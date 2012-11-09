@@ -4,8 +4,6 @@
  <?php  include 'Head.php';  ?>
 <body>
 
- 
-		
 	   <?php //menu 
 		include 'menu.php';  
 		include_once("../controllers/DTOabsence.php");

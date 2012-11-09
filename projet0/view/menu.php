@@ -58,7 +58,7 @@
 		   <ul class="sub-nav">
 		   <li><a href="../view/ajouter_absence.php">Ajouter</a></li>
 		   <li><a href="../view/justifier_absence.php">Justifier</a></li>
-            <li><a href="#">Derniers Abs</a></li>
+            <li><a href="../view/dernier_absent.php">Derniers Abs</a></li>
 			 <li><a href="../view/supprimer_acteur.php">supprimer</a></li>
 			 </ul>
          </li>
