@@ -1,0 +1,52 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1053" measuredH="928" mockupW="1024" mockupH="926">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="29" y="2" w="1024" h="926" measuredW="450" measuredH="400" zOrder="0" locked="true" isInGroup="-1"/>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::Canvas" x="284" y="310" w="514" h="263" measuredW="100" measuredH="70" zOrder="1" locked="false" isInGroup="-1"/>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::TextInput" x="299" y="389" w="445" h="-1" measuredW="84" measuredH="27" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%20%20%20%20%20%20%20%20email...</text>
+      </controlProperties>
+    </control>
+    <control controlID="5" controlTypeID="com.balsamiq.mockups::Button" x="299" y="428" w="97" h="27" measuredW="62" measuredH="27" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>valider</text>
+      </controlProperties>
+    </control>
+    <control controlID="6" controlTypeID="com.balsamiq.mockups::Icon" x="284" y="253" w="-1" h="-1" measuredW="48" measuredH="48" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties/>
+    </control>
+    <control controlID="7" controlTypeID="com.balsamiq.mockups::Label" x="334" y="324" w="307" h="30" measuredW="182" measuredH="28" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>20</size>
+        <text>Mot%20de%20Passe%20oubli%E9</text>
+      </controlProperties>
+    </control>
+    <control controlID="8" controlTypeID="com.balsamiq.mockups::Label" x="656" y="258" w="136" h="39" measuredW="136" measuredH="50" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>40</size>
+        <text>LP-DW</text>
+      </controlProperties>
+    </control>
+    <control controlID="9" controlTypeID="com.balsamiq.mockups::Icon" x="299" y="323" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>HomeMobileIcon%7Cmedium</icon>
+      </controlProperties>
+    </control>
+    <control controlID="10" controlTypeID="com.balsamiq.mockups::HRule" x="299" y="359" w="484" h="-1" measuredW="100" measuredH="10" zOrder="8" locked="false" isInGroup="-1"/>
+    <control controlID="11" controlTypeID="com.balsamiq.mockups::Icon" x="303" y="390" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>ContactIcon%7Csmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="13" controlTypeID="com.balsamiq.mockups::Canvas" x="299" y="470" w="445" h="54" measuredW="100" measuredH="70" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>13576743</color>
+      </controlProperties>
+    </control>
+    <control controlID="14" controlTypeID="com.balsamiq.mockups::Label" x="306" y="470" w="417" h="39" measuredW="634" measuredH="21" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Vous%20avez%20oubli%E9%20votre%20mot%20de%20passe%20%3F%20Indiquez%20votre%20adresse%20e-mail%20et%20nous%20vous%20en%20renverrons%20a%20nouveau%20</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>
