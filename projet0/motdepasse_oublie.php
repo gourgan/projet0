@@ -1,4 +1,4 @@
-<?php
+﻿<?php
  include_once('fonction/check.php');
  ?>
 <!doctype html>
@@ -38,7 +38,7 @@
    <div class="lg-body">
      <div class="inner">
        <div id="lg-head">
-         <p><span class="font-bold">Mot de passe oublié </span> </p>
+         <p><span class="font-bold">Mot de passe oublié </span> <a href="#"><span class="font-bold" style="float:right">Retourner a l'acceuil </span></a> </p>
          <div class="separator"></div>
        </div>
        <div class="login">
