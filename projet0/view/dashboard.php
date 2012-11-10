@@ -29,7 +29,7 @@
 			</div>
 		</div> 
      	 <div class="box grid_6">
-			<div class="box-head"><span class="box-icon-24 fugue-24 system-monitor"></span><h2>charte des absences</h2></div>
+			<div class="box-head"><span class="box-icon-24 fugue-24 system-monitor"></span><h2>Diagramme du taux d'absence</h2></div>
 			<div class="box-content">
 				
 					<div class="form-row">
