@@ -24,7 +24,7 @@ h1 {
 }
 .logo_lp {
 	
-	height: 94px;
+	height: 54px;
 	width: 40.5%;
 	position: absolute;
 	right: 0px;
@@ -154,6 +154,17 @@ label.error {
 	border-radius: 3px;
 	color: #FFFFFF;
 	text-shadow: 0 1px 0 #8E0B0B;
+	font-size: 12px;
+}
+
+#login-msg-success {
+	margin-top: 10px;
+	padding: 6px 10px;
+	background: url(../img/grad-overlay.png) #15A508;
+	border: 1px solid #15A508;
+	border-radius: 3px;
+	color: #FFFFFF;
+	text-shadow: 0 1px 0 #15A508;
 	font-size: 12px;
 }
 #light-ver {

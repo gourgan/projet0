@@ -77,14 +77,17 @@ function afficher_acteurs(){
     echo $exc->getMessage();
     }  
 }
-
+/// on test si l'email est déja existant et on le change s'il existe puis on va envoyer l'email a l'acteur
 function getnew_pass($email){
-    try{	$pass="1234";
+    try{	
+			$pass="12345";
 			$newpas=sha1($pass);
 			$db=connect();
-			mysql_query("UPDATE acteur SET mdp='".$newpas."' WHERE email='".$email."'");
-			
-			if(mysql_affected_rows()){
+			$resultat= $db->prepare("UPDATE acteur SET mdp=? WHERE email=?");
+			$resultat->bindValue(1, $newpas, PDO::PARAM_STR) ;    
+			$resultat->bindValue(2, $email, PDO::PARAM_STR) ;  
+			$resultat->execute();
+			if($resultat->rowCount()){
 				return $pass;
 			}else{
 				return false;

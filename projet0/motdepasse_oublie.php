@@ -38,21 +38,25 @@
    <div class="lg-body">
      <div class="inner">
        <div id="lg-head">
-         <p><span class="font-bold">Mot de passe oublié </span> <a href="#"><span class="font-bold" style="float:right">Retourner a l'acceuil </span></a> </p>
+         <p><span class="font-bold">Mot de passe oublié </span> <a href="index.php"><span class="font-bold" style="float:right;">Retourner a l'acceuil </span></a> </p>
          <div class="separator"></div>
        </div>
        <div class="login">
-         <?php if(isset($_GET["error"])){
-					echo" 
+         <?php 
+			/// Get response from Verifcation
+			if(isset($_GET["rep"])){
+				if($_GET["rep"]=='error'){	
+				echo" 
 					<div id='login-msg'>
 						<p class='font-bold'>Email invalide ! <p>
 					</div>";
-				}else if(isset($_GET["ok"])){
+				}else if(($_GET["rep"]=='ok')){
 					echo" 
-					<div id='login-msg'>
+					<div id='login-msg-success'>
 						<p class='font-bold'>Le nouveau mot de passe est envoyé a votre email ! <p>
 					</div>";
 				}
+			}
 		?>
 		 <form id="lg-form" method="post" action="fonction/verification.php">
            <fieldset>
@@ -64,11 +68,16 @@
                  <li>
                   <input class="submit button green" type="submit" value="Valider"/>
                  </li>
-				 <div id="login-msg">
-						Vous avez oublié votre mot de passe ? 
-						Indiquez votre adresse e-mail et nous vous en renverrons a nouveau 
+				<?php
+					if(!isset($_GET["rep"])){?>
+					 <div id="login-msg">
 						
-				</div>
+							Vous avez oublié votre mot de passe ? 
+							Indiquez votre adresse e-mail et nous vous en renverrons a nouveau 
+							
+					 </div>
+				<?php }
+				?>
               </ul>
            </fieldset>
           </form>

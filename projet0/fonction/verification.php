@@ -25,28 +25,28 @@ if(isset($_GET["logout"])){
 			}
 		}
 	}else{
-		echo"<script type='text/javascript'>document.location.replace('../index.php?error=error');</script>";
+		echo"<script type='text/javascript'>document.location.replace('../index.php?rep=error');</script>";
 	}
 }else if(isset($_POST["email"])){
 	$email=$_POST["email"];
-	$x=getnew_pass($email);
-	if(getnew_pass($email)){
+	if($x=getnew_pass($email)){
 		if(empty($x)){
-				echo"<script type='text/javascript'>document.location.replace('../motdepasse_oublie.php?error=error');</script>";
+				echo"<script type='text/javascript'>document.location.replace('../motdepasse_oublie.php?rep=error');</script>";
 		}else{
-			echo $x;
 			$msg="Vous avez oublié votre mot de passe ? <br/> Voici vos coordonnées d'identification : <b></b>";
 			$msg.="Mot de passe :   ".$x."<br/><br/>";
 			$msg.="VEUILLEZ VOUS IDENTIFIER A L'AIDE DE VOTRE NOM D'UTILISATEUR ET VOTRE NOUVEAU MOT DE PASSE <br/>";
 			$msg.="Merci <br/> <b>Gestion d'absences LP-DW</b> ";
+			// il manque la classe email pour qu'on puisse envoyer l'email a l'acteur;
 			//include("../controllers/mail.php");
 			//if(send_mail("votre nouveau mot de passe",$msg)){
 				//echo"<script type='text/javascript'>document.location.replace('../motdepasse_oublie.php?ok');</script>";
 			//}
-			
+			echo"<script type='text/javascript'>document.location.replace('../motdepasse_oublie.php?rep=ok');</script>";
+
 		}
 	}else{
-		echo"<script type='text/javascript'>document.location.replace('../motdepasse_oublie.php?error=error');</script>";
+		echo"<script type='text/javascript'>document.location.replace('../motdepasse_oublie.php?rep=error');</script>";
 	}
 }
 
