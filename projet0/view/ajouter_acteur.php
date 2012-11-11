@@ -32,7 +32,7 @@
 					</div>
 					<div class="form-row">
 						<label class="form-label"> Nom d'utilisateur </label>
-						<input type="text" name="login" placeholder="Veuillez saisir l'utilisateur" size="100"  pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" required/> 
+						<input type="text" name="login" placeholder="Veuillez saisir l'utilisateur" size="100" title ="pas de nombre autorisé" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" required/> 
 					</div>
 					
 					<div class="form-row">
@@ -41,7 +41,7 @@
 					</div>
 					<div class="form-row">
 						<label class="form-label"> Email  </label>
-						<input type="email" name="email" placeholder="saisir l'email" size="100" required/>
+						<input type="email" name="email" placeholder="saisir l'email" size="100"   required/>
 						<input type="hidden" name="quoi" value="acteur"/>
 					</div>
         </div>
