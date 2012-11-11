@@ -22,9 +22,9 @@
 			<div class="box-head"><span class="box-icon-24 fugue-24 system-monitor"></span><h2>Enregistrement d'absence :</h2></div>
 			<div id="absence-content" class="box-content" style="height:700px;margin-bottom:10px;">
 				 <div id="end" class="notif-msg small-mg" > 
-					L'absence est enregistré avec succés , il vous reste encore
+					L'absence est enregistr&eacute; avec succ&eacute;s , il vous reste encore
 					<span id="bip" style="color:red;font-weight:bolder;"></span>
-					pour qu'il soit validé 
+					pour qu'il soit valid&eacute; 
 				 </div>
 				 	<?php
 						while($lignes=$absence->fetch(PDO::FETCH_OBJ))
@@ -59,7 +59,7 @@
 						echo " 
 						<div class='ad-notif-success grid_12 small-mg' 
 							style='padding:10px;color:green;font-weight:bold;display:block !important;'> 
-							L'absence a été bien validé !<br/>
+							L'absence a &eacute;t&eacute; bien valid&eacute; !<br/>
 							Merci...
 						</div>";
 					}else if(isset($_GET["noabsents"])){
@@ -172,7 +172,7 @@ document.cookie=c_name + "=" + c_value;
 
 
 /* Validation de l'absence en cas de fermeture de la page */
-//pas fé
+//pas f&eacute;
 
 </script>
 

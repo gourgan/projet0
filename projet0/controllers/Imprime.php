@@ -10,7 +10,7 @@ function Header()
     $this->Image('../img/logo.png',10,6,30);
     // Police Arial gras 15
     $this->SetFont('Arial','',15);
-    // Décalage à droite
+    // D&eacute;calage à droite
     $this->Cell(80);
     // Titre
     $this->Cell(0,10,'Absence des etudiants',1,0,'C');
@@ -25,15 +25,15 @@ function Footer()
     $this->SetY(-15);
     // Police Arial italique 8
     $this->SetFont('Times','I',8);
-    // Numéro de page
-    $this->Cell(0,0,'Université de Cergy-Pontoise',20,10,'L');
+    // Num&eacute;ro de page
+    $this->Cell(0,0,'Universit&eacute; de Cergy-Pontoise',20,10,'L');
     $this->Cell(0,0,'Page '.$this->PageNo().'/{nb}',20,0,'C');
     $this->Cell(0,0,'Gestion des absences LPDW',20,10,'R');
     
 }
 }
 function all_absence_pdf(){
-// Instanciation de la classe dérivée
+// Instanciation de la classe d&eacute;riv&eacute;e
 /// on retourne fichier pdf contenant tout les absences 
 
 	$pdf = new PDF();
@@ -71,7 +71,7 @@ function all_absence_pdf(){
     $pdf->Output();
 }
 function between_dates_pdf($date1,$date2){
-// Instanciation de la classe dérivée
+// Instanciation de la classe d&eacute;riv&eacute;e
 /// on retourne fichier pdf contenant tout les basence entre deux dates
 	$pdf = new PDF();
 	$pdf->AliasNbPages();

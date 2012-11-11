@@ -1,17 +1,15 @@
 ﻿<!doctype html>
 <html lang="fr">
 
- <?php  include 'Head.php';  ?>
+ <?php  
+	//includes entete page ;
+	include 'Head.php'; 
+	include 'menu.php'; 
+ ?>
 <body>
-
-  <!--- HEADER -->
-      
-	   <?php  include 'menu.php';  ?>
-	
-
-  <!--- CONTENT AREA -->
-
+<?php afficher_message(); ?>
   <div class="content container_12">
+  
   	<form id="add_eleve" name="add_eleve" enctype="multipart/form-data" action="../fonction/ajout.php" method="POST" >
 
 		<div class="box grid_6">
@@ -24,8 +22,8 @@
 					</div>
 					
 					<div class="form-row">
-							<label class="form-label"> Prénom  </label>
-							<input type="text" name="prenom" placeholder="saisir le Prénom" size="100" />
+							<label class="form-label"> Pr&eacute;nom  </label>
+							<input type="text" name="prenom" placeholder="saisir le Pr&eacute;nom" size="100" />
 					</div>
 					
 					<div class="form-row">
@@ -35,14 +33,14 @@
 					
 					<div class="form-row">
 							<label class="form-label"> Telephone  </label>
-							<input type="text" name="tel" placeholder="saisir Telephone" size="100" pattern="^\d{10}$"  title ="veuillez entrer des nombres"/>
+							<input type="text" name="tel" placeholder="saisir Telephone" size="100" pattern="^\d{10}$" />
 					</div>
 			</div>
 		  </div>
 		 
 	  
       <div class="box grid_12">
-        <div class="box-head"><h2>Identité visuelle</h2></div>
+        <div class="box-head"><h2>Identit&eacute; visuelle</h2></div>
         <div class="box-content">
 			
 			<div class="form-row">

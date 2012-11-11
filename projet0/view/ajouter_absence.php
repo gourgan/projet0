@@ -23,8 +23,8 @@
 								<?php
 									if(isset($_COOKIE["absent_set"])){
 										echo " <div id='end' class='notif-msg small-mg'> 
-												L'absence est déja validé
-												<span style='color:red;font-weight:bolder;'>Vous pouvez pas le modifié !</span>
+												L'absence est d&eacute;ja valid&eacute;
+												<span style='color:red;font-weight:bolder;'>Vous pouvez pas le modifi&eacute; !</span>
 											   </div>";
 									}else{
 

@@ -5,7 +5,7 @@ include("../controllers/Imprime.php");
 
 
 function absence_between_dates($date1,$date2){
-	/////////probléme de date ici 
+	/////////probl&eacute;me de date ici 
 	//$date1=date("d/m/Y",$date1);
 	//$date2=date("d/m/Y",$date2);
 	$date1="2012-10-19";

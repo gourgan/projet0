@@ -1,21 +1,15 @@
 <!doctype html>
 <html lang="fr">
 
- <?php  include 'Head.php';  ?>
+ <?php  
+	include 'Head.php';  
+	include 'menu.php';  
+	include_once '../controllers/DTOintervenant.php';
+	$intervenant=afficher_intervenants();
+ ?>
  <script src="../js/ajax.js"></script>
 <body>
-
-  <!--- HEADER -->
-      
-	   <?php 
-	   include 'menu.php';  
-	   include_once '../controllers/DTOintervenant.php';
-	   $intervenant=afficher_intervenants();
-	   ?>
-	
-
-  <!--- CONTENT AREA -->
-
+  <?php afficher_message(); ?>
   <div class="content container_12">
   	<form id="modif_intervenant" name="modif_intervenant" enctype="multipart/form-data" action="../fonction/modification.php" method="POST" >
          

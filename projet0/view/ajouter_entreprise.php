@@ -1,21 +1,17 @@
 <!doctype html>
 <html lang="fr">
-
- <?php  include 'Head.php';  ?>
+      
+<?php 
+	//includes entete;
+   include 'Head.php'; 
+   include 'menu.php';  
+   include_once '../controllers/DTOEleve.php';
+   //recois la liste des eleves;
+   $eleve=afficher_eleves();
+?>
  
 <body>
-
-  <!--- HEADER -->
-      
-	   <?php 
-	   include 'menu.php';  
-	   include_once '../controllers/DTOEleve.php';
-	   $eleve=afficher_eleves();
-	   ?>
-	
-
-  <!--- CONTENT AREA -->
-
+<?php afficher_message(); ?>
   <div class="content container_12">
   	<form id="add_entreprise" name="add_entreprise" enctype="multipart/form-data" action="../fonction/ajout.php" method="POST" >
 		
@@ -49,16 +45,16 @@
 			<div class="box-content">
 				
 					<div class="form-row">
-							<label class="form-label"> Intitulé de l'entreprise </label>
-							<input type="text" name="intitule" placeholder="Veuillez saisir l'intitulé" size="100" /> 
+							<label class="form-label"> Intitul&eacute; de l'entreprise </label>
+							<input type="text" name="intitule" placeholder="Veuillez saisir l'intitul&eacute;" size="100" /> 
 					</div>
 					<div class="form-row">
 							<label class="form-label"> Adresse de l'entreprise </label>
 							<input type="text" name="adresse" placeholder="Veuillez saisir l'adresse" size="100" /> 
 					</div>	
 					<div class="form-row">
-							<label class="form-label"> Numéro de telephone  </label>
-							<input type="text" name="tel_entreprise" placeholder="saisir le Tél" size="100" />
+							<label class="form-label"> Num&eacute;ro de telephone  </label>
+							<input type="text" name="tel_entreprise" placeholder="saisir le T&eacute;l" size="100" />
 					</div>
 					
 					<div class="form-row">

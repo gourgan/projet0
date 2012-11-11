@@ -14,7 +14,7 @@
 		
 		
 	//Première ligne avec le noms des colonnes
-	echo '"Nom";"Prénom";"Email"'."\n";
+	echo '"Nom";"Pr&eacute;nom";"Email"'."\n";
 	 
 	
 	 $res->execute() or die (mysql_error());

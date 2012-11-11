@@ -1,20 +1,13 @@
 <!doctype html>
 <html lang="fr">
-
- <?php  include 'Head.php';  ?>
+<?php 
+	include 'Head.php'; 
+	include 'menu.php';  
+	include_once '../controllers/DTOEleve.php';
+	$eleve=afficher_eleves();
+?>
 <body>
-
-  <!--- HEADER -->
-      
-	   <?php 
-	   include 'menu.php';  
-	   include_once '../controllers/DTOEleve.php';
-	   $eleve=afficher_eleves();
-	   ?>
-	
-
-  <!--- CONTENT AREA -->
-
+  <?php afficher_message(); ?>
   <div class="content container_12">
   	<form id="supprimer_eleve" name="supprimer_eleve" enctype="multipart/form-data" action="../fonction/supprimer.php" method="POST" >
          
@@ -28,7 +21,7 @@
          
 							<div class="form-item">
 								<select name="eleve">
-								<option value="Selectionner l'etudiant" selected>Selectionner l'étudiant</option>
+								<option value="Selectionner l'etudiant" selected>Selectionner l'&eacute;tudiant</option>
 
 								<?php
 									while($lignes=$eleve->fetch(PDO::FETCH_OBJ))

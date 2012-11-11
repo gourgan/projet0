@@ -2,7 +2,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Gestion des absences :: Mot de passe oublié</title>
+  <title>Gestion des absences :: Mot de passe oubli&eacute;</title>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <link rel="shortcut icon" href="favicon.gif">
   <!---CSS Files-->

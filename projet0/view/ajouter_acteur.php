@@ -1,20 +1,15 @@
 ﻿<!doctype html>
 <html lang="fr">
-
+	<?php
+	  include 'Head.php';  
+	  include 'menu.php'; 
+    ?>
 
 <body>
-
-  <!--- HEADER -->
-
-	<?php  include 'Head.php';  ?>
-	<?php  include 'menu.php';  ?>
-
-  <!--- CONTENT AREA -->
+	<?php afficher_message(); ?>
   <div class="content container_12">
 	<form id="add_actor" name="add_actor" action="../fonction/ajout.php" method="POST" >
 
-
-	  
       <div class="box grid_12">
         <div class="box-head"><h2>  Nouveau Acteur  </h2></div>
         <div class="box-content">
@@ -32,7 +27,7 @@
 					</div>
 					<div class="form-row">
 						<label class="form-label"> Nom d'utilisateur </label>
-						<input type="text" name="login" placeholder="Veuillez saisir l'utilisateur" size="100" title ="pas de nombre autorisé" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" required/> 
+						<input type="text" name="login" placeholder="Veuillez saisir l'utilisateur" size="100"  pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" required/> 
 					</div>
 					
 					<div class="form-row">
@@ -41,7 +36,7 @@
 					</div>
 					<div class="form-row">
 						<label class="form-label"> Email  </label>
-						<input type="email" name="email" placeholder="saisir l'email" size="100"   required/>
+						<input type="email" name="email" placeholder="saisir l'email" size="100" required/>
 						<input type="hidden" name="quoi" value="acteur"/>
 					</div>
         </div>
@@ -57,7 +52,7 @@
   </div>
 
 <div class="footer">
-  <p>Université de Cergy Pontoise <br/>- Site universitaire de Gennevilliers -</p>
+  <p>Universit&eacute; de Cergy Pontoise <br/>- Site universitaire de Gennevilliers -</p>
 </div>
 
 

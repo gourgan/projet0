@@ -1,21 +1,13 @@
 <!doctype html>
 <html lang="fr">
-
- <?php  include 'Head.php';  ?>
- 
+<?php 
+	include 'Head.php';  
+	include 'menu.php';  
+	include_once '../controllers/DTOentreprise.php';
+	$entreprise=afficher_entreprises();
+ ?>
 <body>
-
-  <!--- HEADER -->
-      
-	   <?php 
-	   include 'menu.php';  
-	   include_once '../controllers/DTOentreprise.php';
-	   $entreprise=afficher_entreprises();
-	   ?>
-	
-
-  <!--- CONTENT AREA -->
-
+  <?php afficher_message(); ?>
   <div class="content container_12">
   	<form id="supprimer_entreprise" name="supprimer_entreprise" enctype="multipart/form-data" action="../fonction/supprimer.php" method="POST" >
 		

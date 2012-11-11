@@ -1,19 +1,14 @@
 <!doctype html>
 <html lang="fr">
-
-
-<?php  include 'Head.php';  ?>
+<?php   
+	//INCLUDES ET GET MATIERES
+   include 'Head.php'; 
+   include 'menu.php'; 
+   include_once '../controllers/DTOintervenant.php';
+   $matiere=afficher_matieres();
+?>
 <body>
-<?php  
-		include 'menu.php'; 
-	   include_once '../controllers/DTOintervenant.php';
-	   $matiere=afficher_matieres();
-	   ?>
-	
-	
-
-  <!--- CONTENT AREA -->
-
+<?php afficher_message(); ?>
   <div class="content container_12">
   	<form id="add_intervenant" name="add_intervenant"  enctype="multipart/form-data"  action="../fonction/ajout.php" method="POST" >
 
@@ -27,8 +22,8 @@
 					</div>
 					
 					<div class="form-row">
-							<label class="form-label"> Prénom  </label>
-							<input type="text" name="prenom" placeholder="saisir le Prénom" size="100" />
+							<label class="form-label"> Pr&eacute;nom  </label>
+							<input type="text" name="prenom" placeholder="saisir le Pr&eacute;nom" size="100" />
 					</div>
 					
 					<div class="form-row">
@@ -53,7 +48,7 @@
 		  </div>
 	
       <div class="box grid_12">
-        <div class="box-head"><h2>Identité visuelle</h2></div>
+        <div class="box-head"><h2>Identit&eacute; visuelle</h2></div>
         <div class="box-content">
 			
 			<div class="form-row">

@@ -15,7 +15,7 @@ function afficher_entreprise_modif(){
 			<div class="box-content">
 
 					<div class="form-row">
-						<label class="form-label"> Intitulé </label>
+						<label class="form-label"> Intitul&eacute; </label>
 						<input type="text" name="intitule" value="'.$lignes->nom.'" size="100" /> 
 					</div>
 					
@@ -172,7 +172,7 @@ include_once("../controllers/DTOintervenant.php");
 					</div>
 					
 					<div class="form-row">
-							<label class="form-label"> Prénom  </label>
+							<label class="form-label"> Pr&eacute;nom  </label>
 							<input type="text" name="prenom" value="'.$lignes->prenom.'" size="100" />
 					</div>
 					
@@ -197,7 +197,7 @@ include_once("../controllers/DTOintervenant.php");
 		 
 	  
       <div class="box grid_12">
-        <div class="box-head"><h2>Identité visuelle</h2></div>
+        <div class="box-head"><h2>Identit&eacute; visuelle</h2></div>
         <div class="box-content">
 			<div class="form-row">
 				<label class="form-label"> Changer photo intervenant  </label>
@@ -289,7 +289,7 @@ function afficher_eleve_modif(){
 					</div>
 					
 					<div class="form-row">
-							<label class="form-label"> Prénom  </label>
+							<label class="form-label"> Pr&eacute;nom  </label>
 							<input type="text" name="prenom"  size="100"  value="'.$lignes->prenom.'"> </input> 
 					</div>
 					
@@ -323,7 +323,7 @@ function afficher_eleve_modif(){
 		 
 	  
       <div class="box grid_12">
-        <div class="box-head"><h2>Identité visuelle</h2></div>
+        <div class="box-head"><h2>Identit&eacute; visuelle</h2></div>
         <div class="box-content">
 			<div class="form-row">
 				<label class="form-label"> Changer photo etudiant  </label>
@@ -348,7 +348,7 @@ function afficher_eleve_modif(){
 	 
 }
 
-// s'il est deja passé par le formulaire
+// s'il est deja pass&eacute; par le formulaire
 if(isset($_GET["quoi"])){
 	if($_GET["quoi"]=="eleve"){
 		 afficher_eleve_modif();
@@ -368,9 +368,9 @@ if(isset($_GET["quoi"])){
 	}else if($_GET["quoi"]=="absent"){
 		afficher_absents();
 		
-	}// s'il est pas passé par le formulaire
+	}// s'il est pas pass&eacute; par le formulaire
 	else {
-	echo "Vous avez pas l'accés a cette page!!";
+	echo "Vous avez pas l'acc&eacute;s a cette page!!";
 	header( "refresh:5;url=../index.php" );
 	}
 

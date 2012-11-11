@@ -42,7 +42,7 @@
          <div class="separator"></div>
        </div>
        <div class="login">
-         <?php if(isset($_GET["error"]) and isset($_SESSION['error'])){
+         <?php if(isset($_GET["rep"]) and isset($_SESSION['error'])){
 					echo" 
 					<div id='login-msg'>
 						<p class='font-bold'>Nom d'utilisateur ou mot de passe Invalide!!!<p>
@@ -67,7 +67,7 @@
            </fieldset>
           </form>
           <span id="lost-psw">
-           <a href="motdepasse_oublie.php">Mot de passe oublié?</a>
+           <a href="motdepasse_oublie.php">Mot de passe oubli&eacute;?</a>
           </span>
         </div>
      </div>

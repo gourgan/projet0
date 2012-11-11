@@ -10,11 +10,11 @@ function ajout_en(){
 	$id_eleve = htmlentities($_POST['eleve']);
 	//ajout de l'entreprise
 	if(ajout_entreprise($intitule,$adresse_entreprise,$tel_entreprise,$email_entreprise)){
-		//ajoué l'entreprise a l'etudiant;
+		//ajou&eacute; l'entreprise a l'etudiant;
 		ajout_entreprise_eleve($id_eleve);
-		echo"<script type='text/javascript'>document.location.replace('../view/ajouter_entreprise.php?success');</script>";
+		echo"<script type='text/javascript'>document.location.replace('../view/ajouter_entreprise.php?rep=ok');</script>";
 	}else{
-		echo"<script type='text/javascript'>document.location.replace('../view/ajouter_entreprise.php?error');</script>";
+		echo"<script type='text/javascript'>document.location.replace('../view/ajouter_entreprise.php?rep=error');</script>";
 	}
 }
 function ajout_act(){
@@ -27,9 +27,9 @@ include_once("../controllers/DTOacteur.php");
 	$email = htmlentities($_POST['email']);
 	//ajout acteur
 	if(ajout_acteur($login,$pass,$role,$email)){
-		echo"<script type='text/javascript'>document.location.replace('../view/ajouter_acteur.php?success');</script>";
+		echo"<script type='text/javascript'>document.location.replace('../view/ajouter_acteur.php?rep=ok');</script>";
 	}else{
-		echo"<script type='text/javascript'>document.location.replace('../view/ajouter_acteur.php?error');</script>";
+		echo"<script type='text/javascript'>document.location.replace('../view/ajouter_acteur.php?rep=error');</script>";
 	}
 }
 function ajout_int(){
@@ -45,11 +45,11 @@ include_once("../controllers/DTOintervenant.php");
 	$nm=$nom."_".$prenom;
 	//ajout photo intervenant
 	if(upload($photo,$nm)){
-		$picture=upload($photo,$nm)
+		$picture=upload($photo,$nm);
 		ajout_intervenant($nom,$prenom,$email,$tel,$picture,$alias);
-		echo"<script type='text/javascript'>document.location.replace('../view/ajouter_intervenant.php?success');</script>";
+		echo"<script type='text/javascript'>document.location.replace('../view/ajouter_intervenant.php?rep=ok');</script>";
 	}else{
-		echo"<script type='text/javascript'>document.location.replace('../view/ajouter_intervenant.php?error');</script>";
+		echo"<script type='text/javascript'>document.location.replace('../view/ajouter_intervenant.php?rep=error');</script>";
 	}
 }
 function upload($file,$nm){
@@ -71,7 +71,7 @@ function upload($file,$nm){
 	}
 	//s'il existe aucun erreur?
 	if($file_upload=="true"){
-	//si l'image a eté bien placé sur le serveur?
+	//si l'image a et&eacute; bien plac&eacute; sur le serveur?
 	if(move_uploaded_file($file["tmp_name"], "../upload/$add")){
 		chmod ("../upload/$add", 0777);
 		// en store l'image au serveur change les droit de l'image pour la suppression et 
@@ -92,17 +92,17 @@ function ajout_el(){
 	$nm=$nom."_".$prenom;
 	if(upload($_FILES['pic_stud'],$nm)){
 	$photo=upload($_FILES['pic_stud'],$nm);
-	//entreprise par défaut lors de l'inscription ( );
+	//entreprise par d&eacute;faut lors de l'inscription ( );
 	$entreprise=1;
 	//ajout eleve;
 	ajout_eleve($nom,$prenom,$photo,$email,$tel,$entreprise);
-		echo"<script type='text/javascript'>document.location.replace('../view/ajouter_eleve.php?success');</script>";
+		echo"<script type='text/javascript'>document.location.replace('../view/ajouter_eleve.php?rep=ok');</script>";
 	}else{
-		echo"<script type='text/javascript'>document.location.replace('../view/ajouter_eleve.php?error');</script>";
+		echo"<script type='text/javascript'>document.location.replace('../view/ajouter_eleve.php?rep=error');</script>";
 	}
 }
 
-// s'il est deja passé par le formulaire
+// s'il est deja pass&eacute; par le formulaire
 if(isset($_POST["quoi"])){
 	if($_POST["quoi"]=="eleve"){
 		ajout_el();
@@ -117,9 +117,9 @@ if(isset($_POST["quoi"])){
 	else if($_POST["quoi"]=="intervenant"){
 		ajout_int();
 	}
-// s'il est pas passé par le formulaire
-	else {
-	echo "Vous avez pas l'accés a cette page!!";
+// s'il est pas pass&eacute; par le formulaire
+	}else {
+	echo "Vous avez pas l'acc&eacute;s a cette page!!";
 	header( "refresh:5;url=../index.php" );
 	}
 

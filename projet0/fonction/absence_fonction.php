@@ -7,7 +7,7 @@ function valider_ab(){
 	$statut ="0";
 	date_default_timezone_set('Europe/Paris');
 	$date = date("Y/m/d", time());
-	//verifie si un absence de cette date est déja enregistré?
+	//verifie si un absence de cette date est d&eacute;ja enregistr&eacute;?
 	$id_horaire=check_horaire_day();
 	if (isset($_POST['absents'])){
 		$_SESSION['absents'] = $_POST['absents'];
@@ -24,7 +24,7 @@ function valider_ab(){
 	}else{
 		noabsents();
 	}
-//vide les sessions et cookies utilisés en absence;
+//vide les sessions et cookies utilis&eacute;s en absence;
 	clear_absence();
 //empecher la modification de l'absence
 setcookie("absent_set", "yes", time()+3600*3, "/");
@@ -45,7 +45,7 @@ function check_horaire_day(){
 	}
 	return $id;
 }
-// get date and convert it selon le format dont on a enregistré l'horaire;
+// get date and convert it selon le format dont on a enregistr&eacute; l'horaire;
 function gedate_horaire(){
 
 	$time_a = date("H i s", time());
@@ -59,14 +59,14 @@ function gedate_horaire(){
 	return $quand;
 
 }
-//verifie si un absence de cette date est déja enregistré?
+//verifie si un absence de cette date est d&eacute;ja enregistr&eacute;?
 
 function check_absence_day(){
 
 
 }
 
-//alerte les absence auprés des acteurs et entreprises?
+//alerte les absence aupr&eacute;s des acteurs et entreprises?
 
 function alerter_absence(){
 
@@ -104,13 +104,13 @@ function get_id_eleves_req($id_eleves){
 
 // Si tout est present
 function noabsents(){
-	//vide les sessions et cookies utilisés en absence;
+	//vide les sessions et cookies utilis&eacute;s en absence;
 	clear_absence();
 	setcookie("absent_set", "yes", time()+3600*3, "/");
 	echo"<script type='text/javascript'>document.location.replace('../view/annoncer_absence.php?noabsents');</script>";
 	
 }
-// si klk1 est arrivé avant la validation,on modifie l'absence
+// si klk1 est arriv&eacute; avant la validation,on modifie l'absence
 function modifier_ab(){
 	if (isset($_POST['absents'])){
 
@@ -121,7 +121,7 @@ function modifier_ab(){
 		noabsents();
 	}
 }
-// s'il est deja passé par le formulaire
+// s'il est deja pass&eacute; par le formulaire
 if(isset($_POST["quoi"])){
 	if($_POST["quoi"]=="absence"){
 		enregistrer_ab();
@@ -136,9 +136,9 @@ if(isset($_POST["quoi"])){
 	else if(isset($_POST["valider"]) OR isset($_GET["valider"])){
 		valider_ab();
 	}
-// s'il est pas passé par le formulaire
+// s'il est pas pass&eacute; par le formulaire
 	else {
-	echo "Vous avez pas l'accés a cette page!!";
+	echo "Vous avez pas l'acc&eacute;s a cette page!!";
 	header( "refresh:5;url=../index.php" );
 	}
 ?>

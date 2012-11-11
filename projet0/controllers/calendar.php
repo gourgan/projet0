@@ -6,14 +6,14 @@ $feedURL = "http://www.google.com/calendar/feeds/$userid/private-$magicCookie/ba
 $sxml = simplexml_load_file($feedURL); 
 $count = 1;  
 $donnees=array();
-//on enléve les parenthese pour avoir l'abrev de l'intervenant
+//on enl&eacute;ve les parenthese pour avoir l'abrev de l'intervenant
 function parenthese ($text) 
 {		 preg_match('#\((.*?)\)#', $text, $match); 
 		 if(!empty($match[1])){
 			return $match[1]; 
 		 }else return false;
 }
-//get le programme de la journée
+//get le programme de la journ&eacute;e
 foreach($sxml->entry as $entry) 
 { 
 ///date de l'evenement
@@ -32,7 +32,7 @@ $fin=explode("CET",$date[1]);
 $debut=$date2[1];
 $debut=explode(".",$date2[1]);
 $debut=implode("",$debut);
-//on separe les atribut de late en chaine de caractére extrait from agenda;
+//on separe les atribut de late en chaine de caract&eacute;re extrait from agenda;
 $pieces = explode(" ", $debut);
 //on cree la date from chaine;
 $date_a = date("d-m-Y",strtotime($pieces[2]." ".$pieces[3]." ".$pieces[4]));
@@ -47,7 +47,7 @@ if($time_a<$matin){
 else{
 	$quand ="apres-midi";
 }
-//on préparent les données pour le stockage dans la base
+//on pr&eacute;parent les donn&eacute;es pour le stockage dans la base
 $donnees["matiere"]=$titre;
 $donnees["date"]=$date_a;
 $donnees["quand"]=$quand;

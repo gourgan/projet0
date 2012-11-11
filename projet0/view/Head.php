@@ -5,6 +5,7 @@ require_once ("../controllers/DTOacteur.php");
 if(!checkLoggedin()){
   header("location: ../index.php"); 
 }
+
 ?>
 
 <head>
@@ -30,3 +31,24 @@ if(!checkLoggedin()){
   <script language="javascript" type="text/javascript" src="../js/flot/excanvas.min.js"></script>
   <![endif]-->
 </head>
+<?php 
+	//fonction qui permet d'afficher les message de succ&eacute;s ou erreur lors de l'ajour , suppression ou modification
+function afficher_message(){
+	
+	if(isset($_GET["rep"])){
+	
+		if($_GET["rep"]=='error'){
+			echo 
+			'<div id="login-msg">
+				<p class="font-bold">Il existe des erreurs,veuillez verifier votre saisie</p>
+			</div>';
+		}else if($_GET["rep"]=='ok'){
+			echo '
+			<div id="login-msg-success">
+				<p class="font-bold"> Op&eacute;ration effectu&eacute;e avec succ&eacute;s </p>
+			</div>';
+		
+		}
+	}
+}
+?>

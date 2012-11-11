@@ -38,7 +38,7 @@
    <div class="lg-body">
      <div class="inner">
        <div id="lg-head">
-         <p><span class="font-bold">Mot de passe oublié </span> <a href="index.php"><span class="font-bold" style="float:right;">Retourner a l'acceuil </span></a> </p>
+         <p><span class="font-bold">Mot de passe oubli&eacute; </span> <a href="index.php"><span class="font-bold" style="float:right;">Retourner a l'acceuil </span></a> </p>
          <div class="separator"></div>
        </div>
        <div class="login">
@@ -53,7 +53,7 @@
 				}else if(($_GET["rep"]=='ok')){
 					echo" 
 					<div id='login-msg-success'>
-						<p class='font-bold'>Le nouveau mot de passe est envoyé a votre email ! <p>
+						<p class='font-bold'>Le nouveau mot de passe est envoy&eacute; a votre email ! <p>
 					</div>";
 				}
 			}
@@ -72,7 +72,7 @@
 					if(!isset($_GET["rep"])){?>
 					 <div id="login-msg">
 						
-							Vous avez oublié votre mot de passe ? 
+							Vous avez oubli&eacute; votre mot de passe ? 
 							Indiquez votre adresse e-mail et nous vous en renverrons a nouveau 
 							
 					 </div>

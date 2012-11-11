@@ -1,21 +1,15 @@
 <!doctype html>
 <html lang="fr">
 
- <?php  include 'Head.php';  ?>
- <script src="../js/ajax.js"></script>
+<?php
+	include 'Head.php'; 
+	include 'menu.php';  
+	include_once '../controllers/DTOEleve.php';
+	$eleve=afficher_eleves(); 
+?>
+<script src="../js/ajax.js"></script>
 <body>
-
-  <!--- HEADER -->
-      
-	   <?php 
-	   include 'menu.php';  
-	   include_once '../controllers/DTOEleve.php';
-	   $eleve=afficher_eleves();
-	   ?>
-	
-
-  <!--- CONTENT AREA -->
-
+  <?php afficher_message(); ?>
   <div class="content container_12">
   	<form id="modif_eleve" name="modif_eleve" enctype="multipart/form-data" action="../fonction/modification.php" method="POST" >
          

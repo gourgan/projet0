@@ -26,7 +26,7 @@ and open the template in the editor.
     <body>
         <form name = "form1" action ="#" method = "POST">
             Nom : <input type="text" name="nom" value="" />
-            prénom : <input type="text" name="prenom" value="" />
+            pr&eacute;nom : <input type="text" name="prenom" value="" />
             photo : <input type="file" name="photo" value="" />
             email : <input type="text" name="email" value="" />
             tel : <input type="text" name="telephone" value="" />

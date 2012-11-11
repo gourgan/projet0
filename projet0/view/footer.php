@@ -1,3 +1,3 @@
 <div class="footer">
-  <p>Université de Cergy Pontoise <br/>- Site universitaire de Gennevilliers -</p>
+  <p>Universit&eacute; de Cergy Pontoise <br/>- Site universitaire de Gennevilliers -</p>
 </div>

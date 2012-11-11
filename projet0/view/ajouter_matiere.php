@@ -19,8 +19,8 @@
 			<div class="box-content">
 
 					<div class="form-row">
-						<label class="form-label"> Intitulé </label>
-						<input type="text" name="nom" placeholder="Veuillez saisir l'intitulé" size="100" /> 
+						<label class="form-label"> Intitul&eacute; </label>
+						<input type="text" name="nom" placeholder="Veuillez saisir l'intitul&eacute;" size="100" /> 
 					</div>	
 				
 			</div>
