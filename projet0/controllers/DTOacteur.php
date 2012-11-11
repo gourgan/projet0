@@ -78,25 +78,27 @@ function afficher_acteurs(){
     }  
 }
 /// on test si l'email est déja existant et on le change s'il existe puis on va envoyer l'email a l'acteur
-function getnew_pass($email){
+function getnew_pass($email,$pass){
     try{	
-			$pass="12345";
-			$newpas=sha1($pass);
-			$db=connect();
-			$resultat= $db->prepare("UPDATE acteur SET mdp=? WHERE email=?");
-			$resultat->bindValue(1, $newpas, PDO::PARAM_STR) ;    
-			$resultat->bindValue(2, $email, PDO::PARAM_STR) ;  
-			$resultat->execute();
-			if($resultat->rowCount()){
-				return $pass;
-			}else{
-				return false;
-			}
+		// on crypte le pass ;
+		$newpas=sha1($pass);
+		$db=connect();
+		$resultat= $db->prepare("UPDATE acteur SET mdp=? WHERE email=?");
+		$resultat->bindValue(1, $newpas, PDO::PARAM_STR) ;    
+		$resultat->bindValue(2, $email, PDO::PARAM_STR) ;  
+		$resultat->execute();
+		if($resultat->rowCount()){
+			return true;
+		}else{
+			return false;
+		}
 			
        }
      catch (PDOException $exc) 
     {
-    echo $exc->getMessage();
+		echo $exc->getMessage();
+		return false;
+
     }  
 }
 
