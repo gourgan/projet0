@@ -465,6 +465,7 @@ select {
 .form-item input, .form-item select {
 	width: 100%;
 }
+
 .form-icon {
 	display: inline-block;
 	width: 16px;
@@ -570,6 +571,8 @@ input.filebase {
 	width: 320px;
 	margin: 0 auto;
 }
+
+
 
 /* ADAPTIVE LAYOUT CSS */
 
