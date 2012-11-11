@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="fr">
 
  <?php  include 'Head.php';  ?>
@@ -35,7 +35,7 @@
 					
 					<div class="form-row">
 							<label class="form-label"> Telephone  </label>
-							<input type="text" name="tel" placeholder="saisir Telephone" size="100" />
+							<input type="text" name="tel" placeholder="saisir Telephone" size="100" pattern="^\d{10}$" />
 					</div>
 			</div>
 		  </div>

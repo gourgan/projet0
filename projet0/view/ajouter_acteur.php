@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="fr">
 
 
@@ -32,16 +32,16 @@
 					</div>
 					<div class="form-row">
 						<label class="form-label"> Nom d'utilisateur </label>
-						<input type="text" name="login" placeholder="Veuillez saisir l'utilisateur" size="100"/> 
+						<input type="text" name="login" placeholder="Veuillez saisir l'utilisateur" size="100"  pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" required/> 
 					</div>
 					
 					<div class="form-row">
 						<label class="form-label"> Mot de passe  </label>
-						<input type="password" name="password" placeholder="saisir le password" size="100"/>
+						<input type="password" name="password" placeholder="saisir le password" size="100" required/>
 					</div>
 					<div class="form-row">
 						<label class="form-label"> Email  </label>
-						<input type="text" name="email" placeholder="saisir l'email" size="100"/>
+						<input type="email" name="email" placeholder="saisir l'email" size="100" required/>
 						<input type="hidden" name="quoi" value="acteur"/>
 					</div>
         </div>
