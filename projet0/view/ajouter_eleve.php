@@ -30,7 +30,7 @@
 					
 					<div class="form-row">
 							<label class="form-label"> E-mail  </label>
-							<input type="text" name="email" placeholder="saisir l'E-mail" size="100" />
+							<input type="text" name="email" placeholder="saisir l'E-mail" size="100"  />
 					</div>
 					
 					<div class="form-row">
