@@ -21,7 +21,7 @@
 							<label class="form-label"> Selectionnez l'entreprise </label>
          
 							<div class="form-item">
-								<select name="entreprise" onchange="showUser(this.value,'entreprise')">
+								<select name="entreprise" onchange="showUser(this.value,'entreprise')" >
 								<option value="Selectionner l'entreprise" selected>Selectionner l'entreprise</option>
 
 								<?php

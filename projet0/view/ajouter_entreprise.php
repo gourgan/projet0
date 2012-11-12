@@ -23,7 +23,7 @@
 							<label class="form-label"> Selectionnez l'Etudiant </label>
          
 							<div class="form-item">
-								<select name="eleve">
+								<select name="eleve" >
 								<option value="Selectionner l'etudiant" selected>Selectionner l'etudiant</option>
 
 								<?php
