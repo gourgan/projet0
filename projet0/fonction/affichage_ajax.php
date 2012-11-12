@@ -16,7 +16,7 @@ function afficher_entreprise_modif(){
 
 					<div class="form-row">
 						<label class="form-label"> Intitul&eacute; </label>
-						<input type="text" name="intitule" value="'.$lignes->nom.'" size="100" /> 
+						<input type="text" name="intitule" value="'.$lignes->nom.'" size="100" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" required /> 
 					</div>
 					
 					<div class="form-row">
@@ -26,12 +26,12 @@ function afficher_entreprise_modif(){
 					
 					<div class="form-row">
 							<label class="form-label"> Telephone  </label>
-							<input type="text" name="tel" value="'.$lignes->telephone.'" size="100" />
+							<input type="text" name="tel" value="'.$lignes->telephone.'" size="100" pattern="^\d{10}$" />
 					</div>
 					
 					<div class="form-row">
 							<label class="form-label"> E-mail  </label>
-							<input type="text" name="email" value="'.$lignes->email.'" size="100" />
+							<input type="email" name="email" value="'.$lignes->email.'" size="100" />
 					</div>
 					
 					
@@ -67,20 +67,20 @@ include_once("../controllers/DTOacteur.php");
 
 					<div class="form-row">
 						<label class="form-label"> Login </label>
-						<input type="text" name="login" value="'.$lignes->login.'" size="100" /> 
+						<input type="text" name="login" value="'.$lignes->login.'" size="100" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" required /> 
 					</div>
 					<div class="form-row">
 							<label class="form-label"> Ancien mot de passe  </label>
-							<input type="password" name="anc_password" value="" size="100" />
+							<input type="password" name="anc_password" value="" size="100" required />
 					</div>
 					<div class="form-row">
 							<label class="form-label"> nouveau mot de passe  </label>
-							<input type="password" name="password" value="" size="100" />
+							<input type="password" name="password" value="" size="100" required />
 					</div>
 					
 					<div class="form-row">
 							<label class="form-label"> E-mail  </label>
-							<input type="text" name="email" value="'.$lignes->email.'" size="100" />
+							<input type="email" name="email" value="'.$lignes->email.'" size="100" required />
 					</div>
 						
 					<div class="form-row">
@@ -168,22 +168,22 @@ include_once("../controllers/DTOintervenant.php");
 
 					<div class="form-row">
 						<label class="form-label"> Nom </label>
-						<input type="text" name="nom" value="'.$lignes->nom.'" size="100" /> 
+						<input type="text" name="nom" value="'.$lignes->nom.'" size="100" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" required /> 
 					</div>
 					
 					<div class="form-row">
 							<label class="form-label"> Pr&eacute;nom  </label>
-							<input type="text" name="prenom" value="'.$lignes->prenom.'" size="100" />
+							<input type="text" name="prenom" value="'.$lignes->prenom.'" size="100" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" required />
 					</div>
 					
 					<div class="form-row">
 							<label class="form-label"> E-mail  </label>
-							<input type="text" name="email" value="'.$lignes->email.'" size="100" />
+							<input type="email" name="email" value="'.$lignes->email.'" size="100" />
 					</div>
 					
 					<div class="form-row">
 							<label class="form-label"> Telephone  </label>
-							<input type="text" name="tel" value="'.$lignes->tel.'" size="100" />
+							<input type="text" name="tel" value="'.$lignes->tel.'" size="100" pattern="^\d{10}$" />
 					</div>
 					<div class="form-row">
 							<label class="form-label"> Alias  </label>
@@ -285,22 +285,22 @@ function afficher_eleve_modif(){
 
 					<div class="form-row">
 						<label class="form-label"> Nom </label>
-						<input type="text" name="nom" size="100" value="'.$lignes->nom.'" >   </input> 
+						<input type="text" name="nom" size="100" value="'.$lignes->nom.'" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" required >   </input> 
 					</div>
 					
 					<div class="form-row">
 							<label class="form-label"> Pr&eacute;nom  </label>
-							<input type="text" name="prenom"  size="100"  value="'.$lignes->prenom.'"> </input> 
+							<input type="text" name="prenom"  size="100"  value="'.$lignes->prenom.'" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" required > </input> 
 					</div>
 					
 					<div class="form-row">
 							<label class="form-label"> E-mail  </label>
-							<input type="text" name="email" size="100" value="'.$lignes->email.'" ></input> 
+							<input type="email" name="email" size="100" value="'.$lignes->email.'" ></input> 
 					</div>
 					
 					<div class="form-row">
 							<label class="form-label"> Telephone  </label>
-							<input type="text" name="tel"  size="100" value="'.$lignes->telephone.'" > </input> 
+							<input type="text" name="tel"  size="100" value="'.$lignes->telephone.'"  pattern="^\d{10}$"> </input> 
 							<input type="hidden" name="photo"  size="100" value="'.$lignes->photo.'" > </input> 
 							
 					</div>

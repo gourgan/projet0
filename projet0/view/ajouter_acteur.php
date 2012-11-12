@@ -32,7 +32,7 @@
 					
 					<div class="form-row">
 						<label class="form-label"> Mot de passe  </label>
-						<input type="password" name="password" placeholder="saisir le password" size="100" required/>
+						<input type="password" name="password" placeholder="saisir le password" size="100"  required/>
 					</div>
 					<div class="form-row">
 						<label class="form-label"> Email  </label>

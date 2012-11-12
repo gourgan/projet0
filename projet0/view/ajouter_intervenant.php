@@ -18,22 +18,22 @@
 
 					<div class="form-row">
 						<label class="form-label"> Nom </label>
-						<input type="text" name="nom" placeholder="Veuillez saisir le nom" size="100" /> 
+						<input type="text" name="nom" placeholder="Veuillez saisir le nom" size="100"  pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" required /> 
 					</div>
 					
 					<div class="form-row">
 							<label class="form-label"> Pr&eacute;nom  </label>
-							<input type="text" name="prenom" placeholder="saisir le Pr&eacute;nom" size="100" />
+							<input type="text" name="prenom" placeholder="saisir le Pr&eacute;nom" size="100" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" required />
 					</div>
 					
 					<div class="form-row">
 							<label class="form-label"> E-mail  </label>
-							<input type="text" name="email" placeholder="saisir l'E-mail" size="100" />
+							<input type="email" name="email" placeholder="saisir l'E-mail" size="100" />
 					</div>
 					
 					<div class="form-row">
 							<label class="form-label"> Telephone  </label>
-							<input type="text" name="tel" placeholder="saisir Telephone" size="100" />
+							<input type="text" name="tel" placeholder="saisir Telephone" size="100" pattern="^\d{10}$" />
 							
 					</div>
 					<div class="form-row">

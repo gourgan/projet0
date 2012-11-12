@@ -46,7 +46,7 @@
 				
 					<div class="form-row">
 							<label class="form-label"> Intitul&eacute; de l'entreprise </label>
-							<input type="text" name="intitule" placeholder="Veuillez saisir l'intitul&eacute;" size="100" /> 
+							<input type="text" name="intitule" placeholder="Veuillez saisir l'intitul&eacute;" size="100" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" required /> 
 					</div>
 					<div class="form-row">
 							<label class="form-label"> Adresse de l'entreprise </label>
@@ -54,12 +54,12 @@
 					</div>	
 					<div class="form-row">
 							<label class="form-label"> Num&eacute;ro de telephone  </label>
-							<input type="text" name="tel_entreprise" placeholder="saisir le T&eacute;l" size="100" />
+							<input type="text" name="tel_entreprise" placeholder="saisir le T&eacute;l" size="100" pattern="^\d{10}$" />
 					</div>
 					
 					<div class="form-row">
 							<label class="form-label"> E-mail Entreprise  </label>
-							<input type="text" name="email_entreprise" placeholder="saisir l'E-mail entreprise" size="100" />
+							<input type="email" name="email_entreprise" placeholder="saisir l'E-mail entreprise" size="100" />
 							<input type="hidden" name="quoi" value="entreprise"/>
 					</div>
 					
