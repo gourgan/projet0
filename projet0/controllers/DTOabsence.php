@@ -18,7 +18,7 @@ function ajout_absence($id_h, $id_eleve,$statut){
 	catch (PDOException $exc) 
 	{
 		echo $exc->getMessage();
-		return false
+		return false;
 	}  
 }
 function afficher_absence_selondate(){
