@@ -44,8 +44,8 @@
             <tr class="odd gradeX">
               <td><?php echo $lignes->nom; ?></td>
               <td><?php echo $lignes->prenom; ?></td>
-              <td><?php echo $lignes->adresse; ?></td>
-              <td class="center"> <?php echo $lignes->tel; ?></td>
+              <td><?php echo $lignes->email; ?></td>
+              <td class="center"> <?php echo $lignes->telephone; ?></td>
              
             </tr>
            <?php } ?>
