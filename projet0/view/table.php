@@ -29,14 +29,7 @@
       <div class="box grid_12">
         <div class="box-head"><h2>Table with Toolbar</h2></div>
         <div class="box-content no-pad">
-          <ul class="table-toolbar">
-            <li><a href="#"><img src="../img/icons/basic/plus.png" alt="" /> Add</a></li>
-            <li><a href="#"><img src="../img/icons/basic/delete.png" alt="" /> Remove</a></li>
-            <li><a href="#"><img src="../img/icons/basic/save.png" alt="" /> Save</a></li>
-            <li><a href="#"><img src="../img/icons/basic/print.png" alt="" /> Print</a></li>
-            <li><a href="#"><img src="../img/icons/basic/up.png" alt="" /> Ascending</a></li>
-            <li><a href="#"><img src="../img/icons/basic/down.png" alt="" /> Descending</a></li>
-          </ul>
+        
           <table class="display">
           <thead>
             <tr>
@@ -47,7 +40,7 @@
             </tr>
           </thead>
           <tbody>
-            <?  while($lignes=$eleve->fetch(PDO::FETCH_OBJ)){?>
+            <?php   while($lignes=$eleve->fetch(PDO::FETCH_OBJ)){?>
             <tr class="odd gradeX">
               <td><?php echo $lignes->nom; ?></td>
               <td><?php echo $lignes->prenom; ?></td>
@@ -55,7 +48,7 @@
               <td class="center"> <?php echo $lignes->tel; ?></td>
              
             </tr>
-           <? } ?>
+           <?php } ?>
           </tbody>
          </table>
         </div>
