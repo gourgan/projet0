@@ -25,7 +25,7 @@ function ajout_roleutilisateur($id_role,$id_utilisateur){
 }
 
 
-function modifier_eleve($role,$role_utilisateur){
+function modifier_roleutilisateur($role,$role_utilisateur){
     try{
         
         
@@ -48,7 +48,7 @@ function modifier_eleve($role,$role_utilisateur){
     }  
 }
 
-function supprimer_eleve($id){
+function supprimer_roleutilisateur($id){
   try{
         
         $db=connect();
@@ -64,7 +64,7 @@ function supprimer_eleve($id){
     }
 }
 
-function afficher_eleves(){
+function afficher_roleutilisateur(){
     try{
 		$db=connect();
 
