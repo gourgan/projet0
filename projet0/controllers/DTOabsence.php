@@ -3,15 +3,17 @@
 include_once '../models/absence.php';
 include_once '../models/connexion.php';
    
-function ajout_absence($id_h, $id_eleve,$statut){
+function ajout_absence($id_h, $id_eleve,$statut,$justificatif,$message){
 	try {
 		$db=connect();
 
 		$d = new absence($id_h,$id_eleve,$statut);
-		$resultat= $db->prepare("INSERT INTO absence (id_horaire,id_eleve,statut) VALUES (?,?,?)");
+		$resultat= $db->prepare("INSERT INTO absence (id_horaire,id_eleve,statut,justificatif,message) VALUES (?,?,?,?,?)");
 		$resultat->bindValue(1, $d->getDate_absence(), PDO::PARAM_INT) ;    
 		$resultat->bindValue(2, $d->getId_eleve(), PDO::PARAM_STR) ;    
 		$resultat->bindValue(3, $d->getStatut(), PDO::PARAM_STR) ;    
+		$resultat->bindValue(4, $d->getJustificatif(), PDO::PARAM_STR) ;    
+		$resultat->bindValue(5, $d->getMessage(), PDO::PARAM_STR) ;    
 		$resultat->execute();
 		return true;
 	} 
@@ -107,7 +109,7 @@ function store_matiere_calendar($even){
 	try {		
 		$db=connect();
 		//insertion des donn&eacute;es de l'agenda dans la table horaire;
-		$resultat= $db->prepare("INSERT INTO horaire (date,matiere,abrev_intervenant) VALUES (?,?,?)");
+		$resultat= $db->prepare("INSERT INTO horraire (date,matiere,abrev_intervenant) VALUES (?,?,?)");
 		$resultat->bindValue(1, $donnees["date"], PDO::PARAM_INT) ;    
 		$resultat->bindValue(2, $donnees["matiere"], PDO::PARAM_STR) ;    
 		$resultat->bindValue(3, $donnees["abrev_interv"], PDO::PARAM_STR) ;      

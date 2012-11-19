@@ -1,18 +1,22 @@
 <?php
 
 require '../models/connexion.php';
-include_once '../models/acteur.php';
+include_once '../models/utilisateur.php';
  
 
-function ajout_acteur($login,$mdp,$role,$email){
+function ajout_utilisateur($login,$mdp,$nom,$prenom,$email,$telephone,$picture,$alias){
 	try {
 		$db=connect();
-		$d = new acteur($login,$mdp,$role,$email);
-		$resultat= $db->prepare("INSERT INTO acteur (login,mdp,role,email) VALUES (?,?,?,?)");
+		$d = new utilisateur($login,$mdp,$nom,$prenom,$email,$telephone,$picture,$alias);
+		$resultat= $db->prepare("INSERT INTO utilisateur (login,mdp,nom,prenom,email,telephone,picture,alias) VALUES (?,?,?,?,?,?,?,?,?)");
 		$resultat->bindValue(1, $d->getLogin(), PDO::PARAM_STR) ;    
 		$resultat->bindValue(2, $d->getMdp(), PDO::PARAM_STR) ;    
-		$resultat->bindValue(3, $d->getRole(), PDO::PARAM_STR) ;    
-		$resultat->bindValue(4, $d->getEmail(), PDO::PARAM_STR) ;   
+		$resultat->bindValue(3, $d->getNom(), PDO::PARAM_STR) ;    
+		$resultat->bindValue(4, $d->getPrenom(), PDO::PARAM_STR) ;       
+		$resultat->bindValue(5, $d->getEmail(), PDO::PARAM_STR) ;   
+		$resultat->bindValue(6, $d->getTelephone(), PDO::PARAM_STR) ;   
+		$resultat->bindValue(7 , $d->getPicture(), PDO::PARAM_STR) ;   
+		$resultat->bindValue(8 , $d->getAlias(), PDO::PARAM_STR) ;   
 		$resultat->execute();
 		return true;
 		 
@@ -22,11 +26,11 @@ function ajout_acteur($login,$mdp,$role,$email){
 	}  
 }
 
-function supprimer_acteur($id){
+function supprimer_utilisateur($id){
 	try {
 		
 		$db=connect();
-		$resultat= $db->prepare("DELETE FROM  acteur  WHERE id=?");
+		$resultat= $db->prepare("DELETE FROM  utilisateur  WHERE id=?");
 		$resultat->bindValue(1,$id,PDO::PARAM_INT);
 		$resultat->execute();
 
@@ -40,17 +44,21 @@ function supprimer_acteur($id){
 
 
 
-function modifier_acteur($id,$login,$mdp,$role,$email){
+function modifier_utilisateur($login,$mdp,$nom,$prenom,$email,$telephone,$picture,$alias){
     try{
         $db=connect();
         $d = new acteur($login,$mdp,$role,$email);
-        $resultat= $db->prepare("UPDATE  acteur SET login=?,mdp=?,role=?,email=? WHERE id=?");
+        $resultat= $db->prepare("UPDATE  utilisateur SET login=?,mdp=?,nom=?,prenom=?,email=?,telephone=?,picture=?,alias=?  WHERE id=?");
         
         $resultat->bindValue(1, $d->getLogin(), PDO::PARAM_STR) ;    
-        $resultat->bindValue(2, $d->getMdp(), PDO::PARAM_STR) ;    
-        $resultat->bindValue(3, $d->getRole(), PDO::PARAM_STR) ;    
-        $resultat->bindValue(4, $d->getEmail(), PDO::PARAM_STR) ;  
-        $resultat->bindValue(5, $id, PDO::PARAM_INT) ; 
+		$resultat->bindValue(2, $d->getMdp(), PDO::PARAM_STR) ;    
+		$resultat->bindValue(3, $d->getNom(), PDO::PARAM_STR) ;    
+		$resultat->bindValue(4, $d->getPrenom(), PDO::PARAM_STR) ;       
+		$resultat->bindValue(5, $d->getEmail(), PDO::PARAM_STR) ;   
+		$resultat->bindValue(6, $d->getTelephone(), PDO::PARAM_STR) ;   
+		$resultat->bindValue(7 , $d->getPicture(), PDO::PARAM_STR) ;   
+		$resultat->bindValue(8 , $d->getAlias(), PDO::PARAM_STR) ;     
+        $resultat->bindValue(9, $id, PDO::PARAM_INT) ; 
         $resultat->execute();
         return true;
      
@@ -59,10 +67,10 @@ function modifier_acteur($id,$login,$mdp,$role,$email){
 		return false;
 	}  
 }
-function afficher_acteurs(){
+function afficher_utilisateur(){
     try{
 			$db=connect();
-            $res=$db->prepare('SELECT * FROM acteur');
+            $res=$db->prepare('SELECT * FROM utilisateur ');
             $res->execute();
 			return $res;
 
@@ -79,7 +87,7 @@ function getnew_pass($email,$pass){
 		// on crypte le pass ;
 		$newpas=sha1($pass);
 		$db=connect();
-		$resultat= $db->prepare("UPDATE acteur SET mdp=? WHERE email=?");
+		$resultat= $db->prepare("UPDATE utilisateur SET mdp=? WHERE email=?");
 		$resultat->bindValue(1, $newpas, PDO::PARAM_STR) ;    
 		$resultat->bindValue(2, $email, PDO::PARAM_STR) ;  
 		$resultat->execute();

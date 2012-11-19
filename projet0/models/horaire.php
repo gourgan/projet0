@@ -1,54 +1,51 @@
 <?php
 
-class horaire{
+class horrsaire{
     private $date;
-    private $heure_debut;
-    private $heure_fin;
-    private $id_matiere;
+    private $quand;
+    private $matiere;
+    private $abrev_intervenant;
     
 
+    public function getDate() {
+        return $this->date;
+    }
 
+    public function setDate($date) {
+        $this->date = $date;
+    }
 
-function __construct($date, $heure_debut, $heure_fin, $id_matiere) {
-    $this->date = $date;
-    $this->heure_debut = $heure_debut;
-    $this->heure_fin = $heure_fin;
-    $this->id_matiere = $id_matiere;
-}
+    public function getQuand() {
+        return $this->quand;
+    }
 
+    public function setQuand($quand) {
+        $this->quand = $quand;
+    }
 
+    public function getMatiere() {
+        return $this->matiere;
+    }
 
-public function getDate() {
-    return $this->date;
-}
+    public function setMatiere($matiere) {
+        $this->matiere = $matiere;
+    }
 
-public function setDate($date) {
-    $this->date = $date;
-}
+    public function getAbrev_intervenant() {
+        return $this->abrev_intervenant;
+    }
 
-public function getHeure_debut() {
-    return $this->heure_debut;
-}
+    public function setAbrev_intervenant($abrev_intervenant) {
+        $this->abrev_intervenant = $abrev_intervenant;
+    }
 
-public function setHeure_debut($heure_debut) {
-    $this->heure_debut = $heure_debut;
-}
-
-public function getHeure_fin() {
-    return $this->heure_fin;
-}
-
-public function setHeure_fin($heure_fin) {
-    $this->heure_fin = $heure_fin;
-}
-
-public function getId_matiere() {
-    return $this->id_matiere;
-}
-
-public function setId_matiere($id_matiere) {
-    $this->id_matiere = $id_matiere;
-}
+    
+    function __construct($date, $quand, $matiere, $abrev_intervenant) {
+        $this->date = $date;
+        $this->quand = $quand;
+        $this->matiere = $matiere;
+        $this->abrev_intervenant = $abrev_intervenant;
+    }
 
 
 }
