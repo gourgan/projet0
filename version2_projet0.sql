@@ -1,20 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.2.2
+-- version 3.5.1
 -- http://www.phpmyadmin.net
 --
--- Client: 127.0.0.1
--- Généré le: Sam 17 Novembre 2012 à 14:34
--- Version du serveur: 5.5.27
--- Version de PHP: 5.4.7
+-- Client: localhost
+-- Généré le: Lun 19 Novembre 2012 à 12:54
+-- Version du serveur: 5.5.25
+-- Version de PHP: 5.4.4
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
 
 --
 -- Base de données: `projet0`
@@ -26,7 +20,7 @@ SET time_zone = "+00:00";
 -- Structure de la table `absence`
 --
 
-CREATE TABLE IF NOT EXISTS `absence` (
+CREATE TABLE `absence` (
   `id` int(20) NOT NULL AUTO_INCREMENT,
   `id_horaire` int(11) NOT NULL,
   `id_eleve` int(20) NOT NULL,
@@ -66,7 +60,7 @@ INSERT INTO `absence` (`id`, `id_horaire`, `id_eleve`, `statut`, `justificatif`)
 -- Structure de la table `eleve`
 --
 
-CREATE TABLE IF NOT EXISTS `eleve` (
+CREATE TABLE `eleve` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nom` varchar(15) DEFAULT NULL,
   `prenom` varchar(15) DEFAULT NULL,
@@ -103,7 +97,7 @@ INSERT INTO `eleve` (`id`, `nom`, `prenom`, `photo`, `email`, `id_entreprise`, `
 -- Structure de la table `entreprise`
 --
 
-CREATE TABLE IF NOT EXISTS `entreprise` (
+CREATE TABLE `entreprise` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nom` varchar(20) NOT NULL,
   `adresse` varchar(30) NOT NULL,
@@ -133,7 +127,7 @@ INSERT INTO `entreprise` (`id`, `nom`, `adresse`, `telephone`, `email`) VALUES
 -- Structure de la table `groupe`
 --
 
-CREATE TABLE IF NOT EXISTS `groupe` (
+CREATE TABLE `groupe` (
   `nom` varchar(200) NOT NULL,
   `id` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`)
@@ -145,7 +139,7 @@ CREATE TABLE IF NOT EXISTS `groupe` (
 -- Structure de la table `horraire`
 --
 
-CREATE TABLE IF NOT EXISTS `horraire` (
+CREATE TABLE `horraire` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `date` date NOT NULL,
   `quand` varchar(100) NOT NULL,
@@ -168,11 +162,19 @@ INSERT INTO `horraire` (`id`, `date`, `quand`, `matiere`, `abrev_intervenant`) V
 -- Structure de la table `role`
 --
 
-CREATE TABLE IF NOT EXISTS `role` (
+CREATE TABLE `role` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nom` varchar(20) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Contenu de la table `role`
+--
+
+INSERT INTO `role` (`id`, `nom`) VALUES
+(1, 'delegué'),
+(2, 'responsable');
 
 -- --------------------------------------------------------
 
@@ -180,10 +182,12 @@ CREATE TABLE IF NOT EXISTS `role` (
 -- Structure de la table `role_utilisateur`
 --
 
-CREATE TABLE IF NOT EXISTS `role_utilisateur` (
+CREATE TABLE `role_utilisateur` (
   `id_role` int(11) NOT NULL,
   `id_utilisateur` int(11) NOT NULL,
-  KEY `id_role` (`id_role`,`id_utilisateur`)
+  KEY `id_role` (`id_role`,`id_utilisateur`),
+  KEY `id_role_2` (`id_role`),
+  KEY `id_utilisateur` (`id_utilisateur`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -192,7 +196,7 @@ CREATE TABLE IF NOT EXISTS `role_utilisateur` (
 -- Structure de la table `utilisateur`
 --
 
-CREATE TABLE IF NOT EXISTS `utilisateur` (
+CREATE TABLE `utilisateur` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `login` varchar(200) DEFAULT NULL,
   `mdp` varchar(200) DEFAULT NULL,
@@ -220,6 +224,9 @@ INSERT INTO `utilisateur` (`id`, `login`, `mdp`, `email`, `Alias`) VALUES
 ALTER TABLE `eleve`
   ADD CONSTRAINT `eleve_ibfk_1` FOREIGN KEY (`id_entreprise`) REFERENCES `entreprise` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+--
+-- Contraintes pour la table `role_utilisateur`
+--
+ALTER TABLE `role_utilisateur`
+  ADD CONSTRAINT `role_utilisateur_ibfk_2` FOREIGN KEY (`id_utilisateur`) REFERENCES `utilisateur` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `role_utilisateur_ibfk_1` FOREIGN KEY (`id_role`) REFERENCES `role` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
