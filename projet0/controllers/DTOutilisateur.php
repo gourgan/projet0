@@ -47,7 +47,7 @@ function supprimer_utilisateur($id){
 function modifier_utilisateur($login,$mdp,$nom,$prenom,$email,$telephone,$picture,$alias){
     try{
         $db=connect();
-        $d = new acteur($login,$mdp,$role,$email);
+        $d = new utilisateur($login,$mdp,$role,$email);
         $resultat= $db->prepare("UPDATE  utilisateur SET login=?,mdp=?,nom=?,prenom=?,email=?,telephone=?,picture=?,alias=?  WHERE id=?");
         
         $resultat->bindValue(1, $d->getLogin(), PDO::PARAM_STR) ;    
@@ -151,7 +151,7 @@ function confirmUser($utilisateur,$pass)
 		//on verifie si l'acteur(nom d'utilisateur) existe dans la base;
 		$x="";
 		$db=connect();
-		$res=$db->query('SELECT * FROM  acteur');
+		$res=$db->query('SELECT * FROM  utilisateur');
 		
 		while ($resultat=$res->fetch(PDO::FETCH_ASSOC)) {
 			
@@ -173,7 +173,21 @@ function confirmUser($utilisateur,$pass)
 	}   
    
 }
-
+function get_role($id_utilisateur)
+{
+	try {	
+		//We get the user role ;
+		$db=connect();
+		$res=$db->query('SELECT nom FROM  role r,role_utilisateur ru where r.id=ru.id_role and ru.id_utilisateur=?');
+		$res->bindValue(1, $id_utilisateur, PDO::PARAM_INT) ;  
+		$res->execute();
+		if($x=="error")return false;
+	}catch (PDOException $exc) {
+		echo $exc->getMessage();
+		return false;
+	}   
+   
+}
 function checkLoggedin()
 {			//on verifie s'est existe d&eacute;ja une session precedente;
 

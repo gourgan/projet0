@@ -56,7 +56,7 @@ if(store_in_base($donnees)){
 break;
 
 }else{
-	echo "il existe des erreurs de connexion avec google calendar,merci de faire l'appel en papiers";
+	echo "il existe des erreurs de connexion avec google calendar!!";
 }
 $count++; 
 } 

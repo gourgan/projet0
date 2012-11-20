@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("../controllers/DTOacteur.php");
+include("../controllers/DTOutilisateur.php");
 if(isset($_GET["logout"])){
 	// on dectruit les sessions de l'utilisateur en cours
 	clearsessionscookies();
@@ -14,7 +14,8 @@ if(isset($_GET["logout"])){
 		 // on recupere la session du role de l'acteur pour gerer les roles et les interfaces a afficher pour l'acteur;
 		 $x=$_SESSION['gdrole'];
 		 //pour le calendar code pret mais temps insufisant pour l'integrer 
-		// include("../controllers/calendar.php");
+		//include("../controllers/calendar.php");
+		exit;
 		if(empty($x)){
 				echo"<script type='text/javascript'>document.location.replace('../index.php?error=error');</script>";
 		}else{
@@ -32,6 +33,7 @@ if(isset($_GET["logout"])){
 	$email=$_POST["email"];
 	/// generer un mot de passe aleatoire.
 	$mdp = substr(str_shuffle("abcdefghijkmnpqrstuvwxyz"), 0, 5);
+	
 	if(getnew_pass($email,$mdp)){
 		$msg="Vous avez oubli&eacute; votre mot de passe ? <br/> Voici vos coordonn&eacute;es d'identification : <b></b>";
 		$msg.="Mot de passe :   ".$mdp."<br/><br/>";
