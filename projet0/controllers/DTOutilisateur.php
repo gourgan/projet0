@@ -152,9 +152,9 @@ function confirmUser($utilisateur,$pass)
 		$x="";
 		$db=connect();
 		$res=$db->query('SELECT * FROM  utilisateur');
-		
 		while ($resultat=$res->fetch(PDO::FETCH_ASSOC)) {
-			
+			$role=get_role($resultat["id"]);
+			echo $role;exit;
 			if($resultat["login"]==$utilisateur and $resultat["mdp"]==$pass ){
 			$_SESSION['gdrole']=$resultat["role"];
 			setcookie("gdrole", $_SESSION['gdrole'], time()+60*60*24*100, "/");
@@ -178,10 +178,10 @@ function get_role($id_utilisateur)
 	try {	
 		//We get the user role ;
 		$db=connect();
-		$res=$db->query('SELECT nom FROM  role r,role_utilisateur ru where r.id=ru.id_role and ru.id_utilisateur=?');
-		$res->bindValue(1, $id_utilisateur, PDO::PARAM_INT) ;  
-		$res->execute();
-		if($x=="error")return false;
+		$res=$db->query('SELECT nom FROM  role r,role_utilisateur ru where r.id=ru.id_role and ru.id_utilisateur='.$id_utilisateur);
+		$role=$res->fetch();	
+		return $role['nom'];
+		
 	}catch (PDOException $exc) {
 		echo $exc->getMessage();
 		return false;
