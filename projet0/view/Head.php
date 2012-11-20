@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require_once ("../controllers/DTOacteur.php"); 
+require_once ("../controllers/DTOutilisateur.php"); 
 if(!checkLoggedin()){
   header("location: ../index.php"); 
 }

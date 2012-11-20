@@ -154,9 +154,8 @@ function confirmUser($utilisateur,$pass)
 		$res=$db->query('SELECT * FROM  utilisateur');
 		while ($resultat=$res->fetch(PDO::FETCH_ASSOC)) {
 			$role=get_role($resultat["id"]);
-			echo $role;exit;
 			if($resultat["login"]==$utilisateur and $resultat["mdp"]==$pass ){
-			$_SESSION['gdrole']=$resultat["role"];
+			$_SESSION['gdrole']=$role;
 			setcookie("gdrole", $_SESSION['gdrole'], time()+60*60*24*100, "/");
 			return true;
 			}

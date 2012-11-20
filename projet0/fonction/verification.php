@@ -15,7 +15,6 @@ if(isset($_GET["logout"])){
 		 $x=$_SESSION['gdrole'];
 		 //pour le calendar code pret mais temps insufisant pour l'integrer 
 		//include("../controllers/calendar.php");
-		exit;
 		if(empty($x)){
 				echo"<script type='text/javascript'>document.location.replace('../index.php?error=error');</script>";
 		}else{
