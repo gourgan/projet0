@@ -154,15 +154,15 @@ function confirmUser($utilisateur,$pass)
 		$res=$db->query('SELECT * FROM  utilisateur');
 		while ($resultat=$res->fetch(PDO::FETCH_ASSOC)) {
 			$role=get_role($resultat["id"]);
-			if($resultat["login"]==$utilisateur and $resultat["mdp"]==$pass ){
+			if($resultat["login"]==$utilisateur && $resultat["mdp"]==$pass ){
 			$_SESSION['gdrole']=$role;
-			setcookie("gdrole", $_SESSION['gdrole'], time()+60*60*24*100, "/");
+			setcookie("gdrole", $_SESSION['gdrole'], time()+60, "/");
 			return true;
 			}
 			else{
 				$x="error";
 				$_SESSION['error']="error";
-				setcookie("error", $_SESSION['error'], time()+60*60*24*100, "/");
+				setcookie("error", $_SESSION['error'], time()+60, "/");
 			}
 		}	
 		if($x=="error")return false;

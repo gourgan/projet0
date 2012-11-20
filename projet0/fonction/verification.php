@@ -14,15 +14,18 @@ if(isset($_GET["logout"])){
 		 // on recupere la session du role de l'acteur pour gerer les roles et les interfaces a afficher pour l'acteur;
 		 $x=$_SESSION['gdrole'];
 		 //pour le calendar code pret mais temps insufisant pour l'integrer 
-		//include("../controllers/calendar.php");
+		include("../controllers/calendar.php");
 		if(empty($x)){
 				echo"<script type='text/javascript'>document.location.replace('../index.php?error=error');</script>";
 		}else{
 			if($x=="intervenant"){
 				echo"<script type='text/javascript'>document.location.replace('../view/ajouter_absence.php');</script>";
 			}
-			else{
+			else if($x=="responsable"){
 				echo"<script type='text/javascript'>document.location.replace('../view/dashboard.php');</script>";
+			}
+			else {
+				echo"en tant que delegé , vous avez pas l'accés a l'application";
 			}
 		}
 	}else{

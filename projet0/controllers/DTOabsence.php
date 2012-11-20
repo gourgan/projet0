@@ -109,10 +109,11 @@ function store_matiere_calendar($even){
 	try {		
 		$db=connect();
 		//insertion des donn&eacute;es de l'agenda dans la table horaire;
-		$resultat= $db->prepare("INSERT INTO horraire (date,matiere,abrev_intervenant) VALUES (?,?,?)");
-		$resultat->bindValue(1, $donnees["date"], PDO::PARAM_INT) ;    
-		$resultat->bindValue(2, $donnees["matiere"], PDO::PARAM_STR) ;    
-		$resultat->bindValue(3, $donnees["abrev_interv"], PDO::PARAM_STR) ;      
+		$resultat= $db->prepare("INSERT INTO horaire (date,quand,matiere,abrev_intervenant) VALUES (?,?,?,?)");
+		$resultat->bindValue(1, $even["date"], PDO::PARAM_STR) ;    
+		$resultat->bindValue(2, $even["quand"], PDO::PARAM_STR) ;  
+		$resultat->bindValue(3, $even["matiere"], PDO::PARAM_STR) ;    
+		$resultat->bindValue(4, $even["abrev_interv"], PDO::PARAM_STR) ;      
 		$resultat->execute();
 		return true;
 	} 

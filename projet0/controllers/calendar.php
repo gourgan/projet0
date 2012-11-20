@@ -35,7 +35,7 @@ $debut=implode("",$debut);
 //on separe les atribut de late en chaine de caract&eacute;re extrait from agenda;
 $pieces = explode(" ", $debut);
 //on cree la date from chaine;
-$date_a = date("d-m-Y",strtotime($pieces[2]." ".$pieces[3]." ".$pieces[4]));
+$date_a = date("Y-m-d",strtotime($pieces[4]." ".$pieces[2]." ".$pieces[3]));
 // on cree time from chaine
 $time_a = date("H i s", strtotime($pieces[5]));
 //on cree time pour comparaison
@@ -63,10 +63,7 @@ $count++;
 
 function store_in_base($donnees){
 include_once 'DTOabsence.php';
-if(store_matiere_calendar($donnees)){
-	return true;
-}
-
-return false;
+if(store_matiere_calendar($donnees)) return true;
+else return false;
 }
 ?> 
