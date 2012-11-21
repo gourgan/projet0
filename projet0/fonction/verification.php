@@ -24,8 +24,11 @@ if(isset($_GET["logout"])){
 			else if($x=="responsable"){
 				echo"<script type='text/javascript'>document.location.replace('../view/dashboard.php');</script>";
 			}
+			else if($x=="secretaire"){
+				echo"<script type='text/javascript'>document.location.replace('../view/dashboard.php');</script>";
+			}
 			else {
-				echo"en tant que delegé , vous avez pas l'accés a l'application";
+				echo"vous avez pas l'accés a l'application";
 			}
 		}
 	}else{
