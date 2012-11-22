@@ -89,13 +89,24 @@ function ajout_el(){
 	$prenom = htmlentities($_POST['prenom']);
 	$email = htmlentities($_POST['email']);
 	$tel = htmlentities($_POST['tel']);
+	$dele= htmlentities($_POST['delegue']);
+         if ($dele!=null){
+         
+         $dele =true;
+         
+             
+         }else {
+         $dele =false;
+             
+         }
+         
 	$nm=$nom."_".$prenom;
 	if(upload($_FILES['pic_stud'],$nm)){
 	$photo=upload($_FILES['pic_stud'],$nm);
 	//entreprise par d&eacute;faut lors de l'inscription ( );
 	$entreprise=1;
 	//ajout eleve;
-	ajout_eleve($nom,$prenom,$photo,$email,$tel,$entreprise);
+	ajout_eleve($nom,$prenom,$photo,$email,$tel,$entreprise,$delegue);
 		echo"<script type='text/javascript'>document.location.replace('../view/ajouter_eleve.php?rep=ok');</script>";
 	}else{
 		echo"<script type='text/javascript'>document.location.replace('../view/ajouter_eleve.php?rep=error');</script>";

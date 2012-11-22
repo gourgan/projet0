@@ -304,6 +304,10 @@ function afficher_eleve_modif(){
 							<input type="hidden" name="photo"  size="100" value="'.$lignes->photo.'" > </input> 
 							
 					</div>
+                                          <div class="form-row">
+							<label class="form-label"> Delegu&eacute  </label>
+                                                        <input type="checkbox" name="delegue" />
+					</div>
 					<div class="form-row">
 							<label class="form-label"> Modifier l entreprise </label>
          

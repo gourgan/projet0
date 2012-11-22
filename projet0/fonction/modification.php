@@ -102,12 +102,13 @@ function modifier_el(){
 	$tel = htmlentities($_POST['tel']);
 	$photo=htmlentities($_POST['photo']);
 	$entreprise=$_POST['entreprise'];
+        $delegue=$_POST['delegue'];
 	$nm=$nom."_".$prenom;
 	if($_FILES["pic_stud"]["name"]!=""){
 	$photo=upload($_FILES["pic_stud"],$nm);
 	}
 	
-	if(modifier_eleve($id,$nom,$prenom,$photo,$email,$tel,$entreprise)){
+	if(modifier_eleve($id,$nom,$prenom,$photo,$email,$tel,$entreprise,$delegue)){
 		echo"<script type='text/javascript'>document.location.replace('../view/modifier_eleve.php?rep=ok');</script>";
 	}else{
 		echo"<script type='text/javascript'>document.location.replace('../view/modifier_eleve.php?rep=error');</script>";

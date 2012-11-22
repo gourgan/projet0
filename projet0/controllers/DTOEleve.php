@@ -3,12 +3,12 @@ include_once '../models/eleve.php';
 include_once '../models/connexion.php';
  
 
-function ajout_eleve($nom,$prenom,$photo,$email,$tel,$entreprise){
+function ajout_eleve($nom,$prenom,$photo,$email,$tel,$entreprise,$delegue){
 	try {
         $db=connect();
  
         $d = new eleve($nom,$prenom,$photo,$email,$tel,$entreprise);
-        $resultat= $db->prepare("INSERT INTO eleve (nom,prenom,photo,email,telephone,id_entreprise) VALUES (?,?,?,?,?,?)");
+        $resultat= $db->prepare("INSERT INTO eleve (nom,prenom,photo,email,telephone,id_entreprise,delegue) VALUES (?,?,?,?,?,?,?)");
        
         $resultat->bindValue(1, $d->getNom(), PDO::PARAM_STR) ;    
         $resultat->bindValue(2, $d->getPrenom(), PDO::PARAM_STR) ;    
@@ -16,6 +16,7 @@ function ajout_eleve($nom,$prenom,$photo,$email,$tel,$entreprise){
         $resultat->bindValue(4, $d->getEmail(), PDO::PARAM_STR) ;    
         $resultat->bindValue(5, $d->getTelephone(), PDO::PARAM_STR) ;    
         $resultat->bindValue(6, $d->getId_entreprise(), PDO::PARAM_INT) ;  
+        $resultat->bindValue(7, $d->getDelegue(), PDO::PARAM_BOOL) ;  
        
        
         $resultat->execute();
@@ -28,22 +29,23 @@ function ajout_eleve($nom,$prenom,$photo,$email,$tel,$entreprise){
 }
 
 
-function modifier_eleve($id,$nom,$prenom,$photo,$email,$tel,$entreprise){
+function modifier_eleve($id,$nom,$prenom,$photo,$email,$tel,$entreprise,$delegue){
     try{
         
         
 		$db=connect();
         
 		$d = new eleve($nom,$prenom,$photo,$email,$tel,$entreprise);
-        $resultat= $db->prepare("UPDATE  eleve SET nom=?,prenom=?,photo=?,email=?,telephone=?,id_entreprise=? WHERE id=?");
+        $resultat= $db->prepare("UPDATE  eleve SET nom=?,prenom=?,photo=?,email=?,telephone=?,id_entreprise=?,delegue=? WHERE id=?");
        
         $resultat->bindValue(1, $d->getNom(), PDO::PARAM_STR) ;    
         $resultat->bindValue(2, $d->getPrenom(), PDO::PARAM_STR) ;    
         $resultat->bindValue(3, $d->getPhoto(), PDO::PARAM_STR) ;    
         $resultat->bindValue(4, $d->getEmail(), PDO::PARAM_STR) ;    
         $resultat->bindValue(5, $d->getTelephone(), PDO::PARAM_STR) ;       
-        $resultat->bindValue(6, $d->getId_entreprise(), PDO::PARAM_INT) ;  
-        $resultat->bindValue(7, $id,PDO::PARAM_INT);
+        $resultat->bindValue(6, $d->getId_entreprise(), PDO::PARAM_INT) ;
+        $resultat->bindValue(7, $d->getDelegue(), PDO::PARAM_BOOL) ; 
+        $resultat->bindValue(8, $id,PDO::PARAM_INT);
         $resultat->execute();
         return true;
     }

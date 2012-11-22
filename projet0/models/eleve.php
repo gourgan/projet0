@@ -7,18 +7,29 @@ class eleve{
     private $photo;
     private $email;
     private $telephone;
+    private $delegue;
     private $id_entreprise;
     
     
     
-    function __construct($nom, $prenom, $photo, $email, $telephone,$id_entreprise) {
+    function __construct($nom, $prenom, $photo, $email, $telephone,$id_entreprise,$delegue) {
         $this->nom = $nom;
         $this->prenom = $prenom;
         $this->photo = $photo;
         $this->email = $email;
         $this->telephone = $telephone;
         $this->id_entreprise = $id_entreprise;
+        $this->delegue = $delegue;
     }
+    public function getDelegue() {
+        return $this->delegue;
+    }
+
+    public function setDelegue($delegue) {
+        $this->delegue = $delegue;
+    }
+
+        
 
     
     public function getNom() {
