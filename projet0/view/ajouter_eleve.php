@@ -49,7 +49,35 @@
 				<input type="hidden" name="quoi" value="eleve"/>
 			</div>
 		</div>
+      </div> 
+            
+             <div class="box grid_6">
+			<div class="box-head"><span class="box-icon-24 fugue-24 system-monitor"></span><h2>Informations entreprise d'acceuil</h2></div>
+			<div class="box-content">
+				
+					<div class="form-row">
+							<label class="form-label"> Intitul&eacute; de l'entreprise </label>
+							<input type="text" name="intitule" placeholder="Veuillez saisir l'intitul&eacute;" size="100"  /> 
+					</div>
+					<div class="form-row">
+							<label class="form-label"> Adresse de l'entreprise </label>
+							<input type="text" name="adresse" placeholder="Veuillez saisir l'adresse" size="100" /> 
+					</div>	
+					<div class="form-row">
+							<label class="form-label"> Num&eacute;ro de telephone  </label>
+							<input type="text" name="tel_entreprise" placeholder="saisir le T&eacute;l" size="100"  />
+					</div>
+					
+					<div class="form-row">
+							<label class="form-label"> E-mail Entreprise  </label>
+							<input type="email" name="email_entreprise" placeholder="saisir l'E-mail entreprise" size="100" />
+							<input type="hidden" name="quoi" value="entreprise"/>
+					</div>
+					
+									
+			</div>
       </div>
+	  
 
      
 		<div class="class_button">
