@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: 127.0.0.1
--- Généré le: Jeu 22 Novembre 2012 à 20:10
+-- Généré le: Ven 23 Novembre 2012 à 17:57
 -- Version du serveur: 5.5.27
 -- Version de PHP: 5.4.7
 
@@ -74,30 +74,32 @@ CREATE TABLE IF NOT EXISTS `eleve` (
   `photo` varchar(255) NOT NULL,
   `email` varchar(30) NOT NULL,
   `id_entreprise` int(11) NOT NULL,
+  `id_groupe` int(11) NOT NULL,
   `telephone` varchar(10) NOT NULL,
-  `delegué` tinyint(1) NOT NULL,
+  `delegue` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `id_entreprise` (`id_entreprise`)
+  KEY `id_entreprise` (`id_entreprise`),
+  KEY `id_groupe` (`id_groupe`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=30 ;
 
 --
 -- Contenu de la table `eleve`
 --
 
-INSERT INTO `eleve` (`id`, `nom`, `prenom`, `photo`, `email`, `id_entreprise`, `telephone`, `delegué`) VALUES
-(15, 'Romain', 'lansari', 'Romain_lansari.gif', 'gourgan.hic@', 4, '111', 0),
-(16, 'achraf', 'hicham', 'achraf_hicham.gif', 'peace-und-loove@hotmail.com', 5, '6123456', 0),
-(19, 'nomeleve3', 'prenomeleve3', 'nomeleve3_prenomeleve3.jpg', 'email_eleve3@gmail.com', 1, '2147483647', 0),
-(20, 'nomeleve4', 'prenomeleve4', 'nomeleve4_prenomeleve4.jpg', 'email_eleve4@gmail.com', 1, '2147483647', 0),
-(21, 'nomeleve5', 'prenomeleve5', 'nomeleve5_prenomeleve5.jpg', 'email_eleve5@gmail.com', 1, '2147483647', 0),
-(22, 'nomeleve6', 'prenomeleve6', 'nomeleve6_prenomeleve6.jpg', 'email_eleve6@gmail.com', 1, '2147483647', 0),
-(23, 'nomeleve7', 'prenomeleve7', 'nomeleve7_prenomeleve7.jpg', 'email_eleve7@gmail.com', 1, '2147483647', 0),
-(24, 'nomeleve8', 'prenomeleve8', 'nomeleve8_prenomeleve8.jpg', 'email_eleve8@gmail.com', 1, '2147483647', 0),
-(25, 'nomeleve9', 'prenomeleve9', 'nomeleve9_prenomeleve9.jpg', 'email_eleve9@gmail.com', 1, '2147483647', 0),
-(26, 'nomeleve10', 'prenomeleve10', 'nomeleve10_prenomeleve10.jpg', 'email_eleve10@gmail.com', 1, '2147483647', 0),
-(27, 'nomeleve11', 'prenomeleve11', 'nomeleve11_prenomeleve11.jpg', 'email_eleve11@gmail.com', 1, '2147483647', 0),
-(28, 'nomeleve12', 'prenomeleve12', 'nomeleve12_prenomeleve12.jpg', 'email_eleve12@gmail.com', 1, '2147483647', 0),
-(29, '', '', 'nothing.jpg', '', 1, '0', 0);
+INSERT INTO `eleve` (`id`, `nom`, `prenom`, `photo`, `email`, `id_entreprise`, `id_groupe`, `telephone`, `delegue`) VALUES
+(15, 'Romain', 'lansari', 'Romain_lansari.gif', 'gourgan.hic@', 4, 0, '111', 0),
+(16, 'achraf', 'hicham', 'achraf_hicham.gif', 'peace-und-loove@hotmail.com', 5, 0, '6123456', 0),
+(19, 'nomeleve3', 'prenomeleve3', 'nomeleve3_prenomeleve3.jpg', 'email_eleve3@gmail.com', 1, 0, '2147483647', 0),
+(20, 'nomeleve4', 'prenomeleve4', 'nomeleve4_prenomeleve4.jpg', 'email_eleve4@gmail.com', 1, 0, '2147483647', 0),
+(21, 'nomeleve5', 'prenomeleve5', 'nomeleve5_prenomeleve5.jpg', 'email_eleve5@gmail.com', 1, 0, '2147483647', 0),
+(22, 'nomeleve6', 'prenomeleve6', 'nomeleve6_prenomeleve6.jpg', 'email_eleve6@gmail.com', 1, 0, '2147483647', 0),
+(23, 'nomeleve7', 'prenomeleve7', 'nomeleve7_prenomeleve7.jpg', 'email_eleve7@gmail.com', 1, 0, '2147483647', 0),
+(24, 'nomeleve8', 'prenomeleve8', 'nomeleve8_prenomeleve8.jpg', 'email_eleve8@gmail.com', 1, 0, '2147483647', 0),
+(25, 'nomeleve9', 'prenomeleve9', 'nomeleve9_prenomeleve9.jpg', 'email_eleve9@gmail.com', 1, 0, '2147483647', 0),
+(26, 'nomeleve10', 'prenomeleve10', 'nomeleve10_prenomeleve10.jpg', 'email_eleve10@gmail.com', 1, 0, '2147483647', 0),
+(27, 'nomeleve11', 'prenomeleve11', 'nomeleve11_prenomeleve11.jpg', 'email_eleve11@gmail.com', 1, 0, '2147483647', 0),
+(28, 'nomeleve12', 'prenomeleve12', 'nomeleve12_prenomeleve12.jpg', 'email_eleve12@gmail.com', 1, 0, '2147483647', 0),
+(29, '', '', 'nothing.jpg', '', 1, 0, '0', 0);
 
 -- --------------------------------------------------------
 
@@ -112,7 +114,7 @@ CREATE TABLE IF NOT EXISTS `entreprise` (
   `telephone` varchar(10) DEFAULT NULL,
   `email` varchar(25) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;
 
 --
 -- Contenu de la table `entreprise`
@@ -127,7 +129,14 @@ INSERT INTO `entreprise` (`id`, `nom`, `adresse`, `telephone`, `email`) VALUES
 (6, 'beloa', '', '0614587921', 'a@gm.com'),
 (7, 'az', 'aa', '0612457815', ''),
 (8, 'azertplm12E', 'a', '0612457815', 'a@gm.com'),
-(9, 'atur', 'a', '0614587914', 'a@g');
+(9, 'atur', 'a', '0614587914', 'a@g'),
+(10, '', '', '', ''),
+(11, '', '', '', ''),
+(12, '', '', '', ''),
+(13, '', '', '', ''),
+(14, '', '', '', ''),
+(15, '', '', '', ''),
+(16, '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -241,7 +250,7 @@ INSERT INTO `utilisateur` (`id`, `login`, `mdp`, `nom`, `prenom`, `email`, `tele
 -- Contraintes pour la table `eleve`
 --
 ALTER TABLE `eleve`
-  ADD CONSTRAINT `eleve_ibfk_1` FOREIGN KEY (`id_entreprise`) REFERENCES `entreprise` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `eleve_ibfk_2` FOREIGN KEY (`id_entreprise`) REFERENCES `entreprise` (`id`);
 
 --
 -- Contraintes pour la table `role_utilisateur`
