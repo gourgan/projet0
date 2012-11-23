@@ -59,7 +59,7 @@
 					
 					<div class="form-row">
 							<label class="form-label"> E-mail Entreprise  </label>
-							<input type="email" name="email_entreprise" placeholder="saisir l'E-mail entreprise" size="100" />
+							<input type="email" name="email_entreprise" placeholder="saisir l'E-mail entreprise" size="100"  required />
 							<input type="hidden" name="quoi" value="entreprise"/>
 					</div>
 					
