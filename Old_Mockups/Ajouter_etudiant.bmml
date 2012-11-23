@@ -208,5 +208,15 @@
         <text/>
       </controlProperties>
     </control>
+    <control controlID="88" controlTypeID="com.balsamiq.mockups::Canvas" x="280" y="451" w="289" h="30" measuredW="100" measuredH="70" zOrder="48" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>13576743</color>
+      </controlProperties>
+    </control>
+    <control controlID="89" controlTypeID="com.balsamiq.mockups::Label" x="284" y="451" w="262" h="15" measuredW="255" measuredH="21" zOrder="49" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Cochez%20si%20l%27%E9leve%20est%20un%20Delegu%E9%20de%20classe%20</text>
+      </controlProperties>
+    </control>
   </controls>
 </mockup>
