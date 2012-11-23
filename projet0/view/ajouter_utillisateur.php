@@ -4,18 +4,27 @@
 	//INCLUDES ET GET MATIERES
    include 'Head.php'; 
    include 'menu.php'; 
-   include_once '../controllers/DTOintervenant.php';
-   $matiere=afficher_matieres();
+   include_once '../controllers/DTOutilisateur.php';
+  
 ?>
 <body>
 <?php afficher_message(); ?>
   <div class="content container_12">
-  	<form id="add_intervenant" name="add_intervenant"  enctype="multipart/form-data"  action="../fonction/ajout.php" method="POST" >
+  	<form id="add_utilisateur" name="add_utilisateur"  enctype="multipart/form-data"  action="../fonction/ajout.php" method="POST" >
 
 		<div class="box grid_6">
 			<div class="box-head"><span class="box-icon-24 fugue-24 system-monitor"></span><h2>Information Personnelles</h2></div>
 			<div class="box-content">
-
+                                        
+                                        <div class="form-row">
+						<label class="form-label"> Login </label>
+						<input type="text" name="login" placeholder="Veuillez saisir le login" size="100"  pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" required /> 
+					</div>
+                                        <div class="form-row">
+						<label class="form-label"> Mot de Passe </label>
+						<input type="password" name="login" placeholder="Veuillez saisir le mot de passe " size="100"  pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" required /> 
+					</div>
+                    
 					<div class="form-row">
 						<label class="form-label"> Nom </label>
 						<input type="text" name="nom" placeholder="Veuillez saisir le nom" size="100"  pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" required /> 
@@ -36,10 +45,13 @@
 							<input type="text" name="tel" placeholder="saisir Telephone" size="100" pattern="^\d{10}$" />
 							
 					</div>
+                                        
+                            
+                                          
 					<div class="form-row">
 							<label class="form-label"> Alias  </label>
 							<input type="text" name="alias" placeholder="saisir l'Alias" size="100" />
-							<input type="hidden" name="quoi" value="intervenant"/>
+							<input type="hidden" name="quoi" value="utilisateur"/>
 					</div>
 					
 					
@@ -52,8 +64,8 @@
         <div class="box-content">
 			
 			<div class="form-row">
-				<label class="form-label"> Photo intervenant  </label>
-				<input type="file" name="pic_int" />
+				<label class="form-label"> Photo Utilisateur  </label>
+				<input type="file" name="pic_uti" />
 			</div>
 			
         </div>
