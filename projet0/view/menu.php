@@ -44,14 +44,6 @@
 			 <li><a href="..//supprimer_utilisateur.php">supprimer</a></li>
 			 </ul>
          </li>
-         <li class="nav-item">
-           <a href="#"><p>Acteur</p></a>
-		   <ul class="sub-nav">
-		   <li><a href="../view/ajouter_acteur.php">Ajouter</a></li>
-            <li><a href="../view/modifier_acteur.php">Modifier</a></li>
-			 <li><a href="../view/supprimer_acteur.php">supprimer</a></li>
-			 </ul>
-         </li>
         
          <li class="nav-item">
            <a href="#"><p>Absence</p></a>

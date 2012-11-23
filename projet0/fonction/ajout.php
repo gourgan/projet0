@@ -49,9 +49,9 @@ include_once("../controllers/DTOutilisateur.php");
 	if(upload($photo,$nm)){
 		$picture=upload($photo,$nm);
 		ajout_intervenant($login,$mdp,$nom,$prenom,$email,$tel,$picture,$alias);
-		echo"<script type='text/javascript'>document.location.replace('../view/ajouter_utilisateur.php?rep=ok');</script>";
+		echo"<script type='text/javascript'>document.location.replace('../gestion/ajouter_utillisateur.php?rep=ok');</script>";
 	}else{
-		echo"<script type='text/javascript'>document.location.replace('../view/ajouter_utilisateur.php?rep=error');</script>";
+		echo"<script type='text/javascript'>document.location.replace('../gestion/ajouter_utilisateur.php?rep=error');</script>";
 	}
 }
 function upload($file,$nm){

@@ -37,7 +37,7 @@
 					
 					<div class="form-row">
 							<label class="form-label"> E-mail  </label>
-							<input type="email" name="email" placeholder="saisir l'E-mail" size="100" />
+							<input type="email" name="email" placeholder="saisir l'E-mail" size="100" required />
 					</div>
 					
 					<div class="form-row">
@@ -50,7 +50,7 @@
                                           
 					<div class="form-row">
 							<label class="form-label"> Alias  </label>
-							<input type="text" name="alias" placeholder="saisir l'Alias" size="100" />
+							<input type="text" name="alias" placeholder="saisir l'Alias" size="100"  required />
 							<input type="hidden" name="quoi" value="utilisateur"/>
 					</div>
 					
