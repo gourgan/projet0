@@ -37,7 +37,7 @@
 			 </ul>
          </li>
          <li class="nav-item">
-           <a href="#"><p>Intervenant</p></a>
+           <a href="#"><p>Utilisateur</p></a>
 		   <ul class="sub-nav">
 		   <li><a href="../view/ajouter_utilisateur.php">Ajouter</a></li>
             <li><a href="../view/modifier_utilisateur.php">Modifier</a></li>
