@@ -158,16 +158,16 @@ label.error {
 }
 
 #dele-msg {
-        float : left;
-        height: 15px;
-        width: 250px;
-	background: url(../img/grad-overlay.png);
-        background-color: burlywood;
-	border: 1px solid #8E0B0B;
-	border-radius: 3px;
-	color:  black;
-	text-shadow: 0 1px 0 #8E0B0B;
-	font-size: 12px;
+	background: url("../img/grad-overlay.png") repeat scroll 0 0 #CEADAD;
+    border-radius: 3px 3px 3px 3px;
+    color: black;
+    float: left;
+    font-size: 12px;
+    height: 15px;
+    padding: 1px 0 1px 0;
+    text-align: center;
+    text-shadow: 0 1px 0 #8E0B0B;
+    width: 250px;
 }
 
 #login-msg-success {

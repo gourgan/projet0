@@ -6,3 +6,4 @@ RewriteEngine On
 
 
 RewriteRule gestion/([a-z\_]+) view/$1.php [NC]
+ErrorDocument 404 /gestion/404
