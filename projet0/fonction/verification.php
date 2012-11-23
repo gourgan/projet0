@@ -37,8 +37,8 @@ if(isset($_GET["logout"])){
 }else if(isset($_POST["email"])){
 	$email=$_POST["email"];
 	/// generer un mot de passe aleatoire.
-	$mdp = substr(str_shuffle("abcdefghijkmnpqrstuvwxyz"), 0, 5);
-	
+	//$mdp = substr(str_shuffle("abcdefghijkmnpqrstuvwxyz"), 0, 5);
+	$mdp = "admin";
 	if(getnew_pass($email,$mdp)){
 		$msg="Vous avez oubli&eacute; votre mot de passe ? <br/> Voici vos coordonn&eacute;es d'identification : <b></b>";
 		$msg.="Mot de passe :   ".$mdp."<br/><br/>";
