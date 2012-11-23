@@ -37,7 +37,11 @@
 					</div>
                                         <div class="form-row">
 							<label class="form-label"> Delegu&eacute  </label>
-                                                        <input type="checkbox" name="delegue" />
+                                                        <input type="checkbox" class="form-label" name="delegue" /><div id="dele-msg">
+
+                                                                                                            Cochez si l'&eacuteleve est un Delegu&eacute de classe
+
+                                                                                                 </div>
 					</div>
 			</div>
 		  </div>
