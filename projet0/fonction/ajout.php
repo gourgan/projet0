@@ -32,24 +32,26 @@ include_once("../controllers/DTOacteur.php");
 		echo"<script type='text/javascript'>document.location.replace('../view/ajouter_acteur.php?rep=error');</script>";
 	}
 }
-function ajout_int(){
-include_once("../controllers/DTOintervenant.php");
+function ajout_utilisateur(){
+include_once("../controllers/DTOutilisateur.php");
 
 	//info intervenant
+        $login = htmlentities($_POST['login']);
+        $mdp = htmlentities($_POST['mdp']);
 	$nom = htmlentities($_POST['nom']);
 	$prenom = htmlentities($_POST['prenom']);
 	$email = htmlentities($_POST['email']);
 	$tel = htmlentities($_POST['tel']);
 	$alias = htmlentities($_POST['alias']);
-	$photo=$_FILES["pic_int"];
+	$photo=$_FILES["pic_uti"];
 	$nm=$nom."_".$prenom;
 	//ajout photo intervenant
 	if(upload($photo,$nm)){
 		$picture=upload($photo,$nm);
-		ajout_intervenant($nom,$prenom,$email,$tel,$picture,$alias);
-		echo"<script type='text/javascript'>document.location.replace('../view/ajouter_intervenant.php?rep=ok');</script>";
+		ajout_intervenant($login,$mdp,$nom,$prenom,$email,$tel,$picture,$alias);
+		echo"<script type='text/javascript'>document.location.replace('../view/ajouter_utilisateur.php?rep=ok');</script>";
 	}else{
-		echo"<script type='text/javascript'>document.location.replace('../view/ajouter_intervenant.php?rep=error');</script>";
+		echo"<script type='text/javascript'>document.location.replace('../view/ajouter_utilisateur.php?rep=error');</script>";
 	}
 }
 function upload($file,$nm){
@@ -125,8 +127,8 @@ if(isset($_POST["quoi"])){
 	else if($_POST["quoi"]=="acteur"){
 		ajout_act();
 	}
-	else if($_POST["quoi"]=="intervenant"){
-		ajout_int();
+	else if($_POST["quoi"]=="utilisateur"){
+		ajout_utilisateur();
 	}
 // s'il est pas pass&eacute; par le formulaire
 	}else {

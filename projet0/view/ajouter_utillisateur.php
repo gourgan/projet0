@@ -22,7 +22,7 @@
 					</div>
                                         <div class="form-row">
 						<label class="form-label"> Mot de Passe </label>
-						<input type="password" name="login" placeholder="Veuillez saisir le mot de passe " size="100"  pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" required /> 
+						<input type="password" name="mdp" placeholder="Veuillez saisir le mot de passe " size="100"  pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" required /> 
 					</div>
                     
 					<div class="form-row">

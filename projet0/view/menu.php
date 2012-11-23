@@ -39,9 +39,9 @@
          <li class="nav-item">
            <a href="#"><p>Intervenant</p></a>
 		   <ul class="sub-nav">
-		   <li><a href="../view/ajouter_intervenant.php">Ajouter</a></li>
-            <li><a href="../view/modifier_intervenant.php">Modifier</a></li>
-			 <li><a href="../view/supprimer_intervenant.php">supprimer</a></li>
+		   <li><a href="../view/ajouter_utilisateur.php">Ajouter</a></li>
+            <li><a href="../view/modifier_utilisateur.php">Modifier</a></li>
+			 <li><a href="..//supprimer_utilisateur.php">supprimer</a></li>
 			 </ul>
          </li>
          <li class="nav-item">
