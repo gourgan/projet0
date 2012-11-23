@@ -159,7 +159,7 @@ label.error {
 
 #dele-msg {
         float : left;
-        height: 20px;
+        height: 15px;
         width: 250px;
 	background: url(../img/grad-overlay.png);
         background-color: burlywood;

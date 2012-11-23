@@ -203,6 +203,10 @@
         <text>Delegu%E9%3A</text>
       </controlProperties>
     </control>
-    <control controlID="87" controlTypeID="com.balsamiq.mockups::CheckBox" x="217" y="451" w="-1" h="-1" measuredW="83" measuredH="22" zOrder="47" locked="false" isInGroup="-1"/>
+    <control controlID="87" controlTypeID="com.balsamiq.mockups::CheckBox" x="217" y="451" w="14" h="22" measuredW="26" measuredH="22" zOrder="47" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
   </controls>
 </mockup>

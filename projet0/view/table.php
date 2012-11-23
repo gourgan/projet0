@@ -37,6 +37,9 @@
               <th>Prenom</th>
               <th>Adresse</th>
               <th>Telephone</th>
+              <th>Consulter</th>
+              <th>Modifier</th>
+              <th>Supprimer</th>
             </tr>
           </thead>
           <tbody>
@@ -46,6 +49,9 @@
               <td><?php echo $lignes->prenom; ?></td>
               <td><?php echo $lignes->email; ?></td>
               <td class="center"> <?php echo $lignes->telephone; ?></td>
+              <td align="center"><a href="#" onclick="return false;"><img src="../img/magnifier.png" border="0"></a></td>
+	      <td align="center"><a href="#" onclick="return false;"><img src="../img/page_white_edit.png" border="0"></a></td>
+	      <td align="center"><a href="#" onclick="return false;"><img src="../img/publish_r.png" border="0"></a></td>
              
             </tr>
            <?php } ?>
