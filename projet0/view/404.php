@@ -3,37 +3,22 @@
 
 <head>
   <meta charset="utf-8">
-  <title> 404 Error</title>
+  <title> Page non trouv&eacute;e </title>
   
   <!---CSS Files-->
   <link rel="stylesheet" href="css/master.css">
-  <!---jQuery Files-->
-  <script src="js/jquery-1.7.1.min.js"></script>
-  <script src="js/jquery-ui-1.8.17.min.js"></script>
-  <script src="js/styler.js"></script>
-  <script src="js/jquery.tipTip.js"></script>
-  <script src="js/colorpicker.js"></script>
-  <script src="js/sticky.full.js"></script>
-  <script src="js/global.js"></script>
   <!---Fonts-->
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
-  <!--[if lt IE 9]>
-  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
 </head>
 <body>
-
-  <!--- HEADER -->
-
-  
-
-  <!--- CONTENT AREA -->
-
-  <div class="content container_12">
-     <h1 id="error-heading">404</h1>
-     <p id="error-desc">Page Introuvable.</p>
-     <p id="error-back"><a href="dashboard.html">Retour</a></p>
-  </div>
+	<div class="header">
+	   <a href="index.php"><img src="img/logo.png" alt="Logo"></a> 
+	</div>
+	<div class="content container_12">
+		 <h1 id="error-heading">404</h1>
+		 <p id="error-desc">Page non trouv&eacute;e.</p>
+		 <p id="error-back"><a href="index.php">Retour</a></p>
+	</div>
 
 
 </body>
