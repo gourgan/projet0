@@ -2,12 +2,12 @@
 <html lang="fr">
 
  <?php  
-	include 'Head.php';  
-	include 'menu.php';  
+	include '../Head.php';  
+	include '../menu.php';  
 	include_once '../controllers/DTOintervenant.php';
 	$intervenant=afficher_intervenants();
  ?>
- <script src="../js/ajax.js"></script>
+ <script src="../../js/ajax.js"></script>
 <body>
   <?php afficher_message(); ?>
   <div class="content container_12">

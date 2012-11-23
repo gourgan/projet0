@@ -23,35 +23,35 @@
 		<li class="nav-item">
            <a href="#"><p>Eleve</p></a>
 		   <ul class="sub-nav">
-            <li><a href="../view/ajouter_eleve.php">Ajouter</a></li>
-            <li><a href="../view/modifier_eleve.php">Modifier</a></li>
-			 <li><a href="../view/supprimer_eleve.php">supprimer</a></li>
+            <li><a href="../Eleves/ajouter.php">Ajouter</a></li>
+            <li><a href="../Eleves/modifier.php">Modifier</a></li>
+			 <li><a href="../Eleves/supprimer.php">supprimer</a></li>
           </ul>
          </li>
 		  <li class="nav-item">
            <a href="#"><p>Entreprise</p></a>
 		   <ul class="sub-nav">
-		   <li><a href="../view/ajouter_entreprise.php">Ajouter</a></li>
-            <li><a href="../view/modifier_entreprise.php">Modifier</a></li>
-			 <li><a href="../view/supprimer_entreprise.php">supprimer</a></li>
+		   <li><a href="../Entreprises/ajouter.php">Ajouter</a></li>
+            <li><a href="../Entreprises/modifier.php">Modifier</a></li>
+			 <li><a href="../Entreprises/supprimer.php">supprimer</a></li>
 			 </ul>
          </li>
          <li class="nav-item">
            <a href="#"><p>Utilisateur</p></a>
 		   <ul class="sub-nav">
-		   <li><a href="../view/ajouter_utilisateur.php">Ajouter</a></li>
-            <li><a href="../view/modifier_utilisateur.php">Modifier</a></li>
-			 <li><a href="..//supprimer_utilisateur.php">supprimer</a></li>
+		   <li><a href="../Utilisateurs/ajouter.php">Ajouter</a></li>
+            <li><a href="../Utilisateurs/modifier.php">Modifier</a></li>
+			 <li><a href="../Utilisateurs/supprimer.php">supprimer</a></li>
 			 </ul>
          </li>
         
          <li class="nav-item">
            <a href="#"><p>Absence</p></a>
 		   <ul class="sub-nav">
-		   <li><a href="../view/ajouter_absence.php">Ajouter</a></li>
-		   <li><a href="../view/justifier_absence.php">Justifier</a></li>
-            <li><a href="../view/dernier_absent.php">Derniers Abs</a></li>
-			 <li><a href="../view/supprimer_acteur.php">supprimer</a></li>
+		   <li><a href="../Absences/ajouter_absence.php">Ajouter</a></li>
+		   <li><a href="../Absences/justifier_absence.php">Justifier</a></li>
+            <li><a href="../Absences/dernier_absent.php">Derniers Abs</a></li>
+			 
 			 </ul>
          </li>
          </li>

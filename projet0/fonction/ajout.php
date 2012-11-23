@@ -17,21 +17,7 @@ function ajout_en(){
 		echo"<script type='text/javascript'>document.location.replace('../view/ajouter_entreprise.php?rep=error');</script>";
 	}
 }
-function ajout_act(){
-include_once("../controllers/DTOacteur.php");
 
-	//info acteur
-	$role = htmlentities($_POST['role']);
-	$login = htmlentities($_POST['login']);
-	$pass = sha1(htmlentities($_POST['password']));
-	$email = htmlentities($_POST['email']);
-	//ajout acteur
-	if(ajout_acteur($login,$pass,$role,$email)){
-		echo"<script type='text/javascript'>document.location.replace('../view/ajouter_acteur.php?rep=ok');</script>";
-	}else{
-		echo"<script type='text/javascript'>document.location.replace('../view/ajouter_acteur.php?rep=error');</script>";
-	}
-}
 function ajout_utilisateur(){
 include_once("../controllers/DTOutilisateur.php");
 

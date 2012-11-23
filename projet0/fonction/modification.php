@@ -17,37 +17,15 @@ function modifier_en(){
 	}
 }
 
-function modifier_act(){
-	  include_once("../controllers/DTOacteur.php");
-      $acteurs=afficher_acteurs();
-	  $id=htmlentities($_POST['acteur']);
-	  while($lignes=$acteurs->fetch(PDO::FETCH_OBJ))
-		{
-		  if($lignes->id==$id)
-		  {
-			  $role = htmlentities($_POST['role']);
-			  $login = htmlentities($_POST['login']);
-			  $mdp = sha1(htmlentities($_POST['password']));
-			  $old = sha1(htmlentities($_POST['anc_password']));
-			  $email = htmlentities($_POST['email']);
-			  if($old==$lignes->mdp){
-					if(modifier_acteur($id,$login,$mdp,$role,$email)){
-						echo"<script type='text/javascript'>document.location.replace('../view/modifier_acteur.php?rep=ok');</script>";
-					}else{
-						echo"<script type='text/javascript'>document.location.replace('../view/modifier_acteur.php?rep=error');</script>";
-					}		
-				}
-			  else{
-					echo"<script type='text/javascript'>document.location.replace('../view/modifier_acteur.php?rep=error');</script>";
-			  }	
-		  }
-	  
-		}
-}
-function modifier_int(){
-	include_once("../controllers/DTOintervenant.php");
-	$id= $_POST['intervenant'];
+
+function modifier_uti(){
+	include_once("../controllers/DTOutilisateur.php");
+        
+	$id= $_POST['utilisateur'];
+        
 	//info intervenant
+        $login = htmlentities($_POST['login']);
+        $mdp = htmlentities($_POST['mdp']);
 	$nom = htmlentities($_POST['nom']);
 	$prenom = htmlentities($_POST['prenom']);
 	$email = htmlentities($_POST['email']);
@@ -55,10 +33,10 @@ function modifier_int(){
 	$alias = htmlentities($_POST['alias']);
 	$photo=htmlentities($_POST['picture']);
 	$nm=$nom."_".$prenom;
-	if($_FILES["pic_int"]["name"]!=""){
-	$photo=upload($_FILES["pic_int"],$nm);
+	if($_FILES["pic_uti"]["name"]!=""){
+	$photo=upload($_FILES["pic_uti"],$nm);
 	}
-	if(modifier_intervenant($id,$nom,$prenom,$email,$tel,$photo,$alias)){
+	if(modifier_intervenant($login,$mdp,$id,$nom,$prenom,$email,$tel,$photo,$alias)){
 		echo"<script type='text/javascript'>document.location.replace('../view/modifier_intervenant.php?rep=ok');</script>";
 	}else{
 		echo"<script type='text/javascript'>document.location.replace('../view/modifier_intervenant.php?rep=error');</script>";
@@ -126,11 +104,9 @@ if(isset($_POST["quoi"])){
 		modifier_en();
 
 	}
-	else if($_POST["quoi"]=="acteur"){
-		modifier_act();
-	}
-	else if($_POST["quoi"]=="intervenant"){
-		modifier_int();
+	
+	else if($_POST["quoi"]=="utilisateur"){
+		modifier_uti();
 	}
 // s'il est deja pass&eacute; par le formulaire page accés impossible
 }else echo "acc&eacute;s impossible";

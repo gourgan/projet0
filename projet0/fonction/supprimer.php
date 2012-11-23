@@ -11,18 +11,7 @@ function supprimer_en(){
 	}	
 }
 
-function supprimer_act(){
-	include_once("../controllers/DTOacteur.php");
 
-	//Supprimer acteur
-	$id = $_POST['acteur'];
-	if(supprimer_acteur($id)){
-		echo"<script type='text/javascript'>document.location.replace('../view/supprimer_acteur.php?rep=ok');</script>";
-	}else{
-		echo"<script type='text/javascript'>document.location.replace('../view/supprimer_acteur.php?rep=error');</script>";
-	}	
-
-}
 
 function supprimer_photo($nm){
 	//supprimer la photo et laisser celle par defaut
@@ -50,17 +39,17 @@ function supprimer_el(){
 	}	
 
 }
-function supprimer_int(){
-	include_once("../controllers/DTOintervenant.php");
+function supprimer_uti(){
+	include_once("../controllers/DTOutilisateur.php");
 
 	//Supprimer intervenant
-	$id_image = explode("/",$_POST['intervenant']);
+	$id_image = explode("/",$_POST['utilisateur']);
 	$id = $id_image[0];
 	$image=$id_image[1];
-	if(supprimer_intervenant($id) &&  supprimer_photo($image)){
-		echo"<script type='text/javascript'>document.location.replace('../view/supprimer_intervenant.php?rep=ok');</script>";
+	if(supprimer_utilisateur($id) &&  supprimer_photo($image)){
+		echo"<script type='text/javascript'>document.location.replace('../view/supprimer_utilisateur.php?rep=ok');</script>";
 	}else{
-		echo"<script type='text/javascript'>document.location.replace('../view/supprimer_intervenant.php?rep=error');</script>";
+		echo"<script type='text/javascript'>document.location.replace('../view/supprimer_utilisateur.php?rep=error');</script>";
 	}	
 
 }
@@ -73,13 +62,10 @@ if($_POST["quoi"]=="eleve"){
 else if($_POST["quoi"]=="entreprise"){
 	supprimer_en();
 }
-else if($_POST["quoi"]=="intervenant"){
-	supprimer_int();	
+else if($_POST["quoi"]=="utilisateur"){
+	supprimer_uti();	
 }
-else if($_POST["quoi"]=="acteur"){
-	supprimer_act();
 
-}
 
 
 // s'il est deja pass&eacute; par le formulaire

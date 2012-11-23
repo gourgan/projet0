@@ -1,13 +1,13 @@
 <!doctype html>
 <html lang="fr">
-<?php  include 'head3.php';  ?>
+<?php  include '../Head.php';  ?>
 	
 
 <body>
 
   
-<?php  include 'menu.php';  ?>
-  <script src="../js/ajax.js"></script>
+<?php  include '../menu.php';  ?>
+  <script src="../../js/ajax.js"></script>
 
   <!--- CONTENT AREA -->
 

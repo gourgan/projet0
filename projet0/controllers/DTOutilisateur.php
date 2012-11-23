@@ -44,10 +44,10 @@ function supprimer_utilisateur($id){
 
 
 
-function modifier_utilisateur($login,$mdp,$nom,$prenom,$email,$telephone,$picture,$alias){
+function modifier_utilisateur($login,$mdp,$nom,$prenom,$email,$telephone,$picture,$alias,$id){
     try{
         $db=connect();
-        $d = new utilisateur($login,$mdp,$role,$email);
+        $d = new utilisateur($login,$mdp,$id,$nom,$prenom,$email,$tel,$photo,$alias);
         $resultat= $db->prepare("UPDATE  utilisateur SET login=?,mdp=?,nom=?,prenom=?,email=?,telephone=?,picture=?,alias=?  WHERE id=?");
         
         $resultat->bindValue(1, $d->getLogin(), PDO::PARAM_STR) ;    
@@ -67,7 +67,7 @@ function modifier_utilisateur($login,$mdp,$nom,$prenom,$email,$telephone,$pictur
 		return false;
 	}  
 }
-function afficher_utilisateur(){
+function afficher_utilisateurs(){
     try{
 			$db=connect();
             $res=$db->prepare('SELECT * FROM utilisateur ');

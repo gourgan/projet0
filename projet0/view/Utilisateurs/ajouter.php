@@ -2,8 +2,8 @@
 <html lang="fr">
 <?php   
 	//INCLUDES ET GET MATIERES
-   include 'Head.php'; 
-   include 'menu.php'; 
+   include '../Head.php'; 
+   include '../menu.php'; 
    include_once '../controllers/DTOutilisateur.php';
   
 ?>

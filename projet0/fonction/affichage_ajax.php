@@ -50,67 +50,10 @@ function afficher_entreprise_modif(){
 		}
 }
 
-function afficher_acteur_modif(){
-include_once("../controllers/DTOacteur.php");
 
-//ajax afichage acteur pour modif
-	$id=$_GET["id"];
-	$acteur=afficher_acteurs();
-	while($lignes=$acteur->fetch(PDO::FETCH_OBJ))
-		{
-			if($lignes->id==$id){
-			
-			echo'
-			<div class="box grid_6">
-			<div class="box-head"><span class="box-icon-24 fugue-24 system-monitor"></span><h2>Information Personnelles</h2></div>
-			<div class="box-content">
-
-					<div class="form-row">
-						<label class="form-label"> Login </label>
-						<input type="text" name="login" value="'.$lignes->login.'" size="100" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" required /> 
-					</div>
-					<div class="form-row">
-							<label class="form-label"> Ancien mot de passe  </label>
-							<input type="password" name="anc_password" value="" size="100" required />
-					</div>
-					<div class="form-row">
-							<label class="form-label"> nouveau mot de passe  </label>
-							<input type="password" name="password" value="" size="100" required />
-					</div>
-					
-					<div class="form-row">
-							<label class="form-label"> E-mail  </label>
-							<input type="email" name="email" value="'.$lignes->email.'" size="100" required />
-					</div>
-						
-					<div class="form-row">
-							<label class="form-label"> Modifier le role </label>
-         
-					<div class="form-item">
-								<select name="role">';?>
-									
-									<option value="Responsable" <?php if($lignes->role=="Responsable"){echo"selected";} ?>>Responsable</option>
-									<option value="Secretaire" <?php if($lignes->role=="Secretaire"){echo"selected";} ?>>Secretaire</option>
-									<option value="Intervenant" <?php if($lignes->role=="Intervenant"){echo"selected";} ?>>Intervenant</option>
-								
-							<?php echo'</select>
-							</div>
-					</div>
-			</div>
-				
-		  </div>
 		  		
      
-		<div class="class_button">
-			<input type="submit" value="Modifier" class="button big black">
-			<input type="reset" value="Vider" class="button big red">
-		</div>
-		';
-			
-			}
-	
-		}
-}
+		
 
 function afficher_dates(){
 include_once("../controllers/DTOabsence.php");
@@ -151,13 +94,13 @@ include_once("../controllers/DTOabsence.php");
 			
 }
 	
-function afficher_intervenant_modif(){
-include_once("../controllers/DTOintervenant.php");
+function afficher_utilisateur_modif(){
+include_once("../controllers/DTOutilisateur.php");
 
 //ajax afichage eleve pour modif
 	$id=$_GET["id"];
-	$intervenant=afficher_intervenants();
-	while($lignes=$intervenant->fetch(PDO::FETCH_OBJ))
+	$utilisateur=afficher_utilisateurs();
+	while($lignes=$utilisateur->fetch(PDO::FETCH_OBJ))
 		{
 			if($lignes->id==$id){
 			
@@ -165,7 +108,15 @@ include_once("../controllers/DTOintervenant.php");
 			<div class="box grid_6">
 			<div class="box-head"><span class="box-icon-24 fugue-24 system-monitor"></span><h2>Information Personnelles</h2></div>
 			<div class="box-content">
-
+                                        
+                                         <div class="form-row">
+						<label class="form-label"> Login </label>
+						<input type="text" name="login" value="'.$lignes->login.'" placeholder="Veuillez saisir le login" size="100"  pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" required /> 
+					</div>
+                                        <div class="form-row">
+						<label class="form-label"> Mot de Passe </label>
+						<input type="password" name="mdp" placeholder="Veuillez saisir le mot de passe " size="100"  pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" required /> 
+					</div>
 					<div class="form-row">
 						<label class="form-label"> Nom </label>
 						<input type="text" name="nom" value="'.$lignes->nom.'" size="100" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" required /> 
@@ -200,10 +151,10 @@ include_once("../controllers/DTOintervenant.php");
         <div class="box-head"><h2>Identit&eacute; visuelle</h2></div>
         <div class="box-content">
 			<div class="form-row">
-				<label class="form-label"> Changer photo intervenant  </label>
-				<input type="file" name="pic_int" />
+				<label class="form-label"> Changer photo utilisateur  </label>
+				<input type="file" name="pic_uti" />
 				<img height="165" src="../upload/'.$lignes->picture.'" alt="photo" />
-				<input type="hidden" name="quoi" value="intervenant"/>
+				<input type="hidden" name="quoi" value="utilisateur"/>
 			</div>
 		</div>
       </div>
@@ -361,11 +312,8 @@ if(isset($_GET["quoi"])){
 		afficher_entreprise_modif();
 
 	}
-	else if($_GET["quoi"]=="acteur"){
-		afficher_acteur_modif();
-	}
-	else if($_GET["quoi"]=="intervenant"){
-		afficher_intervenant_modif();
+	else if($_GET["quoi"]=="utilisateur"){
+		afficher_utilisateur_modif();
 	}
 	else if($_GET["quoi"]=="dates_absence"){
 		afficher_dates();

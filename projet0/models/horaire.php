@@ -1,6 +1,6 @@
 <?php
 
-class horrsaire{
+class horraire{
     private $date;
     private $quand;
     private $matiere;

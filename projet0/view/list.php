@@ -5,8 +5,8 @@
   
 
 <head>
- <?php  include 'Head.php';  ?>
- <?php  include 'menu.php'; ?>
+ <?php  include '../Head.php';  ?>
+ <?php  include '../menu.php'; ?>
 </head>
 <body>
 
