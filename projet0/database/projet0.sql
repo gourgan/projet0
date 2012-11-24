@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: 127.0.0.1
--- Généré le: Sam 24 Novembre 2012 à 15:28
+-- Généré le: Sam 24 Novembre 2012 à 17:34
 -- Version du serveur: 5.5.27
 -- Version de PHP: 5.4.7
 
@@ -80,7 +80,7 @@ CREATE TABLE IF NOT EXISTS `eleve` (
   PRIMARY KEY (`id`),
   KEY `id_entreprise` (`id_entreprise`),
   KEY `id_groupe` (`id_groupe`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=30 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=31 ;
 
 --
 -- Contenu de la table `eleve`
@@ -90,16 +90,15 @@ INSERT INTO `eleve` (`id`, `nom`, `prenom`, `photo`, `email`, `id_entreprise`, `
 (15, 'Romain', 'lansari', 'Romain_lansari.gif', 'gourgan.hic@', 4, 0, '111', 0),
 (16, 'achraf', 'hicham', 'achraf_hicham.gif', 'peace-und-loove@hotmail.com', 5, 0, '6123456', 0),
 (19, 'nomeleve3', 'prenomeleve3', 'nomeleve3_prenomeleve3.jpg', 'email_eleve3@gmail.com', 1, 0, '2147483647', 0),
-(20, 'nomeleve4', 'prenomeleve4', 'nomeleve4_prenomeleve4.jpg', 'email_eleve4@gmail.com', 1, 0, '2147483647', 0),
+(20, 'nomeleve4', 'prenomeleve4', 'nomeleve4_prenomeleve4.jpg', 'email_eleve4@gmail.com', 18, 0, '2147483647', 0),
 (21, 'nomeleve5', 'prenomeleve5', 'nomeleve5_prenomeleve5.jpg', 'email_eleve5@gmail.com', 1, 0, '2147483647', 0),
 (22, 'nomeleve6', 'prenomeleve6', 'nomeleve6_prenomeleve6.jpg', 'email_eleve6@gmail.com', 1, 0, '2147483647', 0),
 (23, 'nomeleve7', 'prenomeleve7', 'nomeleve7_prenomeleve7.jpg', 'email_eleve7@gmail.com', 17, 0, '2147483647', 0),
 (24, 'nomeleve8', 'prenomeleve8', 'nomeleve8_prenomeleve8.jpg', 'email_eleve8@gmail.com', 1, 0, '2147483647', 0),
-(25, 'nomeleve9', 'prenomeleve9', 'nomeleve9_prenomeleve9.jpg', 'email_eleve9@gmail.com', 1, 0, '2147483647', 0),
-(26, 'nomeleve10', 'prenomeleve10', 'nomeleve10_prenomeleve10.jpg', 'email_eleve10@gmail.com', 1, 0, '2147483647', 0),
-(27, 'nomeleve11', 'prenomeleve11', 'nomeleve11_prenomeleve11.jpg', 'email_eleve11@gmail.com', 1, 0, '2147483647', 0),
+(26, 'nomeleve10', 'prenomeleve10', 'nomeleve10_prenomeleve10.jpg', 'email_eleve10@gmail.com', 1, 0, '0658741479', 0),
 (28, 'nomeleve12', 'prenomeleve12', 'nomeleve12_prenomeleve12.jpg', 'email_eleve12@gmail.com', 1, 0, '2147483647', 0),
-(29, '', '', 'nothing.jpg', '', 1, 0, '0', 0);
+(29, '', '', 'nothing.jpg', '', 1, 0, '0', 0),
+(30, 'Lansari', 'achraf', 'nothing.jpg', 'achraflansari@gmail.com', 1, 0, '0658741479', 1);
 
 -- --------------------------------------------------------
 
@@ -109,18 +108,18 @@ INSERT INTO `eleve` (`id`, `nom`, `prenom`, `photo`, `email`, `id_entreprise`, `
 
 CREATE TABLE IF NOT EXISTS `entreprise` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nom` varchar(20) NOT NULL,
+  `nom_entreprise` varchar(20) NOT NULL,
   `adresse` varchar(30) NOT NULL,
   `telephone` varchar(10) DEFAULT NULL,
   `email` varchar(25) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=19 ;
 
 --
 -- Contenu de la table `entreprise`
 --
 
-INSERT INTO `entreprise` (`id`, `nom`, `adresse`, `telephone`, `email`) VALUES
+INSERT INTO `entreprise` (`id`, `nom_entreprise`, `adresse`, `telephone`, `email`) VALUES
 (1, 'a', 'b', '1', 'aa'),
 (2, '22', 'hhhhhhhhhhh', '333', '344'),
 (3, '22', 'yyyyyy', '333', '344'),
@@ -137,7 +136,8 @@ INSERT INTO `entreprise` (`id`, `nom`, `adresse`, `telephone`, `email`) VALUES
 (14, '', '', '', ''),
 (15, '', '', '', ''),
 (16, '', '', '', ''),
-(17, 'az', 'aa', '0612457815', 'a@gm.com');
+(17, 'az', 'aa', '0612457815', 'a@gm.com'),
+(18, 'azertplm12E', 'az', '0612457815', 'a@gm.com');
 
 -- --------------------------------------------------------
 
@@ -164,7 +164,7 @@ CREATE TABLE IF NOT EXISTS `horaire` (
   `matiere` varchar(100) NOT NULL,
   `abrev_intervenant` varchar(2) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
 -- Contenu de la table `horaire`
@@ -174,7 +174,10 @@ INSERT INTO `horaire` (`id`, `date`, `quand`, `matiere`, `abrev_intervenant`) VA
 (1, '2012-10-19', 'matin', 'php5', 'LR'),
 (2, '2012-10-19', 'apres-midi', 'poo', 'JR'),
 (3, '2012-01-07', 'matin', 'et aussi ca', ''),
-(4, '2012-01-07', 'matin', 'et aussi ca', '');
+(4, '2012-01-07', 'matin', 'et aussi ca', ''),
+(5, '2012-01-07', 'matin', 'et aussi ca', ''),
+(6, '2012-01-07', 'matin', 'et aussi ca', ''),
+(7, '2012-01-07', 'matin', 'et aussi ca', '');
 
 -- --------------------------------------------------------
 
@@ -210,13 +213,6 @@ CREATE TABLE IF NOT EXISTS `role_utilisateur` (
   KEY `id_utilisateur` (`id_utilisateur`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Contenu de la table `role_utilisateur`
---
-
-INSERT INTO `role_utilisateur` (`id_role`, `id_utilisateur`) VALUES
-(2, 5);
-
 -- --------------------------------------------------------
 
 --
@@ -241,9 +237,7 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
 --
 
 INSERT INTO `utilisateur` (`id`, `login`, `mdp`, `nom`, `prenom`, `email`, `telephone`, `picture`, `Alias`) VALUES
-(2, 'hicham', 'd033e22ae348aeb5660fc2140aec35850c4da997', '', '', '', '', '', ''),
-(3, 'lansari', 'd033e22ae348aeb5660fc2140aec35850c4da997', '', '', 'peace-und-loove@hotmail.com', '', '', ''),
-(5, 'lansari2', 'd033e22ae348aeb5660fc2140aec35850c4da997', '', '', '11', '', '', ''),
+(3, 'akhyl', 'yakh', 'khouna', 'roumane', '3niba@h.com', '0658741479', 'khouna_roumane.png', 'a7iyani '),
 (6, 'aa', 'amzpol', 'ayt', 'achraf', 'achraflansari@gmail.com', '0658741479', 'nothing.jpg', '3b');
 
 --

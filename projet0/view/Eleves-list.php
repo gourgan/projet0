@@ -5,8 +5,8 @@
   
 
 <head>
- <?php  include '../Head.php';  ?>
- <?php  include '../menu.php'; ?>
+ <?php  include 'Head.php';  ?>
+ <?php  include 'menu.php'; ?>
 </head>
 <body>
 
@@ -27,7 +27,7 @@
      
 
       <div class="box grid_12">
-        <div class="box-head"><h2>Table with Toolbar</h2></div>
+        <div class="box-head"><h2>Liste Des Eleves</h2></div>
         <div class="box-content no-pad">
         
           <table class="display">
@@ -37,7 +37,7 @@
               <th>Prenom</th>
               <th>Adresse</th>
               <th>Telephone</th>
-              <th>Consulter</th>
+              <th>Photo</th>
               <th>Modifier</th>
               <th>Supprimer</th>
             </tr>
@@ -49,7 +49,8 @@
               <td><?php echo $lignes->prenom; ?></td>
               <td><?php echo $lignes->email; ?></td>
               <td class="center"> <?php echo $lignes->telephone; ?></td>
-              <td align="center"><a href="#" onclick="return false;"><img src="../img/magnifier.png" border="0"></a></td>
+              <td align="center"> <img  width="75px" height="75px"  src="../upload/<?php echo $lignes->photo; ?>" border="0"> </td>
+              
 	      <td align="center"><a href="#" onclick="return false;"><img src="../img/page_white_edit.png" border="0"></a></td>
 	      <td align="center"><a href="#" onclick="return false;"><img src="../img/publish_r.png" border="0"></a></td>
              
@@ -63,24 +64,6 @@
       
   </div>
 
-<div class="footer">
-  <p>Powered by Adminity Administration Interface</p>
-</div>
-
-<script> /* SCRIPTS */
-  $(function () {
-    $('#dt1').dataTable( {
-        "bJQueryUI": true   
-    });
-    $('#dt2').dataTable( {
-        "bJQueryUI": true     
-    });
-    $('#dt3').dataTable( {
-        "bJQueryUI": true,
-        "sPaginationType": "full_numbers"   
-    }); /* For the data tables */
-  });
-</script>
 
 </body>
 

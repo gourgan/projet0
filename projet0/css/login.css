@@ -156,7 +156,19 @@ label.error {
 	text-shadow: 0 1px 0 #8E0B0B;
 	font-size: 12px;
 }
-
+#login-msg2{
+	margin-top: 10px;
+        margin-left: 15px;
+	padding: 6px 10px;
+	background: url(../img/grad-overlay.png) #8FB1D6;
+	border: 1px solid black;
+	border-radius: 3px;
+	color:black;
+	text-shadow: 0 1px 0 ;
+	font-size: 15px;
+        width : 550px;
+        text-align: center;
+}
 #dele-msg {
 	background: url("../img/grad-overlay.png") repeat scroll 0 0 #CEADAD;
     border-radius: 3px 3px 3px 3px;

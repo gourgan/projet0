@@ -70,7 +70,7 @@ function modifier_utilisateur($login,$mdp,$nom,$prenom,$email,$telephone,$pictur
 function afficher_utilisateurs(){
     try{
 			$db=connect();
-            $res=$db->prepare('SELECT * FROM utilisateur ');
+            $res=$db->prepare('SELECT * FROM utilisateur  ');
             $res->execute();
 			return $res;
 

@@ -64,7 +64,7 @@ include_once("../controllers/DTOabsence.php");
 			echo'
 			<div class="box grid_6">
 			<div class="box-head"><span class="box-icon-24 fugue-24 system-monitor"></span><h2>Information Personnelles</h2></div>
-			<div class="box-content">
+			<div class="box-content style=height:550px;margin-bottom:10px;">
 
 					<div class="form-row">
 						<label class="form-label"> Nom </label>
@@ -173,7 +173,7 @@ include_once("../controllers/DTOutilisateur.php");
 
 function afficher_absents(){
 include_once("../controllers/DTOabsence.php");
-$absent=afficher_absence_selondate($_GET["la_date"]);
+$absent=afficher_absence_selondate($_GET["id"]);
 
 
   echo '<div class="box grid_6">
@@ -181,17 +181,18 @@ $absent=afficher_absence_selondate($_GET["la_date"]);
 			<div class="box-content" style="height:700px;margin-bottom:10px;">';?>
 				 
 				 		<?php
-									while($lignes=$absence->fetch(PDO::FETCH_OBJ))
+									while($lignes=$absent->fetch(PDO::FETCH_OBJ))
 									{?>
 										<div class="one_pic">
-											<img height="300" width="75" src="../upload/<?php 'echo $lignes->photo;'?>" alt="" title="" class="pic" />
+											<img height="300" width="75" src="../upload/<?php echo $lignes->photo;?>" alt="" title="" class="pic" />
 											<div class="check" style="text-align:center">
-												<span> Absent(e) ?</span>
-												<input type="checkbox" name="absents[]" id="absents[]" class="checkbox" value="<?php echo '$lignes->id;' ?>" checked/>
+												<span> Absent</span>
+												<input type="checkbox"  checked name="absents[]" id="absents[]"  class="checkbox" value="<?php echo $lignes->id ; ?>" />
 											</div>
-											<div class="info">
-												<span> <?php echo '$lignes->nom;' ?> </span><br/>
-												<span> <?php echo '$lignes->prenom;' ?> </span><br/>
+                                                                                        <div class="info">
+                                                                                            
+												<span> <?php echo $lignes->nom; ?> </span><br/>
+												<span> <?php echo $lignes->prenom; ?> </span><br/>
 											</div>
 										</div>
 									<?php 
@@ -320,7 +321,10 @@ if(isset($_GET["quoi"])){
 	}else if($_GET["quoi"]=="absent"){
 		afficher_absents();
 		
-	}// s'il est pas pass&eacute; par le formulaire
+	}
+       
+            
+    // s'il est pas pass&eacute; par le formulaire
 	else {
 	echo "Vous avez pas l'acc&eacute;s a cette page!!";
 	header( "refresh:5;url=../index.php" );

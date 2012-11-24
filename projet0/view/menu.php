@@ -25,7 +25,8 @@
 		   <ul class="sub-nav">
             <li><a href="../Eleves/ajout">Ajouter</a></li>
             <li><a href="../Eleves/modification">Modifier</a></li>
-			 <li><a href="../Eleves/suppression">supprimer</a></li>
+            <li><a href="../Eleves/suppression">Supprimer</a></li>
+            <li><a href="../Eleves/list">Liste</a></li>
           </ul>
          </li>
 		  <li class="nav-item">
@@ -33,7 +34,8 @@
 		   <ul class="sub-nav">
 		    <li><a href="../Entreprises/ajout">Ajouter</a></li>
                     <li><a href="../Entreprises/modification">Modifier</a></li>
-		    <li><a href="../Entreprises/suppression">supprimer</a></li>
+		    <li><a href="../Entreprises/suppression">Supprimer</a></li>
+		    <li><a href="../Entreprises/list">Liste</a></li>
 			 </ul>
          </li>
          <li class="nav-item">
@@ -41,7 +43,8 @@
 		   <ul class="sub-nav">
 		   <li><a href="../Utilisateurs/ajout">Ajouter</a></li>
             <li><a href="../Utilisateurs/modification">Modifier</a></li>
-			 <li><a href="../Utilisateurs/suppression">supprimer</a></li>
+			 <li><a href="../Utilisateurs/suppression">Supprimer</a></li>
+			 <li><a href="../Utilisateurs/list">Liste</a></li>
 			 </ul>
          </li>
         

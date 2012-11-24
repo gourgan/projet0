@@ -144,6 +144,7 @@ body {
 	color: #83ab24;
 	background: #3d3d3d;
 	border-radius: 2px;
+        
 }
 
 /* CONTENT */
@@ -411,7 +412,7 @@ ul.circle li, ol.decimal li { height: 1em; margin: 0 0 4px 20px;}
 .button.blue { background: url(../img/grad-overlay-s.png) #2c99f5; border: 1px solid #166fbb; }
 .button.orange { background: url(../img/grad-overlay-s.png) #e3b822; border: 1px solid #c79f16; }
 .button.purple { background: url(../img/grad-overlay-s.png) #bc66bb; border: 1px solid #9e4c9d; }
-.button.yellow { background: url(../img/grad-overlay-s.png) #efdb2f; border: 1px solid #ccb708; }
+.button.yellow { background: url(../img/grad-overlay-s.png) #efdb2f; border: 1px solid #ccb708; width: 150px; margin: 5px; float: right; }
 .button.black { background: url(../img/grad-overlay-s.png) #555; border: 1px solid #444; color: #ddd; text-shadow: 0 1px 0 #000; }
 .button.grey { background: url(../img/grad-overlay-s.png) #dbdbdb; border: 1px solid #ababab; }
 .button.disabled { color: #666; cursor: default !important; box-shadow: none !important; }
@@ -443,10 +444,15 @@ select {
 	box-sizing: content-box;
 	-webkit-box-sizing: content-box;
 	-moz-box-sizing: content-box;
+        font-weight: bold;
+        font-size: 14px;
+        color: #828282;
+        width: 150px;
 }
 .form-row {
 	padding: 10px 8px 10px 0;
 }
+
 .form-label {
 	display: inline-block;
 	width: 160px;
@@ -455,6 +461,17 @@ select {
 	font-size: 11px;
     text-shadow: 0 1px 0 #fff;
     float: left;
+}
+.blue{
+    display: inline-block;
+	width: 180px;
+	margin-right: 12px;
+	margin-top: 3px;
+	font-size: 18px;
+        color: blue;
+    text-shadow: 0 1px 0 #fff;
+    float: left;
+    
 }
 .form-item {
 	display: block;
@@ -613,7 +630,7 @@ input.filebase {
 	}
 	.ad-notif-error.no-display { display: block !important; }
 	.notif-msg{ width:96% !important;border:1px solid #71A100;padding:10px;color:green;font-weight:bold;display:block !important; }
-	.bblue{color:#166FBB !important;font-weight:bold!important;}
+	.bblue{color:#166FBB !important;font-weight:bold!important; margin: 6px;}
 	/*validation des formulaires*/
 	input:valid {
 		box-shadow: 0 0 2px 1px green;

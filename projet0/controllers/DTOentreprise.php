@@ -9,7 +9,7 @@ function ajout_entreprise($nom,$adresse,$telephone,$email){
  
         $d = new entreprise( $nom,$adresse,$telephone,$email);
        
-        $resultat= $db->prepare("INSERT INTO entreprise (nom,adresse,telephone,email) VALUES (?,?,?,?)");
+        $resultat= $db->prepare("INSERT INTO entreprise (nom_entreprise,adresse,telephone,email) VALUES (?,?,?,?)");
        
         $resultat->bindValue(1, $d->getNom(), PDO::PARAM_STR) ;    
         $resultat->bindValue(2, $d->getAdresse(), PDO::PARAM_STR) ;    
@@ -35,7 +35,7 @@ function modifier_entreprise($id,$nom,$adresse,$telephone,$email){
       
      
      
-        $resultat= $db->prepare("UPDATE  entreprise SET nom=?,adresse=?,telephone=?,email=? WHERE id=?");
+        $resultat= $db->prepare("UPDATE  entreprise SET nom_entreprise=?,adresse=?,telephone=?,email=? WHERE id=?");
         
         $resultat->bindValue(1, $d->getNom(), PDO::PARAM_STR) ;    
         $resultat->bindValue(2, $d->getAdresse(), PDO::PARAM_STR) ;    
@@ -103,7 +103,7 @@ function ajout_entreprise_eleve($eleve){
 function afficher_entreprises(){
     try{
 		$db=connect();
-		$res=$db->prepare('SELECT * FROM entreprise');
+		$res=$db->prepare('SELECT * FROM entreprise en,eleve e where e.id_entreprise=en.id ');
 		$res->execute();
 		return $res;
 

@@ -34,7 +34,7 @@
 											<img height="300" width="75" src="../upload/<?php echo $lignes->photo;?>" alt="" title="" class="pic" />
 											<div class="check" style="text-align:center">
 												<span> Absent(e) ?</span>
-												<input type="checkbox" name="absents[]" id="absents[]" class="checkbox" value="<?php echo $lignes->id ; ?>" />
+												<input type="checkbox" name="absents[]" id="absents[]"  class="checkbox" value="<?php echo $lignes->id ; ?>" />
 											</div>
 											<div class="info">
 												<span> <?php echo $lignes->nom ; ?> </span><br/>

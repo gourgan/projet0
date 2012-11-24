@@ -23,11 +23,12 @@ function ajout_absence($id_h, $id_eleve,$statut,$justificatif,$message){
 		return false;
 	}  
 }
-function afficher_absence_selondate(){
+function afficher_absence_selondate($date){
 	try {   
 		////afficher absence selon dates
 		$db=connect();
-		$res=$db->prepare('SELECT * FROM eleve e,absence a WHERE a.id_eleve=e.id');
+		$res=$db->prepare('SELECT * FROM eleve e,absence a,horaire h  WHERE a.id_eleve=e.id AND a.id_horaire=h.id AND h.date=? ');
+                $res->bindValue(1,$date, PDO::PARAM_STR) ; 
 		$res->execute();
 		return $res;
 	} 
