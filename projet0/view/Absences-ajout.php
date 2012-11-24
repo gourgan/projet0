@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="FR">
- <?php  include '../Head.php';  ?>
- <?php  include '../menu.php'; ?>
+ <?php  include 'Head.php';  ?>
+ <?php  include 'menu.php'; ?>
 	
  
 <body>

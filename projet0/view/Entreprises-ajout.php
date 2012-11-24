@@ -3,8 +3,8 @@
       
 <?php 
 	//includes entete;
-   include '../Head.php'; 
-   include '../menu.php';  
+   include 'Head.php'; 
+   include 'menu.php';  
    include_once '../controllers/DTOEleve.php';
    //recois la liste des eleves;
    $eleve=afficher_eleves();

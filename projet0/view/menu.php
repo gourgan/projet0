@@ -16,41 +16,41 @@
         <ul id="top-nav">
         <?php if($_SESSION["gdrole"]=="intervenant"){ ?>
 			<li class="nav-item">
-			   <a href="../view/ajouter_absence.php"><img src="../img/nav/widgets.png" alt="" /><p>Absence</p></a>
+			   <a href="../Absences/ajout.php"><img src="../img/nav/widgets.png" alt="" /><p>Absence</p></a>
 		    </li>
 		<?php } else{ ?>
 
 		<li class="nav-item">
            <a href="#"><p>Eleve</p></a>
 		   <ul class="sub-nav">
-            <li><a href="../Eleves/ajouter.php">Ajouter</a></li>
-            <li><a href="../Eleves/modifier.php">Modifier</a></li>
-			 <li><a href="../Eleves/supprimer.php">supprimer</a></li>
+            <li><a href="../Eleves/ajout">Ajouter</a></li>
+            <li><a href="../Eleves/modification">Modifier</a></li>
+			 <li><a href="../Eleves/suppression.php">supprimer</a></li>
           </ul>
          </li>
 		  <li class="nav-item">
            <a href="#"><p>Entreprise</p></a>
 		   <ul class="sub-nav">
-		   <li><a href="../Entreprises/ajouter.php">Ajouter</a></li>
-            <li><a href="../Entreprises/modifier.php">Modifier</a></li>
-			 <li><a href="../Entreprises/supprimer.php">supprimer</a></li>
+		    <li><a href="../Entreprises/ajout">Ajouter</a></li>
+                    <li><a href="../Entreprises/modification">Modifier</a></li>
+		    <li><a href="../Entreprises/suppression">supprimer</a></li>
 			 </ul>
          </li>
          <li class="nav-item">
            <a href="#"><p>Utilisateur</p></a>
 		   <ul class="sub-nav">
-		   <li><a href="../Utilisateurs/ajouter.php">Ajouter</a></li>
-            <li><a href="../Utilisateurs/modifier.php">Modifier</a></li>
-			 <li><a href="../Utilisateurs/supprimer.php">supprimer</a></li>
+		   <li><a href="../Utilisateurs/ajout">Ajouter</a></li>
+            <li><a href="../Utilisateurs/modification">Modifier</a></li>
+			 <li><a href="../Utilisateurs/suppression">supprimer</a></li>
 			 </ul>
          </li>
         
          <li class="nav-item">
            <a href="#"><p>Absence</p></a>
 		   <ul class="sub-nav">
-		   <li><a href="../Absences/ajouter_absence.php">Ajouter</a></li>
-		   <li><a href="../Absences/justifier_absence.php">Justifier</a></li>
-            <li><a href="../Absences/dernier_absent.php">Derniers Abs</a></li>
+		   <li><a href="../Absences/ajout.php">Ajouter</a></li>
+		   <li><a href="../Absences/justification.php">Justifier</a></li>
+                   <li><a href="../Absences/derniers_absents.php">Derniers Abs</a></li>
 			 
 			 </ul>
          </li>

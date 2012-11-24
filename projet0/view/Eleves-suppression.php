@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="fr">
 <?php 
-	include '../Head.php'; 
-	include '../menu.php';  
+	include 'Head.php'; 
+	include 'menu.php';  
 	include_once '../controllers/DTOEleve.php';
 	$eleve=afficher_eleves();
 ?>

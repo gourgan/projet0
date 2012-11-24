@@ -2,8 +2,8 @@
 <html lang="FR">
  <?php  
 	
-	include '../Head.php';  
-	include '../menu.php';  
+	include 'Head.php';  
+	include 'menu.php';  
 
    ?>
 
