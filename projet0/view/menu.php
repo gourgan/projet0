@@ -59,8 +59,8 @@
          <li class="nav-item">
            <a href="../Importation"><p>PDF/CVS</p></a>
            <ul class="sub-nav">
-            <li><a href="../Importation/csv.php?format=pdf">En PDF</a></li>
-            <li><a href="../Importation/csv.php?format=cvs">En CSV</a></li>
+            <li><a href="../Importation/pdf">En PDF</a></li>
+            <li><a href="../Importation/csv">En CSV</a></li>
           </ul>
          </li>
 		 <?php } ?>
