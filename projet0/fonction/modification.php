@@ -87,7 +87,7 @@ function modifier_el(){
 	}
 	
 	if(modifier_eleve($id,$nom,$prenom,$photo,$email,$tel,$entreprise,$delegue)){
-		echo"<script type='text/javascript'>document.location.replace('../Eleves/modification-ok');</script>";
+		//echo"<script type='text/javascript'>document.location.replace('../Eleves/modification-ok');</script>";
 	}else{
 		echo"<script type='text/javascript'>document.location.replace('../Eleves/modification-error');</script>";
 	}	

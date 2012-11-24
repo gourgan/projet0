@@ -35,7 +35,7 @@ function modifier_eleve($id,$nom,$prenom,$photo,$email,$tel,$entreprise,$delegue
         
 		$db=connect();
         
-		$d = new eleve($nom,$prenom,$photo,$email,$tel,$entreprise);
+		$d = new eleve($nom,$prenom,$photo,$email,$tel,$entreprise,$delegue);
         $resultat= $db->prepare("UPDATE  eleve SET nom=?,prenom=?,photo=?,email=?,telephone=?,id_entreprise=?,delegue=? WHERE id=?");
        
         $resultat->bindValue(1, $d->getNom(), PDO::PARAM_STR) ;    
