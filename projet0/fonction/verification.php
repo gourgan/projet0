@@ -4,7 +4,7 @@ include("../controllers/DTOutilisateur.php");
 if(isset($_GET["logout"])){
 	// on dectruit les sessions de l'utilisateur en cours
 	clearsessionscookies();
-	header('location :../index.php');
+	echo"<script type='text/javascript'>document.location.replace('../index.php');</script>";
 }else if(isset($_POST["utilisateur"]) && isset($_POST["pass"])){
 	
 	$utilisateur=$_POST["utilisateur"];
@@ -16,7 +16,7 @@ if(isset($_GET["logout"])){
 		 //pour le calendar code pret mais temps insufisant pour l'integrer 
 		include("../controllers/calendar.php");
 		if(empty($x)){
-				header('location :../index.php?=error');
+				echo"<script type='text/javascript'>document.location.replace('../index.php?error');</script>";
 		}else{
 			if($x=="intervenant"){
 				echo"<script type='text/javascript'>document.location.replace('../Absences/ajout');</script>";
@@ -32,7 +32,7 @@ if(isset($_GET["logout"])){
 			}
 		}
 	}else{
-		header('location :../index.php?rep=error');
+		 echo"<script type='text/javascript'>document.location.replace('../index.php?rep=error');</script>";
 	}
 }else if(isset($_POST["email"])){
 	$email=$_POST["email"];
@@ -49,11 +49,11 @@ if(isset($_GET["logout"])){
 		//if(send_mail("votre nouveau mot de passe",$msg)){
 			//echo"<script type='text/javascript'>document.location.replace('../motdepasse_oublie.php?ok');</script>";
 		//}
-		echo"<script type='text/javascript'>document.location.replace('../motdepasse_oublie.php?ok');</script>";
+		echo"<script type='text/javascript'>document.location.replace('../motdepasse_oublie.php?rep=ok');</script>";
 	
-	}else echo"<script type='text/javascript'>document.location.replace('../motdepasse_oublie.php?error');</script>";
+	}else echo"<script type='text/javascript'>document.location.replace('../motdepasse_oublie.php?rep=error');</script>";
 
- }else echo"<script type='text/javascript'>document.location.replace('../motdepasse_oublie.php?error');</script>";
+ }else echo"<script type='text/javascript'>document.location.replace('../motdepasse_oublie.php?rep=error');</script>";
 
 
 

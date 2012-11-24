@@ -13,9 +13,9 @@ function ajout_en(){
 	if(ajout_entreprise($intitule,$adresse_entreprise,$tel_entreprise,$email_entreprise)){
 		//ajou&eacute; l'entreprise a l'etudiant;
 		ajout_entreprise_eleve($id_eleve);
-		header('location :../Entreprises/ajout-ok');
+		echo"<script type='text/javascript'>document.location.replace('../Entreprises/ajout-ok');</script>";
 	}else{
-		header('location :../Entreprises/ajout-error');
+		echo"<script type='text/javascript'>document.location.replace('../Entreprises/ajout-error');</script>";
 	}
 }
 
@@ -36,9 +36,9 @@ include_once("../controllers/DTOutilisateur.php");
 	if(upload($photo,$nm)){
 		$picture=upload($photo,$nm);
 		ajout_utilisateur($login,$mdp,$nom,$prenom,$email,$tel,$picture,$alias);
-		header('location :../Utilisateurs/ajout-ok');
+		echo"<script type='text/javascript'>document.location.replace('../Utilisateurs/ajout-ok');</script>";
 	}else{
-		header('location :../Utilisateurs/ajout-error');
+		echo"<script type='text/javascript'>document.location.replace('../Utilisateurs/ajout-error');</script>";
 	}
 }
 function upload($file,$nm){
@@ -96,9 +96,9 @@ function ajout_el(){
 	$entreprise=1;
 	//ajout eleve;
 	ajout_eleve($nom,$prenom,$photo,$email,$tel,$entreprise,$delegue);
-		header('location :../Eleves/ajout-ok');
+		echo"<script type='text/javascript'>document.location.replace('../Eleves/ajout-ok');</script>";
 	}else{
-		header('location :../Eleves/ajout-error');
+		echo"<script type='text/javascript'>document.location.replace('../Eleves/ajout-ok');</script>";
 	}
 }
 

@@ -11,9 +11,9 @@ function modifier_en(){
 	$adresse_entreprise = htmlentities($_POST['adresse']);
 	//modifier l'entreprise 
 	if(modifier_entreprise($id,$intitule,$adresse_entreprise,$tel_entreprise,$email_entreprise)){
-		header('location :../Entreprises/modification-ok');
+		echo"<script type='text/javascript'>document.location.replace('../Entreprises/modification-ok');</script>";
 	}else{
-		header('location :../Entreprises/modification-error');
+		echo"<script type='text/javascript'>document.location.replace('../Entreprises/modification-error');</script>";
 	}
 }
 
@@ -37,9 +37,9 @@ function modifier_uti(){
 	$photo=upload($_FILES["pic_uti"],$nm);
 	}
 	if(modifier_utilisateur($login,$mdp,$id,$nom,$prenom,$email,$tel,$photo,$alias)){
-		header('location :../Utilisateurs/modification-ok');
+		echo"<script type='text/javascript'>document.location.replace('../Utilisateurs/modification-ok');</script>";
 	}else{
-		header('location :../Utilisateurs/modification-error');
+		echo"<script type='text/javascript'>document.location.replace('../Utilisateurs/modification-error');</script>";
 	}	
 }
 function upload($file,$nm){
@@ -87,9 +87,9 @@ function modifier_el(){
 	}
 	
 	if(modifier_eleve($id,$nom,$prenom,$photo,$email,$tel,$entreprise,$delegue)){
-		header('location :../Eleves/modification/ok');
+		echo"<script type='text/javascript'>document.location.replace('../Eleves/modification-ok');</script>";
 	}else{
-		header('location :../Eleves/modification/ok');
+		echo"<script type='text/javascript'>document.location.replace('../Eleves/modification-error');</script>";
 	}	
 	
 }
