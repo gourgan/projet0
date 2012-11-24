@@ -19,13 +19,13 @@ if(isset($_GET["logout"])){
 				header('location :../index.php?=error');
 		}else{
 			if($x=="intervenant"){
-				header('location :../Absences-ajout');
+				header('location :../Absences/ajout');
 			}
 			else if($x=="responsable"){
-				header('location :../Dashboard-news');
+				header('location :../Dashboard/news');
 			}
 			else if($x=="secretaire"){
-				header('location :../Dashboard-news');
+				header('location :../Dashboard/news');
 			}
 			else {
 				echo"vous avez pas l'accés a l'application";
