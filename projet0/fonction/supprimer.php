@@ -5,9 +5,9 @@ function supprimer_en(){
 	//Supprimer entreprise
 	$id = $_POST['entreprise'];
 	if(supprimer_entreprise($id)){
-		echo"<script type='text/javascript'>document.location.replace('../view/supprimer_entreprise.php?rep=ok');</script>";
+		header('location :../Entreprises/suppression-ok');
 	}else{
-		echo"<script type='text/javascript'>document.location.replace('../view/supprimer_entreprise.php?rep=error');</script>";
+		header('location :../Entreprises/suppression-ok');
 	}	
 }
 
@@ -33,9 +33,9 @@ function supprimer_el(){
 	$id = $id_image[0];
 	$image=$id_image[1];
 	if(supprimer_eleve($id) &&  supprimer_photo($image)){
-		echo"<script type='text/javascript'>document.location.replace('../view/supprimer_eleve.php?rep=ok');</script>";
+		header('location :../Eleves/suppression-ok');
 	}else{
-		echo"<script type='text/javascript'>document.location.replace('../view/supprimer_eleve.php?rep=error');</script>";
+		header('location :../Eleves/suppression-error');
 	}	
 
 }
@@ -47,9 +47,9 @@ function supprimer_uti(){
 	$id = $id_image[0];
 	$image=$id_image[1];
 	if(supprimer_utilisateur($id) &&  supprimer_photo($image)){
-		echo"<script type='text/javascript'>document.location.replace('../view/supprimer_utilisateur.php?rep=ok');</script>";
+		header('location :../Utilisateurs/suppression-ok');
 	}else{
-		echo"<script type='text/javascript'>document.location.replace('../view/supprimer_utilisateur.php?rep=error');</script>";
+		header('location :../Utilisateurs/suppression-error');
 	}	
 
 }

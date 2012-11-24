@@ -12,9 +12,9 @@ function ajout_en(){
 	if(ajout_entreprise($intitule,$adresse_entreprise,$tel_entreprise,$email_entreprise)){
 		//ajou&eacute; l'entreprise a l'etudiant;
 		ajout_entreprise_eleve($id_eleve);
-		echo"<script type='text/javascript'>document.location.replace('../view/ajouter_entreprise.php?rep=ok');</script>";
+		header('location :../Entreprises/ajout-ok');
 	}else{
-		echo"<script type='text/javascript'>document.location.replace('../view/ajouter_entreprise.php?rep=error');</script>";
+		header('location :../Entreprises/ajout-error');
 	}
 }
 
@@ -34,10 +34,10 @@ include_once("../controllers/DTOutilisateur.php");
 	//ajout photo intervenant
 	if(upload($photo,$nm)){
 		$picture=upload($photo,$nm);
-		ajout_intervenant($login,$mdp,$nom,$prenom,$email,$tel,$picture,$alias);
-		echo"<script type='text/javascript'>document.location.replace('../gestion/ajouter_utillisateur.php?rep=ok');</script>";
+		ajout_utilisateur($login,$mdp,$nom,$prenom,$email,$tel,$picture,$alias);
+		header('location :../Utilisateurs/ajout-ok');
 	}else{
-		echo"<script type='text/javascript'>document.location.replace('../gestion/ajouter_utilisateur.php?rep=error');</script>";
+		header('location :../Utilisateurs/ajout-error');
 	}
 }
 function upload($file,$nm){
@@ -95,9 +95,9 @@ function ajout_el(){
 	$entreprise=1;
 	//ajout eleve;
 	ajout_eleve($nom,$prenom,$photo,$email,$tel,$entreprise,$delegue);
-		echo"<script type='text/javascript'>document.location.replace('../view/ajouter_eleve.php?rep=ok');</script>";
+		header('location :../Eleves/ajout-ok');
 	}else{
-		echo"<script type='text/javascript'>document.location.replace('../view/ajouter_eleve.php?rep=error');</script>";
+		header('location :../Eleves/ajout-error');
 	}
 }
 

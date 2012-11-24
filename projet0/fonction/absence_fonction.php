@@ -20,7 +20,7 @@ function valider_ab(){
 			//envoyer les alertes des absences!!
 		    //annoncer_absence();
 			/////retour a la page absence avec validation
-			echo"<script type='text/javascript'>document.location.replace('../view/annoncer_absence.php?ok');</script>";
+			header('location :../Absences/annonce-ok');
 	}else{
 		noabsents();
 	}
@@ -89,7 +89,7 @@ function enregistrer_ab(){
 		$_SESSION['absents']=$_POST['absents'];
 		$id_eleves=$_SESSION['absents'];
 		get_id_eleves_req($id_eleves);
-		echo"<script type='text/javascript'>document.location.replace('../view/annoncer_absence.php?saved');</script>";
+		header('location :../Absences/annonce-saved');
 	}else{
 		noabsents();
 	}
@@ -107,7 +107,7 @@ function noabsents(){
 	//vide les sessions et cookies utilis&eacute;s en absence;
 	clear_absence();
 	setcookie("absent_set", "yes", time()+3600*3, "/");
-	echo"<script type='text/javascript'>document.location.replace('../view/annoncer_absence.php?noabsents');</script>";
+	header('location :../Absences/annonce-noabsents');
 	
 }
 // si klk1 est arriv&eacute; avant la validation,on modifie l'absence
@@ -116,7 +116,7 @@ function modifier_ab(){
 
 	$_SESSION['absents']=$_POST['absents'];
 	get_id_eleves_req($_SESSION['absents']);
-	echo"<script type='text/javascript'>document.location.replace('../view/annoncer_absence.php?saved');</script>";
+	header('location :../Absences/annonce-saved');
 	}else{
 		noabsents();
 	}

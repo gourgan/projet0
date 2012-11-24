@@ -4,7 +4,7 @@ include("../controllers/DTOutilisateur.php");
 if(isset($_GET["logout"])){
 	// on dectruit les sessions de l'utilisateur en cours
 	clearsessionscookies();
-	echo"<script type='text/javascript'>document.location.replace('../index.php');</script>";
+	header('location :../index.php');
 }else if(isset($_POST["utilisateur"]) && isset($_POST["pass"])){
 	
 	$utilisateur=$_POST["utilisateur"];
@@ -16,23 +16,23 @@ if(isset($_GET["logout"])){
 		 //pour le calendar code pret mais temps insufisant pour l'integrer 
 		include("../controllers/calendar.php");
 		if(empty($x)){
-				echo"<script type='text/javascript'>document.location.replace('../index.php?error=error');</script>";
+				header('location :../index.php?=error');
 		}else{
 			if($x=="intervenant"){
-				echo"<script type='text/javascript'>document.location.replace('../view/ajouter_absence.php');</script>";
+				header('location :../Absences-ajout');
 			}
 			else if($x=="responsable"){
-				echo"<script type='text/javascript'>document.location.replace('../view/dashboard.php');</script>";
+				header('location :../Dashboard-news');
 			}
 			else if($x=="secretaire"){
-				echo"<script type='text/javascript'>document.location.replace('../view/dashboard.php');</script>";
+				header('location :../Dashboard-news');
 			}
 			else {
 				echo"vous avez pas l'accés a l'application";
 			}
 		}
 	}else{
-		echo"<script type='text/javascript'>document.location.replace('../index.php?rep=error');</script>";
+		header('location :../index.php?rep=error');
 	}
 }else if(isset($_POST["email"])){
 	$email=$_POST["email"];
@@ -49,11 +49,11 @@ if(isset($_GET["logout"])){
 		//if(send_mail("votre nouveau mot de passe",$msg)){
 			//echo"<script type='text/javascript'>document.location.replace('../motdepasse_oublie.php?ok');</script>";
 		//}
-		echo"<script type='text/javascript'>document.location.replace('../motdepasse_oublie.php?rep=ok');</script>";
+		header('location :../motdepasse_oublie.php?rep=ok');
 	
-	}else echo"<script type='text/javascript'>document.location.replace('../motdepasse_oublie.php?rep=error');</script>";
+	}else header('location :../motdepasse_oublie.php?rep=error');
 
- }else echo"<script type='text/javascript'>document.location.replace('../motdepasse_oublie.php?rep=error');</script>";
+ }else header('location :../motdepasse_oublie.php?rep=error');
 
 
 
