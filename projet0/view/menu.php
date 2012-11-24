@@ -21,7 +21,7 @@
 		<?php } else{ ?>
 
 		<li class="nav-item">
-           <a href="#"><p>Eleve</p></a>
+           <a href="../Eleves/list"><p>Eleve</p></a>
 		   <ul class="sub-nav">
             <li><a href="../Eleves/ajout">Ajouter</a></li>
             <li><a href="../Eleves/modification">Modifier</a></li>
@@ -30,7 +30,7 @@
           </ul>
          </li>
 		  <li class="nav-item">
-           <a href="#"><p>Entreprise</p></a>
+           <a href="../Entreprises/list"><p>Entreprise</p></a>
 		   <ul class="sub-nav">
 		    <li><a href="../Entreprises/ajout">Ajouter</a></li>
                     <li><a href="../Entreprises/modification">Modifier</a></li>
@@ -39,7 +39,7 @@
 			 </ul>
          </li>
          <li class="nav-item">
-           <a href="#"><p>Utilisateur</p></a>
+           <a href="../Utilisateurs/list"><p>Utilisateur</p></a>
 		   <ul class="sub-nav">
 		   <li><a href="../Utilisateurs/ajout">Ajouter</a></li>
             <li><a href="../Utilisateurs/modification">Modifier</a></li>
@@ -49,7 +49,7 @@
          </li>
         
          <li class="nav-item">
-           <a href="#"><p>Absence</p></a>
+           <a href="../Absences/derniers_absents"><p>Absence</p></a>
 		   <ul class="sub-nav">
 		   <li><a href="../Absences/ajout">Ajouter</a></li>
 		   <li><a href="../Absences/justification">Justifier</a></li>
