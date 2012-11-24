@@ -22,9 +22,10 @@ function ajout_en(){
 function ajout_uti(){
 include_once("../controllers/DTOutilisateur.php");
          
-	//info intervenant
-        $login = htmlentities($_POST['login']);
-        $mdp = sha1(htmlentities($_POST['mdp']));
+	//info Utilisateur
+    $role = htmlentities($_POST['role']);
+    $login = htmlentities($_POST['login']);
+    $mdp = sha1(htmlentities($_POST['mdp']));
 	$nom = htmlentities($_POST['nom']);
 	$prenom = htmlentities($_POST['prenom']);
 	$email = htmlentities($_POST['email']);
@@ -35,7 +36,7 @@ include_once("../controllers/DTOutilisateur.php");
 	//ajout photo intervenant
 	if(upload($photo,$nm)){
 		$picture=upload($photo,$nm);
-		ajout_utilisateur($login,$mdp,$nom,$prenom,$email,$tel,$picture,$alias);
+		ajout_utilisateur($login,$mdp,$nom,$prenom,$email,$tel,$picture,$alias,$role);
 		echo"<script type='text/javascript'>document.location.replace('../Utilisateurs/ajout-ok');</script>";
 	}else{
 		echo"<script type='text/javascript'>document.location.replace('../Utilisateurs/ajout-error');</script>";

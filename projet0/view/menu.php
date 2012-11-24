@@ -21,7 +21,7 @@
 		<?php } else{ ?>
 
 		<li class="nav-item">
-           <a href="../Eleves/list"><img alt="" src="../img/icons/anlt.png"><p>Eleve</p></a>
+           <a href="../Eleves/list"><img alt="" src="../img/icons/eleve.png"><p>Eleve</p></a>
 		   <ul class="sub-nav">
             <li><a href="../Eleves/ajout">Ajouter</a></li>
             <li><a href="../Eleves/modification">Modifier</a></li>
@@ -30,7 +30,7 @@
           </ul>
          </li>
 		  <li class="nav-item">
-           <a href="../Entreprises/list"><img alt="" src="../img/icons/anlt.png"><p>Entreprise</p></a>
+           <a href="../Entreprises/list"><img alt="" src="../img/icons/entreprise.png"><p>Entreprise</p></a>
 		   <ul class="sub-nav">
 		    <li><a href="../Entreprises/ajout">Ajouter</a></li>
                     <li><a href="../Entreprises/modification">Modifier</a></li>
@@ -39,7 +39,7 @@
 			 </ul>
          </li>
          <li class="nav-item">
-           <a href="../Utilisateurs/list"><img alt="" src="../img/icons/anlt.png"><p>Utilisateur</p></a>
+           <a href="../Utilisateurs/list"><img alt="" src="../img/icons/utilisateur.png"><p>Utilisateur</p></a>
 		   <ul class="sub-nav">
 		   <li><a href="../Utilisateurs/ajout">Ajouter</a></li>
             <li><a href="../Utilisateurs/modification">Modifier</a></li>
@@ -49,7 +49,7 @@
          </li>
         
          <li class="nav-item">
-           <a href="../Absences/derniers_absents"><img alt="" src="../img/icons/anlt.png"><p>Absence</p></a>
+           <a href="../Absences/derniers_absents"><img alt="" src="../img/icons/absence.png"><p>Absence</p></a>
 		   <ul class="sub-nav">
 		   <li><a href="../Absences/ajout">Ajouter</a></li>
 		   <li><a href="../Absences/justification">Justifier</a></li>
@@ -60,7 +60,7 @@
          </li>
 		 
          <li class="nav-item">
-           <a href="../Importation/both"><p><img alt="" src="../img/icons/anlt.png">PDF/CVS</p></a>
+           <a href="../Importation/both"><p><img alt="" src="../img/icons/importation.png">PDF/CVS</p></a>
            <ul class="sub-nav">
             <li><a href="../Importation/pdf">En PDF</a></li>
             <li><a href="../Importation/csv">En CSV</a></li>

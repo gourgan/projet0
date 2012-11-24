@@ -1,6 +1,5 @@
 <?php
-$to = $_POST['to'];
-$msg = $_POST['msg'];
+$to = $email;
 //Image in e-mail
 $mailimg = '
 <a href="#"><img src="../img/logo.jpg"</a>
@@ -31,7 +30,7 @@ color:    "000000";
 $headers='MIME-Version: 1.0' . "\r\n";
 $headers .= 'Content-type: text/html;charset=iso-8859-1' . "\r\n";
 $headers .= 'From: Gestion absence Admin <gourgan.hicham@gmail.com>' . "\r\n";
-$bodys .= "$msg <br>";
+$bodys = "$msg <br>";
 $bodys .= "$mailimg";
 $body = $body . $bodys;
 mail($to, $subject, $body, $headers);

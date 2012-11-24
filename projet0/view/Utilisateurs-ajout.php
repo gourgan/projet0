@@ -5,7 +5,7 @@
    include 'Head.php'; 
    include 'menu.php'; 
    include_once '../controllers/DTOutilisateur.php';
-  
+   
 ?>
 <body>
 <?php afficher_message(); ?>
@@ -15,12 +15,19 @@
 		<div class="box grid_6">
 			<div class="box-head"><span class="box-icon-24 fugue-24 system-monitor"></span><h2>Information Personnelles</h2></div>
 			<div class="box-content">
-                                        
-                                        <div class="form-row">
+					<div class="form-row">
+						<label class="form-label"> Role  </label>
+						<select name="role">
+							<option value="1">Responsable</option>
+							<option value="2">Secretaire</option>
+							<option value="3">Intervenant</option>
+						</select>
+					</div>                    
+                    <div class="form-row">
 						<label class="form-label"> Login </label>
 						<input type="text" name="login" placeholder="Veuillez saisir le login" size="100"  pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" required /> 
 					</div>
-                                        <div class="form-row">
+                    <div class="form-row">
 						<label class="form-label"> Mot de Passe </label>
 						<input type="password" name="mdp" placeholder="Veuillez saisir le mot de passe " size="100"  pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" required /> 
 					</div>

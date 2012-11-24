@@ -4,7 +4,7 @@ require '../models/connexion.php';
 include_once '../models/utilisateur.php';
  
 
-function ajout_utilisateur($login,$mdp,$nom,$prenom,$email,$telephone,$picture,$alias){
+function ajout_utilisateur($login,$mdp,$nom,$prenom,$email,$telephone,$picture,$alias,$role){
 	try {
 		$db=connect();
 		$d = new utilisateur($login,$mdp,$nom,$prenom,$email,$telephone,$picture,$alias);
@@ -18,6 +18,12 @@ function ajout_utilisateur($login,$mdp,$nom,$prenom,$email,$telephone,$picture,$
 		$resultat->bindValue(7 , $d->getPicture(), PDO::PARAM_STR) ;   
 		$resultat->bindValue(8 , $d->getAlias(), PDO::PARAM_STR) ;   
 		$resultat->execute();
+		//on recupere le dernier utilisaeur ajouté , on l'ajoute sur la table role_utilisateur
+		$id_util = $db->lastInsertId();
+		$resultat2= $db->prepare("INSERT INTO role_utilisateur (id_role,id_utilisateur) VALUES (?,?)");
+		$resultat2->bindValue(1 , $role, PDO::PARAM_INT) ;   
+		$resultat2->bindValue(2 , $id_util, PDO::PARAM_INT) ;   
+		$resultat2->execute();
 		return true;
 		 
 	} catch (PDOException $exc) {
@@ -153,13 +159,12 @@ function confirmUser($utilisateur,$pass)
 		$db=connect();
 		$res=$db->query('SELECT * FROM  utilisateur');
 		while ($resultat=$res->fetch(PDO::FETCH_ASSOC)) {
-			
 			if($resultat["login"]==$utilisateur && $resultat["mdp"]==$pass ){
-                            $role=get_role($resultat["id"]);
-			if($role=="secretaire" OR $role=="intervenant" OR $role=="responsable"){
-				$_SESSION['gdrole']=$role;
-				setcookie("gdrole", $_SESSION['gdrole'], time()+60, "/");
-				return true;
+				$role=get_role($resultat["id"]);
+				if($role=="secretaire" OR $role=="intervenant" OR $role=="responsable"){
+					$_SESSION['gdrole']=$role;
+					setcookie("gdrole", $_SESSION['gdrole'], time()+60, "/");
+					return true;
 				}else{ $_SESSION['error']="accés impossible";return false;}
 			}
 			else{
