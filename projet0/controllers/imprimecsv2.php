@@ -6,21 +6,24 @@
  */
 
         require '../models/connexion.php';
+        include_once('../controllers/DTOabsence.php');
 	//envoi des headers csv
+        
+        $res= afficher_absence_entredate($date1,$date2);
+        
 	header('Content-Type: application/csv-tab-delimited-table');	//nommage du fichier avec la date du jour
 	header('Content-disposition: filename=absence_'.date('Y-m-d').'.csv');
-	 $rq=connect();
-        $res=$rq->prepare('select e.nom,e.prenom,e.email from absence a,eleve e  where e.id=a.id_eleve order by a.date_absence ');
+	 
 		
 		
 	//PremiÃ¨re ligne avec le noms des colonnes
-	echo '"Nom";"Pr&eacute;nom";"Email"'."\n";
+	echo '"Nom";"Prénom";"Email";"Matin/Aprés-midi"'."\n";
 	 
 	
-	 $res->execute() or die (mysql_error());
+	  
 	while($a=$res->fetch(PDO::FETCH_OBJ))
 	{
-	echo '"'.$a->nom.'";"'.$a->prenom.'";"'.$a->email.'"'."\n";
+	echo '"'.$a->nom.'";"'.$a->prenom.'";"'.$a->email.'";"'.$a->quand."\n";
 	}
 	 
 	
