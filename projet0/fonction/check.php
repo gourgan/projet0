@@ -7,13 +7,13 @@ if (isset($_SESSION["gdusername"])) {
 	$x=$_SESSION['gdrole'];
      
 	if(empty($x)){
-			echo"<script type='text/javascript'>document.location.replace('index.php?error=error');</script>";
+			header('location :index.php?error=error');
 	}else{
 		if($x=="intervenant"){
-			echo"<script type='text/javascript'>document.location.replace('view/ajouter_absence.php');</script>";
+			header('location :../Absences/ajout');
 		}
 		else{
-			echo"<script type='text/javascript'>document.location.replace('view/dashboard.php');</script>";
+			header('location :../Dashboard/news');
 		}
 	}
 }
