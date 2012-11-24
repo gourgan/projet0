@@ -8,7 +8,7 @@ function ajout_utilisateur($login,$mdp,$nom,$prenom,$email,$telephone,$picture,$
 	try {
 		$db=connect();
 		$d = new utilisateur($login,$mdp,$nom,$prenom,$email,$telephone,$picture,$alias);
-		$resultat= $db->prepare("INSERT INTO utilisateur (login,mdp,nom,prenom,email,telephone,picture,alias) VALUES (?,?,?,?,?,?,?,?,?)");
+		$resultat= $db->prepare("INSERT INTO utilisateur (login,mdp,nom,prenom,email,telephone,picture,alias) VALUES (?,?,?,?,?,?,?,?)");
 		$resultat->bindValue(1, $d->getLogin(), PDO::PARAM_STR) ;    
 		$resultat->bindValue(2, $d->getMdp(), PDO::PARAM_STR) ;    
 		$resultat->bindValue(3, $d->getNom(), PDO::PARAM_STR) ;    
