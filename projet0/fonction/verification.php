@@ -45,7 +45,7 @@ if(isset($_GET["logout"])){
 		$msg.="VEUILLEZ VOUS IDENTIFIER A L'AIDE DE VOTRE NOM D'UTILISATEUR OU Email ET VOTRE NOUVEAU MOT DE PASSE <br/>";
 		$msg.="Merci <br/> <b>Gestion d'absences LP-DW</b> ";
 		// il manque la classe email pour qu'on puisse envoyer l'email a l'acteur;
-		//include("../controllers/mail.php");
+		include("../controllers/mail.php");
 		//if(send_mail("votre nouveau mot de passe",$msg)){
 			//echo"<script type='text/javascript'>document.location.replace('../motdepasse_oublie.php?ok');</script>";
 		//}

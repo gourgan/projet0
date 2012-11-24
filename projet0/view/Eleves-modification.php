@@ -7,7 +7,7 @@
 	include_once '../controllers/DTOEleve.php';
 	$eleve=afficher_eleves(); 
 ?>
-<script src="../../js/ajax.js"></script>
+<script src="../js/ajax.js"></script>
 <body>
   <?php afficher_message(); ?>
   <div class="content container_12">

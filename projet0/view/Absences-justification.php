@@ -2,7 +2,7 @@
 <html lang="fr">
 
  <?php  include 'Head.php';  ?>
- <script src="../../js/ajax.js"></script>
+ <script src="../js/ajax.js"></script>
 <body>
 
   <!--- HEADER -->

@@ -7,7 +7,7 @@
 	include_once '../controllers/DTOutilisateur.php';
 	$utilisateur=afficher_utilisateurs();
  ?>
- <script src="../../js/ajax.js"></script>
+ <script src="../js/ajax.js"></script>
 <body>
   <?php afficher_message(); ?>
   <div class="content container_12">

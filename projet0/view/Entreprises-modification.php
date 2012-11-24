@@ -6,7 +6,7 @@
 	include_once '../controllers/DTOentreprise.php';
 	$entreprise=afficher_entreprises();
  ?>
- <script src="../../js/ajax.js"></script>
+ <script src="../js/ajax.js"></script>
 <body>
   <?php afficher_message(); ?>
   <div class="content container_12">
