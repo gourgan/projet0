@@ -7,7 +7,7 @@ function ajout_eleve($nom,$prenom,$photo,$email,$tel,$entreprise,$delegue){
 	try {
         $db=connect();
  
-        $d = new eleve($nom,$prenom,$photo,$email,$tel,$entreprise);
+        $d = new eleve($nom,$prenom,$photo,$email,$tel,$entreprise,$delegue);
         $resultat= $db->prepare("INSERT INTO eleve (nom,prenom,photo,email,telephone,id_entreprise,delegue) VALUES (?,?,?,?,?,?,?)");
        
         $resultat->bindValue(1, $d->getNom(), PDO::PARAM_STR) ;    

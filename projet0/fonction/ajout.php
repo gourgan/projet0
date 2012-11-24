@@ -95,8 +95,8 @@ function ajout_el(){
 	//entreprise par d&eacute;faut lors de l'inscription ( );
 	$entreprise=1;
 	//ajout eleve;
-	ajout_eleve($nom,$prenom,$photo,$email,$tel,$entreprise,$delegue);
-		echo"<script type='text/javascript'>document.location.replace('../Eleves/ajout-ok');</script>";
+	ajout_eleve($nom,$prenom,$photo,$email,$tel,$entreprise,$dele);
+        echo"<script type='text/javascript'>document.location.replace('../Eleves/ajout-ok');</script>";
 	}else{
 		echo"<script type='text/javascript'>document.location.replace('../Eleves/ajout-ok');</script>";
 	}
