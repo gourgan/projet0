@@ -25,7 +25,7 @@ function modifier_uti(){
         
 	//info intervenant
         $login = htmlentities($_POST['login']);
-        $mdp = htmlentities($_POST['mdp']);
+        $mdp = sha1(htmlentities($_POST['mdp']));
 	$nom = htmlentities($_POST['nom']);
 	$prenom = htmlentities($_POST['prenom']);
 	$email = htmlentities($_POST['email']);
