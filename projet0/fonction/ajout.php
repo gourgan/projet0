@@ -1,4 +1,5 @@
 <?php
+
 function ajout_en(){
 	include_once("../controllers/DTOentreprise.php");
 
@@ -18,12 +19,12 @@ function ajout_en(){
 	}
 }
 
-function ajout_utilisateur(){
+function ajout_uti(){
 include_once("../controllers/DTOutilisateur.php");
-
+         
 	//info intervenant
         $login = htmlentities($_POST['login']);
-        $mdp = htmlentities($_POST['mdp']);
+        $mdp = sha1(htmlentities($_POST['mdp']));
 	$nom = htmlentities($_POST['nom']);
 	$prenom = htmlentities($_POST['prenom']);
 	$email = htmlentities($_POST['email']);
@@ -114,7 +115,8 @@ if(isset($_POST["quoi"])){
 		ajout_act();
 	}
 	else if($_POST["quoi"]=="utilisateur"){
-		ajout_utilisateur();
+            
+		ajout_uti();
 	}
 // s'il est pas pass&eacute; par le formulaire
 	}else {
