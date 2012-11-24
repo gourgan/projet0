@@ -12,9 +12,9 @@ RewriteRule ^Entreprises/([a-z\_]+) view/Entreprises-$1.php [NC]
 RewriteRule ^Dashboard/news view/dashboard.php [NC]
 
 RewriteRule ^Eleves/([a-z\_]+)-([a-z\_]+) view/Eleves-$1.php?rep=$2 [NC]
-RewriteRule ^Absences/([a-z\_]+) view/Absences-$1.php [NC]
-RewriteRule ^Utilisateurs/([a-z\_]+) view/Utilisateurs-$1.php [NC]
-RewriteRule ^Entreprises/([a-z\_]+) view/Entreprises-$1.php [NC]
+RewriteRule ^Absences/([a-z\_]+)-([a-z\_]+) view/Absences-$1.php?rep=$2 [NC]
+RewriteRule ^Utilisateurs/([a-z\_]+)-([a-z\_]+) view/Utilisateurs-$1.php?rep=$2 [NC]
+RewriteRule ^Entreprises/([a-z\_]+)-([a-z\_]+) view/Entreprises-$1.php?rep=$2 [NC]
 
 
 ErrorDocument 404    http://localhost/mes_projets/projet0/projet0/404.php
