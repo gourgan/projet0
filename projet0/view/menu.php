@@ -25,7 +25,7 @@
 		   <ul class="sub-nav">
             <li><a href="../Eleves/ajout">Ajouter</a></li>
             <li><a href="../Eleves/modification">Modifier</a></li>
-			 <li><a href="../Eleves/suppression.php">supprimer</a></li>
+			 <li><a href="../Eleves/suppression">supprimer</a></li>
           </ul>
          </li>
 		  <li class="nav-item">

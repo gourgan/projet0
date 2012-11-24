@@ -14,6 +14,5 @@ ErrorDocument 404    http://localhost/mes_projets/projet0/projet0/404.php
 ErrorDocument 400    http://localhost/mes_projets/projet0/projet0/404.php
 ErrorDocument 401    http://localhost/mes_projets/projet0/projet0/404.php
 ErrorDocument 403    http://localhost/mes_projets/projet0/projet0/404.php 
-ErrorDocument 404    http://localhost/mes_projets/projet0/projet0/404.php
 ErrorDocument 500    http://localhost/mes_projets/projet0/projet0/404.php
 
