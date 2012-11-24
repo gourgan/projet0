@@ -4,7 +4,7 @@
 	include 'Head.php'; 
 	include 'menu.php';  
 	include_once '../controllers/DTOutilisateur.php';
-	$intervenant=afficher_utilisateurs();
+	$utilisateur=afficher_utilisateurs();
 ?>
 <body>
 
