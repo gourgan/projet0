@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: 127.0.0.1
--- Généré le: Ven 23 Novembre 2012 à 17:57
+-- Généré le: Sam 24 Novembre 2012 à 15:28
 -- Version du serveur: 5.5.27
 -- Version de PHP: 5.4.7
 
@@ -93,7 +93,7 @@ INSERT INTO `eleve` (`id`, `nom`, `prenom`, `photo`, `email`, `id_entreprise`, `
 (20, 'nomeleve4', 'prenomeleve4', 'nomeleve4_prenomeleve4.jpg', 'email_eleve4@gmail.com', 1, 0, '2147483647', 0),
 (21, 'nomeleve5', 'prenomeleve5', 'nomeleve5_prenomeleve5.jpg', 'email_eleve5@gmail.com', 1, 0, '2147483647', 0),
 (22, 'nomeleve6', 'prenomeleve6', 'nomeleve6_prenomeleve6.jpg', 'email_eleve6@gmail.com', 1, 0, '2147483647', 0),
-(23, 'nomeleve7', 'prenomeleve7', 'nomeleve7_prenomeleve7.jpg', 'email_eleve7@gmail.com', 1, 0, '2147483647', 0),
+(23, 'nomeleve7', 'prenomeleve7', 'nomeleve7_prenomeleve7.jpg', 'email_eleve7@gmail.com', 17, 0, '2147483647', 0),
 (24, 'nomeleve8', 'prenomeleve8', 'nomeleve8_prenomeleve8.jpg', 'email_eleve8@gmail.com', 1, 0, '2147483647', 0),
 (25, 'nomeleve9', 'prenomeleve9', 'nomeleve9_prenomeleve9.jpg', 'email_eleve9@gmail.com', 1, 0, '2147483647', 0),
 (26, 'nomeleve10', 'prenomeleve10', 'nomeleve10_prenomeleve10.jpg', 'email_eleve10@gmail.com', 1, 0, '2147483647', 0),
@@ -114,7 +114,7 @@ CREATE TABLE IF NOT EXISTS `entreprise` (
   `telephone` varchar(10) DEFAULT NULL,
   `email` varchar(25) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
 
 --
 -- Contenu de la table `entreprise`
@@ -136,7 +136,8 @@ INSERT INTO `entreprise` (`id`, `nom`, `adresse`, `telephone`, `email`) VALUES
 (13, '', '', '', ''),
 (14, '', '', '', ''),
 (15, '', '', '', ''),
-(16, '', '', '', '');
+(16, '', '', '', ''),
+(17, 'az', 'aa', '0612457815', 'a@gm.com');
 
 -- --------------------------------------------------------
 
@@ -153,25 +154,27 @@ CREATE TABLE IF NOT EXISTS `groupe` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `horraire`
+-- Structure de la table `horaire`
 --
 
-CREATE TABLE IF NOT EXISTS `horraire` (
+CREATE TABLE IF NOT EXISTS `horaire` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `date` date NOT NULL,
   `quand` varchar(100) NOT NULL,
   `matiere` varchar(100) NOT NULL,
   `abrev_intervenant` varchar(2) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
--- Contenu de la table `horraire`
+-- Contenu de la table `horaire`
 --
 
-INSERT INTO `horraire` (`id`, `date`, `quand`, `matiere`, `abrev_intervenant`) VALUES
+INSERT INTO `horaire` (`id`, `date`, `quand`, `matiere`, `abrev_intervenant`) VALUES
 (1, '2012-10-19', 'matin', 'php5', 'LR'),
-(2, '2012-10-19', 'apres-midi', 'poo', 'JR');
+(2, '2012-10-19', 'apres-midi', 'poo', 'JR'),
+(3, '2012-01-07', 'matin', 'et aussi ca', ''),
+(4, '2012-01-07', 'matin', 'et aussi ca', '');
 
 -- --------------------------------------------------------
 
@@ -231,7 +234,7 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   `picture` varchar(150) NOT NULL,
   `Alias` varchar(15) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Contenu de la table `utilisateur`
@@ -240,7 +243,8 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
 INSERT INTO `utilisateur` (`id`, `login`, `mdp`, `nom`, `prenom`, `email`, `telephone`, `picture`, `Alias`) VALUES
 (2, 'hicham', 'd033e22ae348aeb5660fc2140aec35850c4da997', '', '', '', '', '', ''),
 (3, 'lansari', 'd033e22ae348aeb5660fc2140aec35850c4da997', '', '', 'peace-und-loove@hotmail.com', '', '', ''),
-(5, 'lansari2', 'd033e22ae348aeb5660fc2140aec35850c4da997', '', '', '11', '', '', '');
+(5, 'lansari2', 'd033e22ae348aeb5660fc2140aec35850c4da997', '', '', '11', '', '', ''),
+(6, 'aa', 'amzpol', 'ayt', 'achraf', 'achraflansari@gmail.com', '0658741479', 'nothing.jpg', '3b');
 
 --
 -- Contraintes pour les tables exportées
