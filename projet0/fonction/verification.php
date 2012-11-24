@@ -19,13 +19,13 @@ if(isset($_GET["logout"])){
 				header('location :../index.php?=error');
 		}else{
 			if($x=="intervenant"){
-				header('location :../Absences/ajout');
+				echo"<script type='text/javascript'>document.location.replace('../Absences/ajout');</script>";
 			}
 			else if($x=="responsable"){
-				header('location :../Dashboard/news');
+				echo"<script type='text/javascript'>document.location.replace('../Dashboard/news');</script>";
 			}
 			else if($x=="secretaire"){
-				header('location :../Dashboard/news');
+				echo"<script type='text/javascript'>document.location.replace('../Dashboard/news');</script>";
 			}
 			else {
 				echo"vous avez pas l'accés a l'application";
@@ -49,11 +49,11 @@ if(isset($_GET["logout"])){
 		//if(send_mail("votre nouveau mot de passe",$msg)){
 			//echo"<script type='text/javascript'>document.location.replace('../motdepasse_oublie.php?ok');</script>";
 		//}
-		header('location :../motdepasse_oublie.php?rep=ok');
+		echo"<script type='text/javascript'>document.location.replace('../motdepasse_oublie.php?ok');</script>";
 	
-	}else header('location :../motdepasse_oublie.php?rep=error');
+	}else echo"<script type='text/javascript'>document.location.replace('../motdepasse_oublie.php?error');</script>";
 
- }else header('location :../motdepasse_oublie.php?rep=error');
+ }else echo"<script type='text/javascript'>document.location.replace('../motdepasse_oublie.php?error');</script>";
 
 
 
