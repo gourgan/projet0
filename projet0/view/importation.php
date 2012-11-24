@@ -1,11 +1,11 @@
 <!doctype html>
 <html lang="fr">
  <!--- HEADER -->
- <?php  include '../Head.php';  ?>
+ <?php  include 'Head.php';  ?>
 <body>
 
 	   <?php //menu 
-		include '../menu.php';  
+		include 'menu.php';  
 		include_once("../controllers/DTOabsence.php");
 		//affichage date depuis absence
 		$dates=get_absence_all_dates();

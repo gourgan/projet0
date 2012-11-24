@@ -48,19 +48,19 @@
          <li class="nav-item">
            <a href="#"><p>Absence</p></a>
 		   <ul class="sub-nav">
-		   <li><a href="../Absences/ajout.php">Ajouter</a></li>
-		   <li><a href="../Absences/justification.php">Justifier</a></li>
-                   <li><a href="../Absences/derniers_absents.php">Derniers Abs</a></li>
+		   <li><a href="../Absences/ajout">Ajouter</a></li>
+		   <li><a href="../Absences/justification">Justifier</a></li>
+                   <li><a href="../Absences/derniers_absents">Derniers Abs</a></li>
 			 
 			 </ul>
          </li>
          </li>
 		 
          <li class="nav-item">
-           <a href="../view/pdf-csv.php"><p>PDF/CVS</p></a>
+           <a href="../Importation"><p>PDF/CVS</p></a>
            <ul class="sub-nav">
-            <li><a href="../view/pdf-csv.php?format=pdf">En PDF</a></li>
-            <li><a href="../view/pdf-csv.php?format=cvs">En CSV</a></li>
+            <li><a href="../Importation/csv.php?format=pdf">En PDF</a></li>
+            <li><a href="../Importation/csv.php?format=cvs">En CSV</a></li>
           </ul>
          </li>
 		 <?php } ?>

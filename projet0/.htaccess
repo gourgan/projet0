@@ -5,10 +5,10 @@ Options +FollowSymlinks
 RewriteEngine On
 
 
-RewriteRule etudiants/([a-z\_]+) view/etudiants/$1.php [NC]
-RewriteRule utilisateurs/([a-z\_]+) view/utilisateurs/$1.php [NC]
-RewriteRule entreprise/([a-z\_]+) view/entreprise/$1.php [NC]
-RewriteRule absence/([a-z\_]+) view/absence/$1.php [NC]
+RewriteRule ^Eleves/([a-z\_]+) view/Eleves-$1.php [NC]
+RewriteRule ^Absences/([a-z\_]+) view/Absences-$1.php [NC]
+RewriteRule ^Utilisateurs/([a-z\_]+) view/Utilisateurs-$1.php [NC]
+RewriteRule ^Entreprises/([a-z\_]+) view/Entreprises-$1.php [NC]
 
 ErrorDocument 404    http://localhost/mes_projets/projet0/projet0/404.php
 ErrorDocument 400    http://localhost/mes_projets/projet0/projet0/404.php
@@ -16,3 +16,4 @@ ErrorDocument 401    http://localhost/mes_projets/projet0/projet0/404.php
 ErrorDocument 403    http://localhost/mes_projets/projet0/projet0/404.php 
 ErrorDocument 404    http://localhost/mes_projets/projet0/projet0/404.php
 ErrorDocument 500    http://localhost/mes_projets/projet0/projet0/404.php
+
