@@ -79,16 +79,7 @@ function ajout_el(){
 	$email = htmlentities($_POST['email']);
 	$tel = htmlentities($_POST['tel']);
 	$dele= htmlentities($_POST['delegue']);
-         if ($dele!=null){
-         
-         $dele =true;
-         
-             
-         }else {
-         $dele =false;
-             
-         }
-         
+	 if ($dele!=null) $dele = true;else $dele = false;
 	$nm=$nom."_".$prenom;
 	if(upload($_FILES['pic_stud'],$nm)){
 	$photo=upload($_FILES['pic_stud'],$nm);

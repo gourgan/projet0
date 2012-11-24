@@ -79,8 +79,8 @@ function modifier_el(){
 	$email = htmlentities($_POST['email']);
 	$tel = htmlentities($_POST['tel']);
 	$photo=htmlentities($_POST['photo']);
-	$entreprise=$_POST['entreprise'];
-        $delegue=$_POST['delegue'];
+	$entreprise=htmlentities($_POST['entreprise']);
+	if(isset($_POST['delegue'])){$delegue = true;}else{$delegue = false;}
 	$nm=$nom."_".$prenom;
 	if($_FILES["pic_stud"]["name"]!=""){
 	$photo=upload($_FILES["pic_stud"],$nm);

@@ -58,7 +58,7 @@ function afficher_entreprise_modif(){
 function afficher_dates(){
 include_once("../controllers/DTOabsence.php");
 
-//ajax afichage eleve pour modif
+//ajax affichage date 
 	$id=$_GET["id"];
 	$dates=get_absence_dates($id);
 			echo'
@@ -229,7 +229,9 @@ function afficher_eleve_modif(){
 	while($lignes=$eleve->fetch(PDO::FETCH_OBJ))
 		{
 			if($lignes->id==$id){
-			
+			(
+			/// si delegué on attribue checked a checkbox;
+			$lignes->delegue==1)?$checked="checked":$checked="";
 			echo'
 			<div class="box grid_6">
 			<div class="box-head"><span class="box-icon-24 fugue-24 system-monitor"></span><h2>Information Personnelles</h2></div>
@@ -256,9 +258,9 @@ function afficher_eleve_modif(){
 							<input type="hidden" name="photo"  size="100" value="'.$lignes->photo.'" > </input> 
 							
 					</div>
-                                          <div class="form-row">
-							<label class="form-label"> Delegu&eacute  </label>
-                                                        <input type="checkbox" name="delegue" />
+                    <div class="form-row">
+						<label class="form-label"> Delegu&eacute  </label>
+						<input type="checkbox" name="delegue" '.$checked.' />
 					</div>
 					<div class="form-row">
 							<label class="form-label"> Modifier l entreprise </label>
