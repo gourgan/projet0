@@ -36,7 +36,7 @@ function modifier_uti(){
 	if($_FILES["pic_uti"]["name"]!=""){
 	$photo=upload($_FILES["pic_uti"],$nm);
 	}
-	if(modifier_utilisateur($login,$mdp,$id,$nom,$prenom,$email,$tel,$photo,$alias)){
+	if(modifier_utilisateur($login,$mdp,$nom,$prenom,$email,$tel,$photo,$alias,$id)){
 		echo"<script type='text/javascript'>document.location.replace('../Utilisateurs/modification-ok');</script>";
 	}else{
 		echo"<script type='text/javascript'>document.location.replace('../Utilisateurs/modification-error');</script>";
@@ -87,7 +87,7 @@ function modifier_el(){
 	}
 	
 	if(modifier_eleve($id,$nom,$prenom,$photo,$email,$tel,$entreprise,$delegue)){
-		//echo"<script type='text/javascript'>document.location.replace('../Eleves/modification-ok');</script>";
+		echo"<script type='text/javascript'>document.location.replace('../Eleves/modification-ok');</script>";
 	}else{
 		echo"<script type='text/javascript'>document.location.replace('../Eleves/modification-error');</script>";
 	}	

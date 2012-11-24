@@ -134,11 +134,11 @@ include_once("../controllers/DTOutilisateur.php");
 					
 					<div class="form-row">
 							<label class="form-label"> Telephone  </label>
-							<input type="text" name="tel" value="'.$lignes->tel.'" size="100" pattern="^\d{10}$" />
+							<input type="text" name="tel" value="'.$lignes->telephone.'" size="100" pattern="^\d{10}$" />
 					</div>
 					<div class="form-row">
 							<label class="form-label"> Alias  </label>
-							<input type="text" name="alias" value="'.$lignes->alias.'" size="100" />
+							<input type="text" name="alias" value="'.$lignes->Alias.'" size="100" />
 							<input type="hidden" name="picture"  size="100" value="'.$lignes->picture.'" > </input> 
 
 					</div>

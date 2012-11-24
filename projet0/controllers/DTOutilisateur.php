@@ -47,7 +47,7 @@ function supprimer_utilisateur($id){
 function modifier_utilisateur($login,$mdp,$nom,$prenom,$email,$telephone,$picture,$alias,$id){
     try{
         $db=connect();
-        $d = new utilisateur($login,$mdp,$id,$nom,$prenom,$email,$tel,$photo,$alias);
+        $d = new utilisateur($login,$mdp,$nom,$prenom,$email,$telephone,$picture,$alias);
         $resultat= $db->prepare("UPDATE  utilisateur SET login=?,mdp=?,nom=?,prenom=?,email=?,telephone=?,picture=?,alias=?  WHERE id=?");
         
         $resultat->bindValue(1, $d->getLogin(), PDO::PARAM_STR) ;    
