@@ -60,7 +60,7 @@
          </li>
 		 
          <li class="nav-item">
-           <a href="../Importation"><p>PDF/CVS</p></a>
+           <a href="../Importation/both"><p>PDF/CVS</p></a>
            <ul class="sub-nav">
             <li><a href="../Importation/pdf">En PDF</a></li>
             <li><a href="../Importation/csv">En CSV</a></li>
