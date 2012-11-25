@@ -1,4 +1,22 @@
 <?php
+function modifier_ab(){
+	include_once("../controllers/DTOabsence.php");
+    
+	$id = htmlentities($_POST['absent']);
+	//entreprise
+	$statut = htmlentities($_POST['statut']);
+	$justificatif = htmlentities($_POST['justificatif']);
+	$message = htmlentities($_POST['message']);
+	
+	//modifier l'absence
+	if(modifier_absence($statut,$justificatif,$message,$id)){
+		echo"<script type='text/javascript'>document.location.replace('../Absences/justification-ok');</script>";
+	}else{
+		echo"<script type='text/javascript'>document.location.replace('../Absences/justification-error');</script>";
+	}
+}
+
+
 function modifier_en(){
 	include_once("../controllers/DTOentreprise.php");
     
@@ -106,6 +124,9 @@ if(isset($_POST["quoi"])){
 	
 	else if($_POST["quoi"]=="utilisateur"){
 		modifier_uti();
+	}
+        else if($_POST["quoi"]=="justification"){
+		modifier_ab();
 	}
 // s'il est deja pass&eacute; par le formulaire page accés impossible
 }else echo "acc&eacute;s impossible";

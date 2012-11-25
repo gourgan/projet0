@@ -63,23 +63,33 @@ include_once("../controllers/DTOabsence.php");
 
 //ajax affichage date 
 	$id=$_GET["id"];
-	$dates=get_absence_dates($id);
+	
+        $dates=get_absence_all_dates();
 			echo'
 			<div class="box grid_6">
 			<div class="box-head"><span class="box-icon-24 fugue-24 system-monitor"></span><h2>Information Personnelles</h2></div>
 			<div class="box-content style=height:550px;margin-bottom:10px;">
 
 					<div class="form-row">
-						<label class="form-label"> Nom </label>
-						<select name="entreprise">';?>
-							<?php while($lignes2=$dates->fetch(PDO::FETCH_OBJ))
-								{?>
-								 <option <?php echo "value=".$lignes2->id;
-									echo">".$lignes2->date."</option>" ;?>						
-							<?php }echo'
-						</select>
+							
+							
+							<label class="form-label"> Selectionnez une date : </label>
+							
+								<?php while($lignes=$dates->fetch(PDO::FETCH_OBJ))
+									{	
+									$date_ab=explode(":",$lignes->date);
+									$date_ab=$date_ab[0];
+									echo "<option  value=\'$date_ab\'>
+										$date_ab</option>" ;
+									}?>						
+							</select>	<br/>			
+				     </div>
+					<div class="form-row">
+							<label class="form-label"> Message :  </label>
+							<textarea name="message" rows="4" cols="50"> </textarea>
 					</div>
-					
+                                        
+
 					<div class="form-row">
 							<label class="form-label"> Justificatif  </label>
 							<input type="file" name="justif" />

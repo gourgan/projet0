@@ -26,10 +26,10 @@
 			<div class="box-content">
 				
 					<div class="form-row">
-							<label class="form-label"> Justificatif de l'absence </label>
+							<label class="form-label"> Selectionner l'etudiant </label>
          
 							<div class="form-item">
-								<select name="eleve" onchange="showUser(this.value,'dates_absence')">
+								<select name="absence" onchange="showUser(this.value,'dates_absence')">
 								<option value="Selectionner l'etudiant" selected>Selectionner l'etudiant</option>
 
 								<?php
