@@ -74,8 +74,6 @@ function supprimer_eleve($id){
 function afficher_eleves(){
     try{
 		$db=connect();
-
-
 		$res=$db->prepare('SELECT * FROM eleve');
 		$res->execute();
 		return $res;

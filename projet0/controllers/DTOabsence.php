@@ -3,11 +3,11 @@
 include_once '../models/absence.php';
 include_once '../models/connexion.php';
    
-function ajout_absence($id_h, $id_eleve,$statut,$justificatif,$message){
+function ajout_absence($id_h, $id_eleve,$statut,$justificatif=null,$message=null){
 	try {
 		$db=connect();
 
-		$d = new absence($id_h,$id_eleve,$statut);
+		$d = new absence($id_h, $id_eleve,$statut,$justificatif,$message);
 		$resultat= $db->prepare("INSERT INTO absence (id_horaire,id_eleve,statut,justificatif,message) VALUES (?,?,?,?,?)");
 		$resultat->bindValue(1, $d->getDate_absence(), PDO::PARAM_INT);    
 		$resultat->bindValue(2, $d->getId_eleve(), PDO::PARAM_STR);    
@@ -49,7 +49,7 @@ function afficher_absence_selondate($date){
 		////afficher absence selon dates
 		$db=connect();
 		$res=$db->prepare('SELECT * FROM eleve e,absence a,horaire h  WHERE a.id_eleve=e.id AND a.id_horaire=h.id AND h.date=? ');
-                $res->bindValue(1,$date, PDO::PARAM_STR) ; 
+        $res->bindValue(1,$date, PDO::PARAM_STR) ; 
 		$res->execute();
 		return $res;
 	} catch (PDOException $exc) 
@@ -60,11 +60,11 @@ function afficher_absence_selondate($date){
 }
     function afficher_absence_entredate($date1,$date2){
 	try {   
-		////afficher absence selon dates
+		////afficher absence entre dates
 		$db=connect();
 		$res=$db->prepare('SELECT * FROM eleve e,absence a,horaire h  WHERE a.id_eleve=e.id AND a.id_horaire=h.id AND h.date BETWEEN ? AND ? ');
-                $res->bindValue(1,$date1, PDO::PARAM_STR) ; 
-                $res->bindValue(1,$date2, PDO::PARAM_STR) ; 
+        $res->bindValue(1,$date1, PDO::PARAM_STR) ; 
+        $res->bindValue(1,$date2, PDO::PARAM_STR) ; 
 		$res->execute();
 		return $res;
 	}     
@@ -78,9 +78,9 @@ function afficher_absence_selondate($date){
 
 function get_programme($today,$quand){
 	try {   
-		//we get programme du jour d'apr&eacute;s la date from horaire
+		//we get programme du jour d'aprés la date from horaire
 		$db=connect();
-		$res=$db->prepare('SELECT id FROM horaire h WHERE h.date=? and h.quand=?');
+		$res=$db->prepare('SELECT id FROM horaire WHERE date=? and quand=?');
 		$res->bindValue(1,$today, PDO::PARAM_STR) ;    
 		$res->bindValue(2,$quand, PDO::PARAM_STR) ;    
 		$res->execute();
@@ -130,7 +130,7 @@ function get_absence_dates($id){
 
 function get_absence_all_dates(){
 	try {		
-		echo "xxxxxxx";//get all dates dont il y'avait un absence;
+		//get all dates dont il y'avait un absence;
 		$db=connect();
 		$res=$db->prepare('SELECT DISTINCT h.date,a.id FROM horaire h,absence a  group by h.date');
 		$res->execute();

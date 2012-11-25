@@ -6,7 +6,7 @@ function valider_ab(){
 	//Validation definitive et enregistrement de l'absence
 	$statut ="0";
 	date_default_timezone_set('Europe/Paris');
-	$date = date("Y/m/d", time());
+	$date = date("Y-m-d", time());
 	//verifie si un absence de cette date est d&eacute;ja enregistr&eacute;?
 	$id_horaire=check_horaire_day();
 	if (isset($_POST['absents'])){
@@ -20,13 +20,15 @@ function valider_ab(){
 			//envoyer les alertes des absences!!
 		    //annoncer_absence();
 			/////retour a la page absence avec validation
+			exit;
+
 			echo"<script type='text/javascript'>document.location.replace('../Absences/annonce-ok');</script>";
 	}else{
 		noabsents();
 	}
 //vide les sessions et cookies utilis&eacute;s en absence;
 	clear_absence();
-//empecher la modification de l'absence
+//empecher la modification de l'absence dans 3 heure (durée de cours)
 setcookie("absent_set", "yes", time()+3600*3, "/");
 
 }
@@ -35,13 +37,14 @@ setcookie("absent_set", "yes", time()+3600*3, "/");
 
 function check_horaire_day(){
 	include_once("../controllers/DTOabsence.php");
-	$date_a=date("Y/m/d", time());
+	$date_a=date("Y-m-d", time());
 	$quand=gedate_horaire();
 	$id_h=get_programme($date_a,$quand);
+	print_r($id_h);
 	$id=0;
 	while($lignes=$id_h->fetch(PDO::FETCH_OBJ))
 	{
-		$id=$lignes['id'];
+		$id=$lignes->id;
 	}
 	return $id;
 }
@@ -59,14 +62,14 @@ function gedate_horaire(){
 	return $quand;
 
 }
-//verifie si un absence de cette date est d&eacute;ja enregistr&eacute;?
+//verifie si un absence de cette date est déja enregistré?
 
 function check_absence_day(){
 
 
 }
 
-//alerte les absence aupr&eacute;s des acteurs et entreprises?
+//alerte les absence auprés des acteurs et entreprises?
 
 function alerter_absence(){
 

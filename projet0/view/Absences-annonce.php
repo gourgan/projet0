@@ -9,10 +9,13 @@
 
 <body>
   <div id="contenty" class="content container_12">
-	<?php if(isset($_GET["saved"])){
+	
+	<?php 
+	if(isset($_GET["rep"]) && $_GET["rep"]=="saved"){
 	//on recoient les eleves absents to get their informations from database
 	$eleves_abs=$_SESSION['absents_req'];
-    include_once '../controllers/DTOabsence.php';
+	include_once '../controllers/DTOabsence.php';
+
     $absence=afficher_absence_temp($eleves_abs);
 	?>
 		
@@ -69,7 +72,7 @@
 							Tout le monde est present aujourd'hui !<br/>
 							Merci...
 						</div>";
-						echo "<script> document.absenceform.quoi.value="valider";
+						echo "<script> document.absenceform.quoi.value='valider';
 									   document.forms['absenceform'].submit();</script>";
 					}
 				?>
