@@ -16,7 +16,7 @@ function afficher_entreprise_modif(){
 
 					<div class="form-row">
 						<label class="form-label"> Intitul&eacute; </label>
-						<input type="text" name="intitule" value="'.$lignes->nom.'" size="100" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" required /> 
+						<input type="text" name="intitule" value="'.$lignes->nom_entreprise.'" size="100" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" required /> 
 					</div>
 					
 					<div class="form-row">
@@ -272,7 +272,7 @@ function afficher_eleve_modif(){
 									<option <?php echo "value=".$lignes2->id;
 									if($lignes->id_entreprise==$lignes2->id)
 									echo"selected";
-									echo">".$lignes2->nom."</option>" ;?>						
+									echo">".$lignes2->nom_entreprise."</option>" ;?>						
 							<?php }echo'</select>
 							</div>
 					</div>

@@ -25,7 +25,7 @@
 								<?php
 									while($lignes=$entreprise->fetch(PDO::FETCH_OBJ))
 									{
-										echo "<option value='".$lignes->id."'>".$lignes->nom."</option>";
+										echo "<option value='".$lignes->id."'>".$lignes->nom_entreprise."</option>";
 				
 									}
 									
