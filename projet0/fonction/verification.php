@@ -6,7 +6,7 @@ if(isset($_GET["logout"])){
 	clearsessionscookies();
 	echo"<script type='text/javascript'>document.location.replace('../index.php');</script>";
 }else if(isset($_POST["utilisateur"]) && isset($_POST["pass"])){
-	
+
 	$utilisateur=$_POST["utilisateur"];
 	$pass=sha1($_POST["pass"]);
 	if(confirmUser($utilisateur,$pass)){
@@ -55,8 +55,6 @@ if(isset($_GET["logout"])){
 	}else echo"<script type='text/javascript'>document.location.replace('../motdepasse_oublie.php?rep=error');</script>";
 
  }else echo"<script type='text/javascript'>document.location.replace('../motdepasse_oublie.php?rep=error');</script>";
-
-
 
 ?>
 
