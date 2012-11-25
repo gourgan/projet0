@@ -37,8 +37,8 @@ if(isset($_GET["logout"])){
 }else if(isset($_POST["email"])){
 	$email=$_POST["email"];
 	/// generer un mot de passe aleatoire.
-	//$mdp = substr(str_shuffle("abcdefghijkmnpqrstuvwxyz"), 0, 5);
-	$mdp = "admin4";
+	$mdp = substr(str_shuffle("abcdefghijkmnpqrstuvwxyz"), 0, 5);
+
 	if(getnew_pass($email,$mdp)){
 		$subject="jetons mot de passe";
 		$msg="Vous avez oubli&eacute; votre mot de passe ? <br/> Voici vos coordonn&eacute;es d'identification : <b></b>";
@@ -47,7 +47,7 @@ if(isset($_GET["logout"])){
 		$msg.="Merci <br/> <b>Gestion d'absences LP-DW</b> ";
 		// il manque la classe email pour qu'on puisse envoyer l'email a l'acteur;
 		include("../controllers/mail.php");
-		exit;
+		echo $mdp;exit;
 		//if(send_mail("votre nouveau mot de passe",$msg)){
 			//echo"<script type='text/javascript'>document.location.replace('../motdepasse_oublie.php?ok');</script>";
 		//}

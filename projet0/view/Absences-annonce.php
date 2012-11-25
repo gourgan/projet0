@@ -7,7 +7,7 @@
 
    ?>
 
-<body onclose="valider();">
+<body>
   <div id="contenty" class="content container_12">
 	<?php if(isset($_GET["saved"])){
 	//on recoient les eleves absents to get their informations from database
@@ -69,6 +69,8 @@
 							Tout le monde est present aujourd'hui !<br/>
 							Merci...
 						</div>";
+						echo "<script> document.absenceform.quoi.value="valider";
+									   document.forms['absenceform'].submit();</script>";
 					}
 				?>
    </div>

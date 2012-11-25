@@ -88,6 +88,7 @@ function ajout_el(){
 	$entreprise=1;
 	//ajout eleve;
 	ajout_eleve($nom,$prenom,$photo,$email,$tel,$entreprise,$dele);
+	exit;
         echo"<script type='text/javascript'>document.location.replace('../Eleves/ajout-ok');</script>";
 	}else{
 		echo"<script type='text/javascript'>document.location.replace('../Eleves/ajout-ok');</script>";
