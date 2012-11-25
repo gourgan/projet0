@@ -5,11 +5,11 @@
 <div class="top-bar">
       <ul id="nav">
         <li id="user-panel">
-          <img src="../img/nav/<?php echo$_SESSION["gdrole"]; ?>.jpg" id="usr-avatar" alt="" />
+          <img src="../img/nav/<?php echo $_SESSION["gdrole"]; ?>.jpg" id="usr-avatar" alt="image" />
           <div id="usr-info">
             <p id="usr-name">Bonjour, <?php echo $_SESSION["gdusername"] ; ?>.</p>
             <p id="usr-notif">Vous êtes un <a><?php echo $_SESSION["gdrole"] ; ?> </a></p>
-            <p><a href="modifier_acteur.php">Modifier votre Compte</a><a href="../fonction/verification.php?logout">Log out</a></p>
+            <p><a href="../Utilisateurs/modification-<?php echo $_SESSION["id_user"]?>">Modifier votre Compte</a><a href="../fonction/verification.php?logout">Log out</a></p>
           </div>
         </li>
         <li>

@@ -32,7 +32,6 @@ function modifier_entreprise($id,$nom,$adresse,$telephone,$email){
         
         $db=connect();
         $d = new entreprise($nom,$adresse,$telephone,$email);
-		$db->closeCursor();
         $resultat= $db->prepare("UPDATE entreprise SET nom_entreprise=?,adresse_entreprise=?,telephone_entreprise=?,email_entreprise=? WHERE id=?");
         $resultat->bindValue(1, $d->getNom(), PDO::PARAM_STR) ;    
         $resultat->bindValue(2, $d->getAdresse(), PDO::PARAM_STR) ;    
@@ -40,7 +39,6 @@ function modifier_entreprise($id,$nom,$adresse,$telephone,$email){
         $resultat->bindValue(4, $d->getEmail(), PDO::PARAM_STR) ;  
         $resultat->bindValue(5, $id, PDO::PARAM_INT) ; 
         $resultat->execute();
-		echo $resultat->rowCount();exit;
         return true;
      
 	} catch (PDOException $exc) {
@@ -101,7 +99,7 @@ function ajout_entreprise_eleve($eleve){
 function afficher_entreprises(){
     try{
 		$db=connect();
-		$res=$db->prepare('SELECT * FROM entreprise en,eleve e where e.id_entreprise=en.id ');
+		$res=$db->prepare('SELECT * FROM entreprise en,eleve e where e.id_entreprise=en.id');
 		$res->execute();
 		return $res;
 
@@ -112,5 +110,18 @@ function afficher_entreprises(){
 		return false;
     }  
 }
+function afficher_entreprises_all(){
+    try{
+		$db=connect();
+		$res=$db->prepare('SELECT * FROM entreprise');
+		$res->execute();
+		return $res;
 
+       }
+    catch (PDOException $exc)
+    {
+		echo $exc->getMessage();
+		return false;
+    }  
+}
 ?>

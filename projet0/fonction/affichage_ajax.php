@@ -4,9 +4,9 @@ function afficher_entreprise_modif(){
 
 //ajax afichage entreprise pour modif
 	$id=$_GET["id"];
-	$entreprise=afficher_entreprises();
+	$entreprise=afficher_entreprises_all();
 	while($lignes=$entreprise->fetch(PDO::FETCH_OBJ))
-		{		
+		{	
 			if($lignes->id==$id){
 			
 			echo'
@@ -121,8 +121,15 @@ include_once("../controllers/DTOutilisateur.php");
 			<div class="box grid_6">
 			<div class="box-head"><span class="box-icon-24 fugue-24 system-monitor"></span><h2>Information Personnelles</h2></div>
 			<div class="box-content">
-                                        
-                                         <div class="form-row">
+                    <div class="form-row">
+						<label class="form-label"> Role  </label>
+						<select name="role">
+							<option value="1">Responsable</option>
+							<option value="2">Secretaire</option>
+							<option value="3">Intervenant</option>
+						</select>
+					</div>                        
+                    <div class="form-row">
 						<label class="form-label"> Login </label>
 						<input type="text" name="login" value="'.$lignes->login.'" placeholder="Veuillez saisir le login" size="100"  pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" required /> 
 					</div>
@@ -153,6 +160,7 @@ include_once("../controllers/DTOutilisateur.php");
 							<label class="form-label"> Alias  </label>
 							<input type="text" name="alias" value="'.$lignes->Alias.'" size="100" />
 							<input type="hidden" name="picture"  size="100" value="'.$lignes->picture.'" > </input> 
+							<input type="hidden" name="utilisateur" value="'.$lignes->id.'"/>
 
 					</div>
 			
@@ -329,7 +337,6 @@ if(isset($_GET["quoi"])){
 		 afficher_eleve_modif();
 	}
 	else if($_GET["quoi"]=="entreprise"){
-
 		afficher_entreprise_modif();
 
 	}

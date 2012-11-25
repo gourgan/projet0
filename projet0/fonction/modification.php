@@ -28,7 +28,7 @@ function modifier_en(){
 	$adresse_entreprise = htmlentities($_POST['adresse']);
 	//modifier l'entreprise 
 	if(modifier_entreprise($id,$intitule,$adresse_entreprise,$tel_entreprise,$email_entreprise)){
-		echo"<script type='text/javascript'>document.location.replace('../Entreprises/modification-ok');</script>";
+	echo"<script type='text/javascript'>document.location.replace('../Entreprises/modification-ok');</script>";
 	}else{
 		echo"<script type='text/javascript'>document.location.replace('../Entreprises/modification-error');</script>";
 	}

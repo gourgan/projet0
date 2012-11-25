@@ -136,6 +136,7 @@ function clearsessionscookies()
 		unset($_SESSION['gdusername']);
 		unset($_SESSION['gdpassword']);
 		unset($_SESSION['gdrole']);
+		unset($_SESSION['id_user']);
 		
 		session_unset();    
 		session_destroy(); 
@@ -163,7 +164,9 @@ function confirmUser($utilisateur,$pass)
 				$role=get_role($resultat["id"]);
 				if($role=="secretaire" OR $role=="intervenant" OR $role=="responsable"){
 					$_SESSION['gdrole']=$role;
+					$_SESSION['id_user']=$resultat["id"];
 					setcookie("gdrole", $_SESSION['gdrole'], time()+60, "/");
+					setcookie("id_user", $_SESSION['id_user'], time()+60, "/");
 					return true;
 				}else{ $_SESSION['error']="accés impossible";return false;}
 			}

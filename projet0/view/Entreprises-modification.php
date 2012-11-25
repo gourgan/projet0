@@ -4,10 +4,7 @@
 	include 'Head.php'; 
 	include 'menu.php';  
 	include_once '../controllers/DTOentreprise.php';
-	$entreprise=afficher_entreprises();
-	echo '<pre>';
-		print_r($_SERVER);
-	echo '</pre>';
+	$entreprise=afficher_entreprises_all();
  ?>
  <script src="../js/ajax.js"></script>
 <body>
@@ -46,7 +43,7 @@
 			else {
 				
 				$id=htmlentities($_GET['id']);
-				echo "<script language='javascript'>showUser(42,'entreprise')</script>"; 
+				echo "<script language='javascript'>showUser(".$id.",'entreprise')</script>"; 
 			} ?>
       </div>
 	  <div id="ajax_form">

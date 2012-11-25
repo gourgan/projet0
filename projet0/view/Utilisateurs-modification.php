@@ -15,7 +15,9 @@
          
 		 
 	<div class="box grid_6">
-			<div class="box-head"><span class="box-icon-24 fugue-24 system-monitor"></span><h2>Modifier utilisateur</h2></div>
+			<div class="box-head"><span class="box-icon-24 fugue-24 system-monitor"></span><h2>Modification des utilisateurs</h2></div>
+			<?php if(!isset($_GET['id'])){	 ?>
+
 			<div class="box-content">
 				
 					<div class="form-row">
@@ -38,6 +40,13 @@
 					</div>
 													
 			</div>
+			<?php }
+			/// test pour les droits de modification
+			else if(($_SESSION["gdrole"]=="intervenant" && $_GET['id']==$_SESSION["id_user"]) || ($_SESSION["gdrole"]!=="intervenant")){
+				
+				$id=htmlentities($_GET['id']);
+				echo "<script language='javascript'>showUser(".$id.",'utilisateur')</script>"; 
+			}else echo "<div class='box-content'>Vous avez pas l'acc&eacute;s a cette page</div>"; ?>
       </div>
 	  <div id="ajax_form">
 

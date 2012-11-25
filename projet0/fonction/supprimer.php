@@ -14,15 +14,13 @@ function supprimer_en(){
 
 
 function supprimer_photo($nm){
-	//supprimer la photo et laisser celle par defaut
+	//supprimer la photo et laisser celle par defaut nommé nothing
 	$fichier="../upload/".$nm;
-	if( file_exists ($fichier) AND strpos($fichier,'nothing') == "" )
+	if( file_exists ($fichier) AND strpos($fichier,'nothing') == "" and isset($nm))
     {
-		if(unlink($fichier))
-				echo "Le fichier $fichier a &eacute;t&eacute; supprim&eacute; avec succès";
-			else
-				echo "Erreur lors de la suppression du fichier $fichier";    }
-		return true;
+		unlink($fichier);
+	}
+	return true;
 }
 
 function supprimer_el(){
@@ -47,7 +45,7 @@ function supprimer_uti(){
 	$id = $id_image[0];
 	$image=$id_image[1];
 	if(supprimer_utilisateur($id) &&  supprimer_photo($image)){
-		//echo"<script type='text/javascript'>document.location.replace('../Utilisateurs/suppression-ok');</script>";
+		echo"<script type='text/javascript'>document.location.replace('../Utilisateurs/suppression-ok');</script>";
 	}else{
 		echo"<script type='text/javascript'>document.location.replace('../Utilisateurs/suppression-error');</script>";
 	}	
