@@ -54,7 +54,7 @@
 		   <li><a href="../Absences/ajout">Ajouter</a></li>
 		   <li><a href="../Absences/justification">Justifier</a></li>
                    <li><a href="../Absences/derniers_absents">Derniers Abs</a></li>
-			 
+                   <li><a href="../Absences/list">Liste</a></li>
 			 </ul>
          </li>
          </li>
