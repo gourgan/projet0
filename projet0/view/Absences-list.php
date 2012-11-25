@@ -26,45 +26,37 @@
   
   <!--- CONTENT AREA -->
 
-  <div class="content container_12">
+   <div class="content container_12">
      
-
+      
+       
+       
+       
+       
+       
+       
       <div class="box grid_12">
-        <div class="box-head"><h2>Liste Des Eleves</h2></div>
-        
-        <div class="box grid_6">
-			<div class="box-head"><span class="box-icon-24 fugue-24 system-monitor"></span><h2>exportation et telechargement des fichiers d'absence</h2></div>
-			<div class="box-content">
-					<br/>
-						<label class="form-label" style="color:green;font-weight:18px;"> Lister les absents entre deux dates </label>
-					<br/>
-                                        <div class="form-row">
-							<label class="form-label bblue" > Date Debut  </label>
-							<br/>			
-							<label class="form-label bblue" > Date Fin  </label>
-
-							
-						     
-							<div class="class_button">
-								<input type="submit" name="par date"value="afficher par date" class="button big blue">
-							</div>
-						</div>	
-                       
-                        </div>
-						
-						
-					
-			</div>
-		  </div>
-
-        
-        
-        
-        
+        <div class="box-head"><h2>Liste Des Utilisateurs</h2></div>
+       
         <div class="box-content no-pad">
         
           <table class="display">
-          <thead>
+        <label class="form-label" style="color:green;font-weight:18px;"> Entrer les dates</label>
+					<br/>
+                                        <div class="form-row">
+							<label class="form-label bblue" > Date Debut  </label>
+                                                        <input type="date" name="date1" />
+							<br/>			
+							<label class="form-label bblue" > Date Fin  </label>
+                                                        <input type="date" name="date2" />
+							
+						     
+							<div class="class_button">
+								<input type="submit" name="par date"value="afficher par date" class="button big yellow">
+							</div>
+						</div>	
+        
+        <thead>
             <tr>
               <th>Nom</th>
               <th>Prenom</th>
@@ -77,7 +69,7 @@
             </tr>
           </thead>
           <tbody>
-            <?php   while($lignes=$eleve->fetch(PDO::FETCH_OBJ)){?>
+            <?php   while($lignes=$absent->fetch(PDO::FETCH_OBJ)){?>
             <tr class="odd gradeX">
               <td align="center"><?php echo $lignes->nom; ?></td>
               <td align="center"><?php echo $lignes->prenom; ?></td>
@@ -91,13 +83,15 @@
             </tr>
            <?php } ?>
           </tbody>
+          
+                                        
+                                        
          </table>
         </div>
       </div>
 
       
   </div>
-
 
 </body>
 

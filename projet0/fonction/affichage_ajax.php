@@ -74,7 +74,7 @@ include_once("../controllers/DTOabsence.php");
 							
 							
 							<label class="form-label"> Selectionnez une date : </label>
-							
+							<select name="date">
 								<?php while($lignes=$dates->fetch(PDO::FETCH_OBJ))
 									{	
 									$date_ab=explode(":",$lignes->date);
@@ -92,7 +92,7 @@ include_once("../controllers/DTOabsence.php");
 
 					<div class="form-row">
 							<label class="form-label"> Justificatif  </label>
-							<input type="file" name="justif" />
+							<input type="file" name="justificatif" />
 					</div>
 					
 			

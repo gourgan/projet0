@@ -24,7 +24,7 @@
 	<div class="box grid_6">
 			<div class="box-head"><span class="box-icon-24 fugue-24 system-monitor"></span><h2>Justifier l'absence</h2></div>
 			<div class="box-content">
-				
+				<form id="modif_absence" name="modif_absence" enctype="multipart/form-data" action="../fonction/modification.php" method="POST" >
 					<div class="form-row">
 							<label class="form-label"> Selectionner l'etudiant </label>
          
@@ -43,7 +43,7 @@
 								</select>
 					
 							</div>
-							<input type="hidden" name="quoi" value="justificatif"/>
+							<input type="hidden" name="quoi" value="justification"/>
 					</div>
 													
 			</div>

@@ -23,17 +23,16 @@ function ajout_absence($id_h, $id_eleve,$statut,$justificatif,$message){
 		return false;
 	}  
 }
-function ajout_absence($id_h, $id_eleve,$statut,$justificatif,$message){
+function modifier_absence($id,$statut,$justificatif,$message){
 	try {
 		$db=connect();
 
-		$d = new absence($id_h,$id_eleve,$statut);
-		$resultat= $db->prepare("INSERT INTO absence (id_horaire,id_eleve,statut,justificatif,message) VALUES (?,?,?,?,?)");
-		$resultat->bindValue(1, $d->getDate_absence(), PDO::PARAM_INT);    
-		$resultat->bindValue(2, $d->getId_eleve(), PDO::PARAM_STR);    
-		$resultat->bindValue(3, $d->getStatut(), PDO::PARAM_STR);    
-		$resultat->bindValue(4, $d->getJustificatif(), PDO::PARAM_STR);    
-		$resultat->bindValue(5, $d->getMessage(), PDO::PARAM_STR);    
+		
+		$resultat= $db->prepare("UPDATE absence SET statut=?,justificatif=?,message=?  where id=?");    
+		$resultat->bindValue(1, $statut, PDO::PARAM_STR);    
+		$resultat->bindValue(2, $justificatif,PDO::PARAM_STR);    
+		$resultat->bindValue(3, $message, PDO::PARAM_STR);    
+		$resultat->bindValue(4, $id, PDO::PARAM_INT);    
 		$resultat->execute();
 		return true;
 	} 
@@ -45,16 +44,12 @@ function ajout_absence($id_h, $id_eleve,$statut,$justificatif,$message){
 }
 
 
-function modifier_absence($statut,$justificatif,$message,$id){
+function afficher_absence_selondate($date){
 	try {   
 		////afficher absence selon dates
 		$db=connect();
-		$res=$db->prepare('UPDATE absence SET statut=?,justificatif=?,message=? WHERE id=?');
-                $res->bindValue(1,$statut, PDO::PARAM_STR); 
-                $res->bindValue(2,$justificatif, PDO::PARAM_STR); 
-                $res->bindValue(3,$message, PDO::PARAM_STR); 
-                $res->bindValue(4,$date, PDO::PARAM_STR); 
-               
+		$res=$db->prepare('SELECT * FROM eleve e,absence a,horaire h  WHERE a.id_eleve=e.id AND a.id_horaire=h.id AND h.date=? ');
+                $res->bindValue(1,$date, PDO::PARAM_STR) ; 
 		$res->execute();
 		return $res;
 	} catch (PDOException $exc) 

@@ -10,9 +10,9 @@ function modifier_ab(){
 	
 	//modifier l'absence
 	if(modifier_absence($statut,$justificatif,$message,$id)){
-		echo"<script type='text/javascript'>document.location.replace('../Absences/justification-ok');</script>";
+		//echo"<script type='text/javascript'>document.location.replace('../Absences/justification-ok');</script>";
 	}else{
-		echo"<script type='text/javascript'>document.location.replace('../Absences/justification-error');</script>";
+		//echo"<script type='text/javascript'>document.location.replace('../Absences/justification-error');</script>";
 	}
 }
 
