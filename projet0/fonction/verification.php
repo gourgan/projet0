@@ -38,18 +38,21 @@ if(isset($_GET["logout"])){
 	$email=$_POST["email"];
 	/// generer un mot de passe aleatoire.
 	$mdp = substr(str_shuffle("abcdefghijkmnpqrstuvwxyz"), 0, 5);
-
-	if(getnew_pass($email,$mdp)){
+	$user=getnew_pass($email,$mdp);
+	if($user!==0){
 		$subject="jetons mot de passe";
-		$msg="Vous avez oubli&eacute; votre mot de passe ? <br/> Voici vos coordonn&eacute;es d'identification : <b></b>";
-		$msg.="Mot de passe :   ".$mdp."<br/><br/>";
-		$msg.="VEUILLEZ VOUS IDENTIFIER A L'AIDE DE VOTRE NOM D'UTILISATEUR OU Email ET VOTRE NOUVEAU MOT DE PASSE <br/>";
-		$msg.="Merci <br/> <b>Gestion d'absences LP-DW</b> ";
+		$msg="<h1 style='font-size:17px;text-align:center;color: #4F4F4F;font-weight: 900;
+				  text-shadow: 0 1px 0 #292929;'>
+				  Vous avez oubli&eacute; votre mot de passe ?</h1> <br/> 
+		<p style='font-size:13px;text-align:left;color: #4F4F4F;font-weight: 400;
+				  text-shadow: 0 1px 0 #292929;'>Voici vos coordonn&eacute;es d'identification : <br></br>";
+		$msg.="Login :   ".$user."<br/>
+		Mot de passe :   ".$mdp."<br/>
+		<br/>";
+		$msg.="<b style='color:red;font-size:12px'>**note : Veuillez vous identifier a l'aide de votre login et nouveau mot de passe</b> <br/>";
+		$msg.="Merci <br/> <b>Gestion d'absences LP-DW</b> </p>";
 		// il manque la classe email pour qu'on puisse envoyer l'email a l'acteur;
 		include("../controllers/mail.php");
-		//if(send_mail("votre nouveau mot de passe",$msg)){
-			//echo"<script type='text/javascript'>document.location.replace('../motdepasse_oublie.php?ok');</script>";
-		//}
 		echo"<script type='text/javascript'>document.location.replace('../motdepasse_oublie.php?rep=ok');</script>";
 	
 	}else echo"<script type='text/javascript'>document.location.replace('../motdepasse_oublie.php?rep=error');</script>";
