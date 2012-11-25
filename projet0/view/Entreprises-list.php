@@ -47,12 +47,12 @@
             <tr class="odd gradeX">
               <td><?php echo $lignes->nom." ".$lignes->prenom; ?></td>
               <td><?php echo $lignes->nom_entreprise ?></td>
-              <td><?php echo $lignes->adresse; ?></td>
-              <td> <?php echo $lignes->telephone; ?></td>
-              <td><?php echo $lignes->email; ?></td>
+              <td><?php echo $lignes->adresse_entreprise; ?></td>
+              <td> <?php echo $lignes->telephone_entreprise; ?></td>
+              <td><?php echo $lignes->email_entreprise; ?></td>
               
-	      <td align="center"><a href="#" onclick="return false;"><img src="../img/page_white_edit.png" border="0"></a></td>
-	      <td align="center"><a href="#" onclick="return false;"><img src="../img/publish_r.png" border="0"></a></td>
+	      <td align="center"><a href="modification-<?php echo $lignes->id_entreprise ?>"><img src="../img/page_white_edit.png" border="0"></a></td>
+	      <td align="center"><a href="suppression-<?php echo $lignes->id_entreprise ?>"><img src="../img/publish_r.png" border="0"></a></td>
              
             </tr>
            <?php } ?>

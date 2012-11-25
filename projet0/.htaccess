@@ -5,15 +5,19 @@ Options +FollowSymlinks
 RewriteEngine On
 
 
+RewriteRule ^Eleves/([a-z\_]+)-([0-9]+) view/Eleves-$1.php?id=$2 [QSA,L] 
 RewriteRule ^Eleves/([a-z\_]+)-([a-z\_]+) view/Eleves-$1.php?rep=$2 [QSA,L] 
 RewriteRule ^Eleves/([a-z\_]+) view/Eleves-$1.php [QSA,L] 
 
+RewriteRule ^Absences/([a-z\_]+)-([0-9]+) view/Absences-$1.php?id=$2 [QSA,L] 
 RewriteRule ^Absences/([a-z\_]+)-([a-z\_]+) view/Absences-$1.php?rep=$2 [QSA,L] 
 RewriteRule ^Absences/([a-z\_]+) view/Absences-$1.php [QSA,L] 
 
+RewriteRule ^Utilisateurs/([a-z\_]+)-([0-9]+) view/Utilisateurs-$1.php?id=$2 [QSA,L] 
 RewriteRule ^Utilisateurs/([a-z\_]+)-([a-z\_]+) view/Utilisateurs-$1.php?rep=$2 [QSA,L] 
 RewriteRule ^Utilisateurs/([a-z\_]+) view/Utilisateurs-$1.php [QSA,L] 
 
+RewriteRule ^Entreprises/([a-z\_]+)-([0-9]+) view/Entreprises-$1.php?id=$2 [QSA,L] 
 RewriteRule ^Entreprises/([a-z\_]+)-([a-z\_]+) view/Entreprises-$1.php?rep=$2 [QSA,L] 
 RewriteRule ^Entreprises/([a-z\_]+) view/Entreprises-$1.php [QSA,L] 
 

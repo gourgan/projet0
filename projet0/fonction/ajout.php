@@ -1,5 +1,6 @@
 <?php
 
+///ajout des entreprises;
 function ajout_en(){
 	include_once("../controllers/DTOentreprise.php");
 
@@ -19,6 +20,7 @@ function ajout_en(){
 	}
 }
 
+//ajout des utilisateurs
 function ajout_uti(){
 include_once("../controllers/DTOutilisateur.php");
          
@@ -42,6 +44,7 @@ include_once("../controllers/DTOutilisateur.php");
 		echo"<script type='text/javascript'>document.location.replace('../Utilisateurs/ajout-error');</script>";
 	}
 }
+//upload des images ;
 function upload($file,$nm){
 	$msg="";
 	$extension = end(explode(".", $file["name"]));
@@ -71,31 +74,46 @@ function upload($file,$nm){
 
 	}else{return $add;}
 }
+
+//préparation ajout des eleves
 function ajout_el(){
 	include_once("../controllers/DTOEleve.php");
-
 	//eleve
 	$nom = htmlentities($_POST['nom']);
 	$prenom = htmlentities($_POST['prenom']);
 	$email = htmlentities($_POST['email']);
 	$tel = htmlentities($_POST['tel']);
-	$dele= htmlentities($_POST['delegue']);
-	 if ($dele!=null) $dele = true;else $dele = false;
+	 if (isset($_POST['delegue'])) $dele = true;else $dele = false;
 	$nm=$nom."_".$prenom;
 	if(upload($_FILES['pic_stud'],$nm)){
 	$photo=upload($_FILES['pic_stud'],$nm);
 	//entreprise par d&eacute;faut lors de l'inscription ( );
-	$entreprise=1;
+	$entreprise=null;
 	//ajout eleve;
-	ajout_eleve($nom,$prenom,$photo,$email,$tel,$entreprise,$dele);
-	exit;
-        echo"<script type='text/javascript'>document.location.replace('../Eleves/ajout-ok');</script>";
+	if($id_eleve=ajout_eleve($nom,$prenom,$photo,$email,$tel,$entreprise,$dele)){
+		echo $id_eleve;
+	include_once("../controllers/DTOentreprise.php");
+	//entreprise : si champs nom entreprise rempli
+	if(isset($_POST['intitule']) AND  $_POST['intitule']!=""){
+		 $intitule = htmlentities($_POST['intitule']);
+		(isset($_POST['tel_entreprise']))?$tel_entreprise = htmlentities($_POST['tel_entreprise']):$tel_entreprise=null;
+		(isset($_POST['email_entreprise']))?$email_entreprise = htmlentities($_POST['email_entreprise']):$email_entreprise=null;
+		(isset($_POST['adresse']))?$adresse_entreprise = htmlentities($_POST['adresse']):$adresse_entreprise=null;
+		//ajout de l'entreprise
+		if(ajout_entreprise($intitule,$adresse_entreprise,$tel_entreprise,$email_entreprise)){
+			//ajou&eacute; l'entreprise a l'etudiant;
+			ajout_entreprise_eleve($id_eleve);
+		 }
+	 }
+	 echo"<script type='text/javascript'>document.location.replace('../Eleves/ajout-ok');</script>";
+	}
+       
 	}else{
 		echo"<script type='text/javascript'>document.location.replace('../Eleves/ajout-ok');</script>";
 	}
 }
 
-// s'il est deja pass&eacute; par le formulaire
+// s'il est deja passé par le formulaire
 if(isset($_POST["quoi"])){
 	if($_POST["quoi"]=="eleve"){
 		ajout_el();

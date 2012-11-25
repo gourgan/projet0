@@ -3,13 +3,13 @@
 include_once '../models/entreprise.php';
 include_once '../models/connexion.php';
  
-function ajout_entreprise($nom,$adresse,$telephone,$email){
+function ajout_entreprise($nom,$adresse=null,$telephone=null,$email=null){
 	try {
         $db=connect();
  
-        $d = new entreprise( $nom,$adresse,$telephone,$email);
+        $d = new entreprise($nom,$adresse,$telephone,$email);
        
-        $resultat= $db->prepare("INSERT INTO entreprise (nom_entreprise,adresse,telephone,email) VALUES (?,?,?,?)");
+        $resultat= $db->prepare("INSERT INTO entreprise (nom_entreprise,adresse_entreprise,telephone_entreprise,email_entreprise) VALUES (?,?,?,?)");
        
         $resultat->bindValue(1, $d->getNom(), PDO::PARAM_STR) ;    
         $resultat->bindValue(2, $d->getAdresse(), PDO::PARAM_STR) ;    
@@ -35,7 +35,7 @@ function modifier_entreprise($id,$nom,$adresse,$telephone,$email){
       
      
      
-        $resultat= $db->prepare("UPDATE  entreprise SET nom_entreprise=?,adresse=?,telephone=?,email=? WHERE id=?");
+        $resultat= $db->prepare("UPDATE entreprise SET nom_entreprise=?,adresse_entreprise=?,telephone_entreprise=?,email_entreprise=? WHERE id=?");
         
         $resultat->bindValue(1, $d->getNom(), PDO::PARAM_STR) ;    
         $resultat->bindValue(2, $d->getAdresse(), PDO::PARAM_STR) ;    
@@ -87,7 +87,7 @@ function ajout_entreprise_eleve($eleve){
         $id_entreprise=get_entreprise();
 		$id_entreprise=$id_entreprise['MAX(id)'];
 		$db=connect();
-		$resultat= $db->prepare("UPDATE  eleve SET id_entreprise=? WHERE id=?");
+		$resultat= $db->prepare("UPDATE eleve SET id_entreprise=? WHERE id=?");
         $resultat->bindValue(1, $id_entreprise, PDO::PARAM_STR) ;     
         $resultat->bindValue(2, $eleve, PDO::PARAM_INT) ; 
         $resultat->execute();	

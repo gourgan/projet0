@@ -6,9 +6,7 @@
 	include 'menu.php';  
 	include_once '../controllers/DTOEleve.php';
 	$eleve=afficher_eleves(); 
-	echo '<pre>';
-print_r($_SERVER);
-echo '</pre>';
+
 ?>
 <script src="../js/ajax.js"></script>
 <body>

@@ -21,17 +21,17 @@ function afficher_entreprise_modif(){
 					
 					<div class="form-row">
 							<label class="form-label"> adresse  </label>
-							<input type="text" name="adresse" value="'.$lignes->adresse.'" size="100" />
+							<input type="text" name="adresse" value="'.$lignes->adresse_entreprise.'" size="100" />
 					</div>
 					
 					<div class="form-row">
 							<label class="form-label"> Telephone  </label>
-							<input type="text" name="tel" value="'.$lignes->telephone.'" size="100" pattern="^\d{10}$" />
+							<input type="text" name="tel" value="'.$lignes->telephone_entreprise.'" size="100" pattern="^\d{10}$" />
 					</div>
 					
 					<div class="form-row">
 							<label class="form-label"> E-mail  </label>
-							<input type="email" name="email" value="'.$lignes->email.'" size="100" />
+							<input type="email" name="email" value="'.$lignes->email_entreprise.'" size="100" />
 					</div>
 					
 					
@@ -263,19 +263,23 @@ function afficher_eleve_modif(){
 						<input type="checkbox" name="delegue" '.$checked.' />
 					</div>
 					<div class="form-row">
-							<label class="form-label"> Modifier l entreprise </label>
+							<label class="form-label"> Modifier l\'entreprise </label>
          
-					<div class="form-item">
-								<select name="entreprise">';?>
-							<?php while($lignes2=$entreprises->fetch(PDO::FETCH_OBJ))
+					<div class="form-item" style="overflow: inherit;">';?>
+						<?php if($entreprises->rowCount()>0){ ?>
+							<select name="entreprise">
+							<?php
+							while($lignes2=$entreprises->fetch(PDO::FETCH_OBJ))
 								{?>
 									<option <?php echo "value=".$lignes2->id;
 									if($lignes->id_entreprise==$lignes2->id)
 									echo"selected";
 									echo">".$lignes2->nom_entreprise."</option>" ;?>						
-							<?php }echo'</select>
-							</div>
-					</div>
+							<?php }
+							echo'</select>';
+					  }else {echo '<a class="ajout_href" href="../Entreprises/ajout">Ajouter entreprise</a>';}	
+					echo '</div>
+				</div>
 			</div>
 		  </div>
 		 

@@ -17,10 +17,9 @@ function ajout_eleve($nom,$prenom,$photo,$email,$tel,$entreprise,$delegue){
         $resultat->bindValue(5, $d->getTelephone(), PDO::PARAM_STR) ;    
         $resultat->bindValue(6, $d->getId_entreprise(), PDO::PARAM_INT) ;  
         $resultat->bindValue(7, $d->getDelegue(), PDO::PARAM_BOOL) ;  
-       
-       
+		
         $resultat->execute();
-        return true;
+        return $db->lastInsertId();
      
 	} catch (PDOException $exc) {
 		echo $exc->getMessage();

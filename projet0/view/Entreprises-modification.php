@@ -5,6 +5,9 @@
 	include 'menu.php';  
 	include_once '../controllers/DTOentreprise.php';
 	$entreprise=afficher_entreprises();
+	echo '<pre>';
+		print_r($_SERVER);
+	echo '</pre>';
  ?>
  <script src="../js/ajax.js"></script>
 <body>
@@ -12,9 +15,10 @@
   <div class="content container_12">
   	<form id="modif_entreprise" name="modif_entreprise" enctype="multipart/form-data" action="../fonction/modification.php" method="POST" >
          
-		 
+	
 	<div class="box grid_6">
 			<div class="box-head"><span class="box-icon-24 fugue-24 system-monitor"></span><h2>Modifier entreprise</h2></div>
+			<?php if(!isset($_GET['id'])){	 ?>
 			<div class="box-content">
 				
 					<div class="form-row">
@@ -38,6 +42,11 @@
 					</div>
 													
 			</div>
+			<?php }
+			else {
+				$id=htmlentities($_GET['id']);
+				echo "<script>showUser(".$id.",'entreprise')</script>"; 
+			} ?>
       </div>
 	  <div id="ajax_form">
 
