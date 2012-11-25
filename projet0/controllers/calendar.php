@@ -53,7 +53,6 @@ $donnees["date"]=$date_a;
 $donnees["quand"]=$quand;
 $donnees["abrev_interv"]=$prof;
 if(store_in_base($donnees)){
-break;
 
 }else{
 	echo "il existe des erreurs de connexion avec google calendar!!";
@@ -66,4 +65,5 @@ include_once 'DTOabsence.php';
 if(store_matiere_calendar($donnees)) return true;
 else return false;
 }
+echo "xxx";
 ?> 

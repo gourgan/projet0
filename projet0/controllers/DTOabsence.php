@@ -135,7 +135,7 @@ function get_absence_dates($id){
 
 function get_absence_all_dates(){
 	try {		
-		//get all dates dont il y'avait un absence;
+		echo "xxxxxxx";//get all dates dont il y'avait un absence;
 		$db=connect();
 		$res=$db->prepare('SELECT DISTINCT h.date,a.id FROM horaire h,absence a  group by h.date');
 		$res->execute();

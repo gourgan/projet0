@@ -14,7 +14,7 @@ if(isset($_GET["logout"])){
 		 // on recupere la session du role de l'acteur pour gerer les roles et les interfaces a afficher pour l'acteur;
 		 $x=$_SESSION['gdrole'];
 		 //pour le calendar code pret mais temps insufisant pour l'integrer 
-		include("../controllers/calendar.php");
+		  include("../controllers/calendar.php");
 		if(empty($x)){
 				echo"<script type='text/javascript'>document.location.replace('../index.php?error');</script>";
 		}else{
@@ -47,7 +47,6 @@ if(isset($_GET["logout"])){
 		$msg.="Merci <br/> <b>Gestion d'absences LP-DW</b> ";
 		// il manque la classe email pour qu'on puisse envoyer l'email a l'acteur;
 		include("../controllers/mail.php");
-		echo $mdp;exit;
 		//if(send_mail("votre nouveau mot de passe",$msg)){
 			//echo"<script type='text/javascript'>document.location.replace('../motdepasse_oublie.php?ok');</script>";
 		//}
