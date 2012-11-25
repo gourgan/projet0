@@ -20,6 +20,7 @@ function valider_ab(){
 			//envoyer les alertes des absences!!
 		    //annoncer_absence();
 			/////retour a la page absence avec validation
+			exit;
 
 			echo"<script type='text/javascript'>document.location.replace('../Absences/annonce-ok');</script>";
 	}else{
@@ -39,6 +40,7 @@ function check_horaire_day(){
 	$date_a=date("Y-m-d", time());
 	$quand=gedate_horaire();
 	$id_h=get_programme($date_a,$quand);
+	print_r($id_h);
 	$id=0;
 	while($lignes=$id_h->fetch(PDO::FETCH_OBJ))
 	{
@@ -77,11 +79,11 @@ function alerter_absence(){
 //on supprime tout les traces des sessions et cookies absence;
 function clear_absence(){
 
-	 unset($_SESSION['absents']); 
-	 unset($_SESSION['absents_req']); 
-	 //unset($_SESSION['shape']); 
-	 setcookie('times'); 
-	 setcookie('timems'); 
+ unset($_SESSION['absents']); 
+ unset($_SESSION['absents_req']); 
+ //unset($_SESSION['shape']); 
+ setcookie('times'); 
+ setcookie('timems'); 
  }
 function enregistrer_ab(){
 	//Enregistrement temporaire de l'absence
@@ -114,6 +116,7 @@ function noabsents(){
 // si klk1 est arriv&eacute; avant la validation,on modifie l'absence
 function modifier_ab(){
 	if (isset($_POST['absents'])){
+
 	$_SESSION['absents']=$_POST['absents'];
 	get_id_eleves_req($_SESSION['absents']);
 	echo"<script type='text/javascript'>document.location.replace('../Absences/annonce-saved');</script>";

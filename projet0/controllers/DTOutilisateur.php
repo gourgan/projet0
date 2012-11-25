@@ -98,12 +98,7 @@ function getnew_pass($email,$pass){
 		$resultat->bindValue(2, $email, PDO::PARAM_STR) ;  
 		$resultat->execute();
 		if($resultat->rowCount()){
-			$resultat2= $db->prepare("SELECT login FROM utilisateur WHERE mdp=? AND email=?");
-			$resultat2->bindValue(1, $newpas, PDO::PARAM_STR) ;    
-			$resultat2->bindValue(2, $email, PDO::PARAM_STR) ;  
-			$resultat2->execute();
-			$login=$resultat2->fetch();	
-			return $login['login'];
+			return true;
 		}else{
 			return false;
 		}
@@ -204,20 +199,12 @@ function get_role($id_utilisateur)
    
 }
 function checkLoggedin()
-{			//on verifie s'est existe déja une session active et aussi les droits d'acces aux pages
+{			//on verifie s'est existe d&eacute;ja une session precedente;
 
 	try {
 			
 		if(isset($_SESSION['gdusername']) AND isset($_SESSION['gdpassword']))
-		{	
-			if($_SESSION['gdrole']=="intervenant"){
-			$url=$_SERVER['SCRIPT_NAME'];
-			if ((strpos($url, 'Utilisateurs') !== false && strpos($url, 'modification') !== false) || (strpos($url, 'Absences') !== false)) {
-					return true;
-				}else {echo"<script type='text/javascript'>document.location.replace('404.php');</script>";}
-			
-			}else{return true;}
-		}
+			return true;
 		elseif(isset($_COOKIE['gdusername']) && isset($_COOKIE['gdpassword']))
 		{
 			if(confirmUser($_COOKIE['gdusername'],$_COOKIE['gdpassword']))
