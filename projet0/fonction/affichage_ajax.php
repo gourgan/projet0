@@ -6,7 +6,7 @@ function afficher_entreprise_modif(){
 	$id=$_GET["id"];
 	$entreprise=afficher_entreprises();
 	while($lignes=$entreprise->fetch(PDO::FETCH_OBJ))
-		{
+		{		
 			if($lignes->id==$id){
 			
 			echo'
@@ -32,6 +32,9 @@ function afficher_entreprise_modif(){
 					<div class="form-row">
 							<label class="form-label"> E-mail  </label>
 							<input type="email" name="email" value="'.$lignes->email_entreprise.'" size="100" />
+							<input type="hidden" name="quoi" value="entreprise"/>
+							<input type="hidden" name="entreprise" value="'.$lignes->id.'"/>
+							
 					</div>
 					
 					
@@ -316,6 +319,7 @@ if(isset($_GET["quoi"])){
 		 afficher_eleve_modif();
 	}
 	else if($_GET["quoi"]=="entreprise"){
+
 		afficher_entreprise_modif();
 
 	}
@@ -336,5 +340,6 @@ if(isset($_GET["quoi"])){
 	header( "refresh:5;url=../index.php" );
 	}
 
-}?>
+}
+?>
 

@@ -2,8 +2,7 @@
 function modifier_en(){
 	include_once("../controllers/DTOentreprise.php");
     
-	$id = $_POST['entreprise'];
-	
+	$id = htmlentities($_POST['entreprise']);
 	//entreprise
 	$intitule = htmlentities($_POST['intitule']);
 	$tel_entreprise = htmlentities($_POST['tel']);

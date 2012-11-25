@@ -32,17 +32,15 @@ function modifier_entreprise($id,$nom,$adresse,$telephone,$email){
         
         $db=connect();
         $d = new entreprise($nom,$adresse,$telephone,$email);
-      
-     
-     
+		$db->closeCursor();
         $resultat= $db->prepare("UPDATE entreprise SET nom_entreprise=?,adresse_entreprise=?,telephone_entreprise=?,email_entreprise=? WHERE id=?");
-        
         $resultat->bindValue(1, $d->getNom(), PDO::PARAM_STR) ;    
         $resultat->bindValue(2, $d->getAdresse(), PDO::PARAM_STR) ;    
         $resultat->bindValue(3, $d->getTelephone(), PDO::PARAM_STR) ;    
         $resultat->bindValue(4, $d->getEmail(), PDO::PARAM_STR) ;  
         $resultat->bindValue(5, $id, PDO::PARAM_INT) ; 
         $resultat->execute();
+		echo $resultat->rowCount();exit;
         return true;
      
 	} catch (PDOException $exc) {

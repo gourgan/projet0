@@ -17,7 +17,7 @@
          
 	
 	<div class="box grid_6">
-			<div class="box-head"><span class="box-icon-24 fugue-24 system-monitor"></span><h2>Modifier entreprise</h2></div>
+			<div class="box-head"><span class="box-icon-24 fugue-24 system-monitor"></span><h2>Modification entreprise</h2></div>
 			<?php if(!isset($_GET['id'])){	 ?>
 			<div class="box-content">
 				
@@ -44,8 +44,9 @@
 			</div>
 			<?php }
 			else {
+				
 				$id=htmlentities($_GET['id']);
-				echo "<script>showUser(".$id.",'entreprise')</script>"; 
+				echo "<script language='javascript'>showUser(42,'entreprise')</script>"; 
 			} ?>
       </div>
 	  <div id="ajax_form">
