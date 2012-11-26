@@ -1,6 +1,6 @@
 <?php
 require('fpdf.php');
-
+date_default_timezone_set('Europe/Paris');
 class PDF extends FPDF
 {
 // En-tête
@@ -51,18 +51,19 @@ function all_absence_pdf(){
     $pdf->Ln(20);
 	$pdf->SetFillColor(96,96,96);
     $pdf->SetTextColor(255,255,255);
-	$header=array('Nom','Prenom',"Date d'absence","intervenant");
+	$header=array('Nom','Prenom',"Date d'absence","Matiere","intervenant");
 	for($i=0;$i<sizeof($header);$i++)
-	$pdf->cell(50,10,$header[$i],10,0,'C',1);
+	$pdf->cell(38,10,$header[$i],10,0,'C',1);
 	$pdf->SetFillColor(0xdd,0xdd,0xdd);
     $pdf->SetTextColor(0,0,0);
 	$pdf->SetXY(10,$pdf->GetY()+10);
 	$fond=0;
 	while($row=mysql_fetch_array($resultat)){
-	$pdf->cell(50,10,$row['nom'],10,0,'C',$fond);
-    $pdf->cell(50,10,$row['prenom'],10,0,'C',$fond);
-    $pdf->cell(50,10,$row['date']."-".$row['quand'],10,0,'C',$fond);
-	$pdf->cell(50,10,$row['abrev_intervenant'],10,0,'C',$fond);
+	$pdf->cell(38,10,$row['nom'],10,0,'C',$fond);
+    $pdf->cell(38,10,$row['prenom'],10,0,'C',$fond);
+    $pdf->cell(38,10,$row['date']."-".$row['quand'],10,0,'C',$fond);
+    $pdf->cell(38,10,$row['matiere'],10,0,'C',$fond);
+	$pdf->cell(38,10,$row['abrev_intervenant'],10,0,'C',$fond);
 	$pdf->SetXY(10,$pdf->GetY()+9);
 	$fond=!$fond;
 
