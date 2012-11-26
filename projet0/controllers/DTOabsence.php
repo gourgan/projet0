@@ -244,9 +244,10 @@ function exist_date(){
 }
 
 function emailer_absence($id_eleve,$id_horaire){
-	try {		
+	try {	echo "xxxxx";	
 			include("DTOutilisateur.php");
 			include("DTOentreprise.php");
+			echo "xxxxx";
 			$today=date("Y-m-d", time());
 			$quand_=gedate_horaire();
 			$count=count($id_eleve);
@@ -295,7 +296,6 @@ function contact_actors($email,$subject,$msg1){
 				
 		}
 		
-		} 
 	catch (PDOException $exc) 
 	{
 		echo $exc->getMessage();
