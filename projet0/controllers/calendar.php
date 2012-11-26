@@ -3,7 +3,7 @@
 
 include_once 'DTOabsence.php';
 //on verifie si on adéja enregistré les infos de l'agenda pour le jour active;
-if(exist_date()){
+if(!exist_date()){
 	$userid = 'gourgan.hicham%40gmail.com'; 
 	$magicCookie = 'e9e14333cede09d44f85b1f890591b8b'; 
 	$feedURL = "http://www.google.com/calendar/feeds/$userid/private-$magicCookie/basic"; 

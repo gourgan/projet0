@@ -64,7 +64,7 @@ function afficher_absence_selondate($date){
 		$db=connect();
 		$res=$db->prepare('SELECT * FROM eleve e,absence a,horaire h  WHERE a.id_eleve=e.id AND a.id_horaire=h.id AND h.date BETWEEN ? AND ? ');
         $res->bindValue(1,$date1, PDO::PARAM_STR) ; 
-        $res->bindValue(1,$date2, PDO::PARAM_STR) ; 
+        $res->bindValue(2,$date2, PDO::PARAM_STR) ; 
 		$res->execute();
 		return $res;
 	}     
@@ -75,7 +75,23 @@ function afficher_absence_selondate($date){
 		return false;
 	}  
 }
-
+   function afficher_absence_all(){
+	try {   
+		////afficher tous les absences 
+		$db=connect();
+		$res=$db->prepare('select * from absence a,eleve e,horaire h 
+							where e.id=a.id_eleve and a.id_horaire=h.id
+							order by h.date');
+		$res->execute();
+		return $res;
+	}     
+        
+	catch (PDOException $exc) 
+	{
+		echo $exc->getMessage();
+		return false;
+	}  
+}
 function get_programme($today,$quand){
 	try {   
 		//we get programme du jour d'aprés la date from horaire
@@ -200,8 +216,7 @@ function exist_date(){
 		$resultat->bindValue(1, $today, PDO::PARAM_STR) ;    
 		$resultat->bindValue(2, $quand_, PDO::PARAM_STR) ;     
 		$resultat->execute();
-		echo $resultat->rowCount();exit;
-		return true;
+		if($resultat->rowCount()>0)return true; else return false;
 	} 
 	catch (PDOException $exc) 
 	{
