@@ -15,7 +15,7 @@ function valider_ab(){
 		
 		foreach( $id_eleve as $item)
 		   {
-			ajout_absence($id_horaire,$item,$statut);   
+				ajout_absence($id_horaire,$item,$statut);   
 		   }
 			//envoyer les alertes des absences!!
 		    emailer_absence($id_eleve,$id_horaire);

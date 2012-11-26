@@ -244,10 +244,9 @@ function exist_date(){
 }
 
 function emailer_absence($id_eleve,$id_horaire){
-	try {	echo "xxxxx";	
-			include("DTOutilisateur.php");
+	try {	
+
 			include("DTOentreprise.php");
-			echo "xxxxx";
 			$today=date("Y-m-d", time());
 			$quand_=gedate_horaire();
 			$count=count($id_eleve);
@@ -260,13 +259,14 @@ function emailer_absence($id_eleve,$id_horaire){
 				".$today." - ".$quand;
 				contact_actors($resultat['email_entreprise'],$subject,$msg);
 			}
+			include("DTOutilisateur.php");
 			$responsable=get_user("responsable");
 			$secretaire=get_user("secretaire");
 			$subject="declaration d'absence des apprentis";
 			$msg="Nous vous rappellons que les apprentis suivants  : ";
 				for($i=0;$i<$count;$i++){$msg.=$eleves[$i]."<br/>";}
-			$msg.=" sont declarés absent aujourd'hui :
-			".$today." - ".$quand;
+			$msg.=" sont declaréeacute;s absent aujourd'hui :
+				$today - $quand";
 			contact_actors($responsable['email'],$subject,$msg);
 			contact_actors($secretaire['email'],$subject,$msg);
 			return true;
@@ -291,11 +291,10 @@ function contact_actors($email,$subject,$msg1){
 					  <br/>";
 			$msg.=" Bien cordialement <br/> <b>Gestion d'absences LP-DW</b> </p>";
 			// il manque la classe email pour qu'on puisse envoyer l'email a l'acteur;
-			include("mail.php");
+			include_once("mail.php");
 			send_mail($email,$subject,$msg);
 				
 		}
-		
 	catch (PDOException $exc) 
 	{
 		echo $exc->getMessage();

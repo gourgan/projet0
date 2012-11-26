@@ -13,7 +13,7 @@
   <!--- HEADER -->
 
 	 <?php 
-	   include_once '../controllers/DTOEntreprise.php';
+	   include_once '../controllers/DTOentreprise.php';
           
 	   $entreprise=afficher_entreprises();
           

@@ -1,6 +1,6 @@
 <?php
 
-require '../models/connexion.php';
+require_once ('../models/connexion.php');
 include_once '../models/utilisateur.php';
  
 
@@ -208,7 +208,7 @@ function get_user($role)
 {
 	try {	
 		$db=connect();
-		$res=$db->query('SELECT prenom,email FROM  utilisateur u,role_utilisateur ru,role r where r.id=ru.id_role and ru.id_utilisateur=u.id AND r.nom='.$role);
+		$res=$db->query("SELECT prenom,email FROM  utilisateur u,role_utilisateur ru,role r where r.id=ru.id_role and ru.id_utilisateur=u.id AND r.nom='".$role."'");
 		$role=$res->fetch();	
 		return $role;
 		
