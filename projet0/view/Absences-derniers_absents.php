@@ -4,7 +4,7 @@
        include 'menu.php';
 	
      
-		 echo "xx"; 
+		 
 		include_once("../controllers/DTOabsence.php");
 		//affichage date depuis absence
 		$dates= get_absence_all_dates();
