@@ -18,7 +18,7 @@ function valider_ab(){
 			ajout_absence($id_horaire,$item,$statut);   
 		   }
 			//envoyer les alertes des absences!!
-		    //annoncer_absence();
+		    emailer_absence($id_eleve,$id_horaire);
 			/////retour a la page absence avec validation
 
 			echo"<script type='text/javascript'>document.location.replace('../Absences/annonce-ok');</script>";

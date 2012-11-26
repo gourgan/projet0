@@ -95,7 +95,7 @@ function ajout_entreprise_eleve($eleve){
 	}  
 }
 
-
+//affiche entreprise aui apparient a chaque eleve
 function afficher_entreprises(){
     try{
 		$db=connect();
@@ -110,6 +110,23 @@ function afficher_entreprises(){
 		return false;
     }  
 }
+//pour l'emailing absence
+function retourner_entreprises($id){
+    try{
+		$db=connect();
+		$res=$db->prepare('SELECT * FROM entreprise en,eleve e where e.id_entreprise=en.id AND e.id='.$id);
+		$res->execute();
+		$result=$res->fetch();	
+		return $result;
+
+       }
+    catch (PDOException $exc)
+    {
+		echo $exc->getMessage();
+		return false;
+    }  
+}
+
 function afficher_entreprises_all(){
     try{
 		$db=connect();

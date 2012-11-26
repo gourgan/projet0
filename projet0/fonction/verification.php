@@ -51,8 +51,9 @@ if(isset($_GET["logout"])){
 		<br/>";
 		$msg.="<b style='color:red;font-size:12px'>**note : Veuillez vous identifier a l'aide de votre login et nouveau mot de passe</b> <br/>";
 		$msg.="Merci <br/> <b>Gestion d'absences LP-DW</b> </p>";
-		// il manque la classe email pour qu'on puisse envoyer l'email a l'acteur;
+		// la classe email pour qu'on puisse envoyer l'email a l'acteur;
 		include("../controllers/mail.php");
+		send_mail($email,$subject,$msg);
 		echo"<script type='text/javascript'>document.location.replace('../motdepasse_oublie.php?rep=ok');</script>";
 	
 	}else echo"<script type='text/javascript'>document.location.replace('../motdepasse_oublie.php?rep=error');</script>";

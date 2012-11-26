@@ -109,6 +109,7 @@ function supprimer_absence(){
 	}  
 }
 
+
 function get_programme($today,$quand){
 	try {   
 		//we get programme du jour d'aprés la date from horaire
@@ -235,6 +236,66 @@ function exist_date(){
 		$resultat->execute();
 		if($resultat->rowCount()>0)return true; else return false;
 	} 
+	catch (PDOException $exc) 
+	{
+		echo $exc->getMessage();
+		return false;
+	}  
+}
+
+function emailer_absence($id_eleve,$id_horaire){
+	try {		
+			include("DTOutilisateur.php");
+			include("DTOentreprise.php");
+			$today=date("Y-m-d", time());
+			$quand_=gedate_horaire();
+			$count=count($id_eleve);
+			$eleves=array();
+			for($i=0;$i<$count;$i++){
+				$eleves[]=$resultat['nom']." ".$resultat['prenom'];
+				$resultat=retourner_entreprises($id_eleve[$i]);
+				$subject="declaration d'absence de votre apprentis";
+				$msg="Nous vous rappellons que l'apprentis ".$resultat['nom']." est declaré absent aujourd'hui :
+				".$today." - ".$quand;
+				contact_actors($resultat['email_entreprise'],$subject,$msg);
+			}
+			$responsable=get_user("responsable");
+			$secretaire=get_user("secretaire");
+			$subject="declaration d'absence des apprentis";
+			$msg="Nous vous rappellons que les apprentis suivants  : ";
+				for($i=0;$i<$count;$i++){$msg.=$eleves[$i]."<br/>";}
+			$msg.=" sont declarés absent aujourd'hui :
+			".$today." - ".$quand;
+			contact_actors($responsable['email'],$subject,$msg);
+			contact_actors($secretaire['email'],$subject,$msg);
+			return true;
+		} 
+	catch (PDOException $exc) 
+	{
+		echo $exc->getMessage();
+		return false;
+	}  
+}
+
+function contact_actors($email,$subject,$msg1){
+	try {		
+
+			$msg="<h1 style='font-size:17px;text-align:center;color: #4F4F4F;font-weight: 900;
+					text-shadow: 0 1px 0 #292929;'>
+					D&eacute;claration d'absence d'apprentis
+			<p style='font-size:13px;text-align:left;color: #4F4F4F;font-weight: 400;
+					  text-shadow: 0 1px 0 #292929;'>Bonjour,<br/>Details d'absence : 
+					  </br>
+					  $msg1 
+					  <br/>";
+			$msg.=" Bien cordialement <br/> <b>Gestion d'absences LP-DW</b> </p>";
+			// il manque la classe email pour qu'on puisse envoyer l'email a l'acteur;
+			include("mail.php");
+			send_mail($email,$subject,$msg);
+				
+		}
+		
+		} 
 	catch (PDOException $exc) 
 	{
 		echo $exc->getMessage();
