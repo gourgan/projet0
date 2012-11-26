@@ -161,6 +161,53 @@ function store_matiere_calendar($even){
 		return false;
 	}  
 }
+// get date and convert it selon le format dont on a enregistr&eacute; l'horaire;
+function gedate_horaire(){
+	$time_a = date("H i s", time());
+	$matin=date("H i s", mktime(13,20,00,0,0,0));
+	if($time_a<$matin){
+		$quand="matin";
+	}
+	else{
+		$quand="apres-midi";
+	}
+	return $quand;
 
+}
+
+//verifie si un absence de cette date est déja enregistré?
+
+function check_absence_day(){
+
+
+}
+
+//alerte les absence auprés des acteurs et entreprises?
+
+function alerter_absence(){
+
+
+
+}
+function exist_date(){
+	try {		
+		
+		$today=date("Y-m-d", time());
+		$quand_=gedate_horaire();
+		$db=connect();
+		//insertion des données de l'agenda dans la table horaire;
+		$resultat= $db->prepare("SELECT * FROM horaire WHERE date=? and quand=?");
+		$resultat->bindValue(1, $today, PDO::PARAM_STR) ;    
+		$resultat->bindValue(2, $quand_, PDO::PARAM_STR) ;     
+		$resultat->execute();
+		echo $resultat->rowCount();exit;
+		return true;
+	} 
+	catch (PDOException $exc) 
+	{
+		echo $exc->getMessage();
+		return false;
+	}  
+}
 
 ?>

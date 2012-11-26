@@ -1,8 +1,9 @@
 <?php
+
 $to = $email;
 //Image in e-mail
 $mailimg = '
-<a href="#"><img src="../img/logo.jpg"</a>
+<a href="http://nos-projets.alwaysdata.net/"><img src="http://nos-projets.alwaysdata.net/img/logo.png"</a>
 ';
 //Mail Body - Position, background, font color, font size...
 $body ='
@@ -13,7 +14,7 @@ $body ='
 body, P.msoNormal, LI.msoNormal
 {
 background-position: top;
-background-color: #336699;
+background-color: #C8C6C8;
 margin-left:  10em;
 margin-top: 1em;
 font-family: "verdana";
