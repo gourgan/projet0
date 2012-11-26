@@ -75,7 +75,7 @@ function afficher_absence_selondate($date){
 		return false;
 	}  
 }
-   function afficher_absence_all(){
+function afficher_absence_all(){
 	try {   
 		////afficher tous les absences 
 		$db=connect();
@@ -92,6 +92,23 @@ function afficher_absence_selondate($date){
 		return false;
 	}  
 }
+
+function supprimer_absence(){
+	try {   
+		////Supprimer absences 
+		$db=connect();
+		$res=$db->prepare('DELETE from absence where id=?');
+		$res->bindValue(1,$id, PDO::PARAM_INT) ; 
+		$res->execute();
+		return true;
+	}         
+	catch (PDOException $exc) 
+	{
+		echo $exc->getMessage();
+		return false;
+	}  
+}
+
 function get_programme($today,$quand){
 	try {   
 		//we get programme du jour d'aprés la date from horaire

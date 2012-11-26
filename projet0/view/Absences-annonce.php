@@ -50,6 +50,7 @@
 			
 			
 		<div class="class_button" style="width:251px;font-weight:bold;">
+			<input type="hidden" name="quoi" value=""/>
 			<input type="submit" value="modifier" name="modifier" class="button big black">
 			<input type="submit" value="Valider definitivement" name="valider" class="button big green">
 		</div>
@@ -58,14 +59,14 @@
 		
 		</div>
 	  </form>
-	<?php } else if(isset($_GET["ok"])){
+	<?php } else if(isset($_GET["rep"]) && $_GET["rep"]=="ok"){
 						echo " 
 						<div class='ad-notif-success grid_12 small-mg' 
 							style='padding:10px;color:green;font-weight:bold;display:block !important;'> 
 							L'absence a &eacute;t&eacute; bien valid&eacute; !<br/>
 							Merci...
 						</div>";
-					}else if(isset($_GET["noabsents"])){
+					}else if(isset($_GET["rep"]) && $_GET["rep"]=="noabsents"){
 						echo " 
 						<div class='ad-notif-success grid_12 small-mg' 
 							style='padding:10px;color:green;font-weight:bold;display:block !important;'> 
